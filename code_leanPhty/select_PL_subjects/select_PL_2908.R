@@ -1,0 +1,352 @@
+#load datasets
+
+#load entire cleaned data (154009 lines)
+VIP_data_all <- read.csv("../VIP_data/VIP_170206_cleaned.csv", header = TRUE, sep = ",", row.names = NULL, fill=TRUE)
+
+#visit 1 and visit2 data
+VIP_data_subset_visit1_complete_cases<- read.csv("../VIP_data/VIP_data_subset_visit1_complete_cases.csv", header = TRUE, sep = ",", row.names = NULL, fill=TRUE)
+VIP_data_subset_visit2_complete_cases<- read.csv("../VIP_data/VIP_data_subset_visit2_complete_cases.csv", header = TRUE, sep = ",", row.names = NULL, fill=TRUE)
+
+#resistance_case_control_susceptible
+
+#resistance_continuous
+
+#resistance_case_control_compliant
+
+#susceptible_case_control_compliant
+
+#case_02_control_compliant
+
+#case_12_control_compliant
+
+#case_01_control_compliant
+
+#case_10_control_compliant
+
+
+#biclassstrict  01
+visit1_subjects_biclass_strict_0<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor_strict==0]
+length(visit1_subjects_biclass_strict_0)
+
+visit2_subjects_biclass_strict_0<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict==0]
+length(visit2_subjects_biclass_strict_0)
+
+persistent_subjects_biclass_strict_0<-visit2_subjects_biclass_strict_0[visit2_subjects_biclass_strict_0 %in% visit1_subjects_biclass_strict_0]
+length(persistent_subjects_biclass_strict_0)
+
+visit1_subjects_biclass_strict_1<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor_strict==1]
+length(visit1_subjects_biclass_strict_1)
+
+visit2_subjects_biclass_strict_1<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict==1]
+length(visit2_subjects_biclass_strict_1)
+
+persistent_subjects_biclass_strict_1<-visit2_subjects_biclass_strict_1[visit2_subjects_biclass_strict_1 %in% visit1_subjects_biclass_strict_1]
+length(persistent_subjects_biclass_strict_1)
+
+#exclude smokers from 1
+persistent_subjects_biclass_strict_1_non_smokers<-persistent_subjects_biclass_strict_1[!(persistent_subjects_biclass_strict_1 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_biclass_strict_1_non_smokers)
+
+
+#biclassstrictopposite  01
+visit1_subjects_biclass_strict_0_opposite<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor_strict_opposite==0]
+length(visit1_subjects_biclass_strict_0_opposite)
+
+visit2_subjects_biclass_strict_0_opposite<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite==0]
+length(visit2_subjects_biclass_strict_0_opposite)
+
+persistent_subjects_biclass_strict_0_opposite<-visit2_subjects_biclass_strict_0_opposite[visit2_subjects_biclass_strict_0_opposite %in% visit1_subjects_biclass_strict_0_opposite]
+length(persistent_subjects_biclass_strict_0_opposite)
+
+visit1_subjects_biclass_strict_1_opposite<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor_strict_opposite==1]
+length(visit1_subjects_biclass_strict_1_opposite)
+
+visit2_subjects_biclass_strict_1_opposite<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite==1]
+length(visit2_subjects_biclass_strict_1_opposite)
+
+persistent_subjects_biclass_strict_1_opposite<-visit2_subjects_biclass_strict_1[visit2_subjects_biclass_strict_1_opposite %in% visit1_subjects_biclass_strict_1_opposite]
+length(persistent_subjects_biclass_strict_1_opposite)
+
+#exclude former smokers from 1
+persistent_subjects_biclass_strict_1_opposite_non_former_smokers<-persistent_subjects_biclass_strict_1_opposite[!(persistent_subjects_biclass_strict_1_opposite %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_biclass_strict_1_opposite_non_former_smokers)
+
+
+
+#biclass  01
+visit1_subjects_biclass_0<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor==0]
+length(visit1_subjects_biclass_0)
+
+visit2_subjects_biclass_0<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor==0]
+length(visit2_subjects_biclass_0)
+
+persistent_subjects_biclass_0<-visit2_subjects_biclass_strict_0[visit2_subjects_biclass_0 %in% visit1_subjects_biclass_0]
+length(persistent_subjects_biclass_0)
+
+visit1_subjects_biclass_1<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor==1]
+length(visit1_subjects_biclass_1)
+
+visit2_subjects_biclass_1<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor==1]
+length(visit2_subjects_biclass_1)
+
+persistent_subjects_biclass_1<-visit2_subjects_biclass_1[visit2_subjects_biclass_1 %in% visit1_subjects_biclass_1]
+length(persistent_subjects_biclass_1)
+
+#exclude smokers from 1
+persistent_subjects_biclass_1_non_smokers<-persistent_subjects_biclass_1[!(persistent_subjects_biclass_1 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_biclass_1_non_smokers)
+
+
+#biclassopposite  01
+visit1_subjects_biclass_0_opposite<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor_opposite==0]
+length(visit1_subjects_biclass_0_opposite)
+
+visit2_subjects_biclass_0_opposite<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite==0]
+length(visit2_subjects_biclass_0_opposite)
+
+persistent_subjects_biclass_0_opposite<-visit2_subjects_biclass_0_opposite[visit2_subjects_biclass_0_opposite %in% visit1_subjects_biclass_0_opposite]
+length(persistent_subjects_biclass_0_opposite)
+
+visit1_subjects_biclass_1_opposite<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_bi_factor_opposite==1]
+length(visit1_subjects_biclass_1_opposite)
+
+visit2_subjects_biclass_1_opposite<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite==1]
+length(visit2_subjects_biclass_1_opposite)
+
+persistent_subjects_biclass_1_opposite<-visit2_subjects_biclass_1[visit2_subjects_biclass_1_opposite %in% visit1_subjects_biclass_1_opposite]
+length(persistent_subjects_biclass_1_opposite)
+
+#exclude former smokers from 1
+persistent_subjects_biclass_1_opposite_non_former_smokers<-persistent_subjects_biclass_1_opposite[!(persistent_subjects_biclass_1_opposite %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_biclass_1_opposite_non_former_smokers)
+
+
+
+#multiclass -2-1 0 1 2
+visit1_subjects_multiclass_0<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor==0]
+length(visit1_subjects_multiclass_0)
+
+visit2_subjects_multiclass_0<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor==0]
+length(visit2_subjects_multiclass_0)
+
+persistent_subjects_multiclass_0<-visit2_subjects_multiclass_0[visit2_subjects_multiclass_0 %in% visit1_subjects_multiclass_0]
+length(persistent_subjects_multiclass_0)
+
+visit1_subjects_multiclass_1<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor==1]
+length(visit1_subjects_multiclass_1)
+
+visit2_subjects_multiclass_1<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor==1]
+length(visit2_subjects_multiclass_1)
+
+persistent_subjects_multiclass_1<-visit2_subjects_multiclass_1[visit2_subjects_multiclass_1 %in% visit1_subjects_multiclass_1]
+length(persistent_subjects_multiclass_1)
+
+#exclude smokers from 1
+persistent_subjects_multiclass_1_non_smokers<-persistent_subjects_multiclass_1[!(persistent_subjects_multiclass_1 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_multiclass_1_non_smokers)
+
+
+visit1_subjects_multiclass_2<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor==2]
+length(visit1_subjects_multiclass_2)
+
+visit2_subjects_multiclass_2<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor==2]
+length(visit2_subjects_multiclass_2)
+
+persistent_subjects_multiclass_2<-visit2_subjects_multiclass_2[visit2_subjects_multiclass_2 %in% visit1_subjects_multiclass_2]
+length(persistent_subjects_multiclass_2)
+
+#exclude smokers from 2
+persistent_subjects_multiclass_2_non_smokers<-persistent_subjects_multiclass_2[!(persistent_subjects_multiclass_2 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_multiclass_2_non_smokers)
+
+
+
+visit1_subjects_multiclass_minus1<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor==-1]
+length(visit1_subjects_multiclass_minus1)
+
+visit2_subjects_multiclass_minus1<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor==-1]
+length(visit2_subjects_multiclass_minus1)
+
+persistent_subjects_multiclass_minus1<-visit2_subjects_multiclass_minus1[visit2_subjects_multiclass_minus1 %in% visit1_subjects_multiclass_minus1]
+length(persistent_subjects_multiclass_minus1)
+
+#exclude former smokers from -1
+persistent_subjects_multiclass_minus1_non_smokers<-persistent_subjects_multiclass_minus1[!(persistent_subjects_multiclass_minus1 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_multiclass_minus1_non_smokers)
+
+
+visit1_subjects_multiclass_minus2<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor==-2]
+length(visit1_subjects_multiclass_minus2)
+
+visit2_subjects_multiclass_minus2<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor==-2]
+length(visit2_subjects_multiclass_minus2)
+
+persistent_subjects_multiclass_minus2<-visit2_subjects_multiclass_minus2[visit2_subjects_multiclass_minus2 %in% visit1_subjects_multiclass_minus2]
+length(persistent_subjects_multiclass_minus2)
+
+#exclude former smokers from -2
+persistent_subjects_multiclass_minus2_non_smokers<-persistent_subjects_multiclass_minus2[!(persistent_subjects_multiclass_minus2 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_multiclass_minus2_non_smokers)
+
+#there are no persistent subjects in -2 !!!
+
+
+
+#allmulticlass 00 11 22 01 10 20 02 12 21
+visit1_subjects_allmulticlass_00<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='00']
+length(visit1_subjects_allmulticlass_00)
+
+visit2_subjects_allmulticlass_00<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='00']
+length(visit2_subjects_allmulticlass_00)
+
+persistent_subjects_allmulticlass_00<-visit2_subjects_allmulticlass_00[visit2_subjects_allmulticlass_00 %in% visit1_subjects_allmulticlass_00]
+length(persistent_subjects_allmulticlass_00)
+
+visit1_subjects_allmulticlass_11<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='11']
+length(visit1_subjects_allmulticlass_11)
+
+visit2_subjects_allmulticlass_11<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='11']
+length(visit2_subjects_allmulticlass_11)
+
+persistent_subjects_allmulticlass_11<-visit2_subjects_allmulticlass_11[visit2_subjects_allmulticlass_11 %in% visit1_subjects_allmulticlass_11]
+length(persistent_subjects_allmulticlass_11)
+
+visit1_subjects_allmulticlass_22<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='22']
+length(visit1_subjects_allmulticlass_22)
+
+visit2_subjects_allmulticlass_22<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='22']
+length(visit2_subjects_allmulticlass_22)
+
+persistent_subjects_allmulticlass_22<-visit2_subjects_allmulticlass_22[visit2_subjects_allmulticlass_22 %in% visit1_subjects_allmulticlass_22]
+length(persistent_subjects_allmulticlass_22)#empty
+
+visit1_subjects_allmulticlass_01<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='01']
+length(visit1_subjects_allmulticlass_01)
+
+visit2_subjects_allmulticlass_01<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='01']
+length(visit2_subjects_allmulticlass_01)
+
+persistent_subjects_allmulticlass_01<-visit2_subjects_allmulticlass_01[visit2_subjects_allmulticlass_01 %in% visit1_subjects_allmulticlass_01]
+length(persistent_subjects_allmulticlass_01)
+
+#exclude smokers from 01
+
+persistent_subjects_allmulticlass_01_non_smokers<-persistent_subjects_allmulticlass_01[!(persistent_subjects_allmulticlass_01 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_allmulticlass_01_non_smokers)
+
+visit1_subjects_allmulticlass_02<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='02']
+length(visit1_subjects_allmulticlass_02)
+
+visit2_subjects_allmulticlass_02<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='02']
+length(visit2_subjects_allmulticlass_02)
+
+persistent_subjects_allmulticlass_02<-visit2_subjects_allmulticlass_02[visit2_subjects_allmulticlass_02 %in% visit1_subjects_allmulticlass_02]
+length(persistent_subjects_allmulticlass_02)
+
+#exclude smokers from 02
+
+persistent_subjects_allmulticlass_02_non_smokers<-persistent_subjects_allmulticlass_02[!(persistent_subjects_allmulticlass_02 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_allmulticlass_02_non_smokers)
+
+
+visit1_subjects_allmulticlass_12<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='12']
+length(visit1_subjects_allmulticlass_12)
+
+visit2_subjects_allmulticlass_12<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='12']
+length(visit2_subjects_allmulticlass_12)
+
+persistent_subjects_allmulticlass_12<-visit2_subjects_allmulticlass_12[visit2_subjects_allmulticlass_12 %in% visit1_subjects_allmulticlass_12]
+length(persistent_subjects_allmulticlass_12)
+
+#exclude smokers from 12
+
+persistent_subjects_allmulticlass_12_non_smokers<-persistent_subjects_allmulticlass_12[!(persistent_subjects_allmulticlass_12 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==1 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_allmulticlass_12_non_smokers)
+
+
+visit1_subjects_allmulticlass_10<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='10']
+length(visit1_subjects_allmulticlass_10)
+
+visit2_subjects_allmulticlass_10<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='10']
+length(visit2_subjects_allmulticlass_10)
+
+persistent_subjects_allmulticlass_10<-visit2_subjects_allmulticlass_10[visit2_subjects_allmulticlass_10 %in% visit1_subjects_allmulticlass_10]
+length(persistent_subjects_allmulticlass_10)
+
+#exclude former smokers from 10
+
+persistent_subjects_allmulticlass_10_non_smokers<-persistent_subjects_allmulticlass_10[!(persistent_subjects_allmulticlass_10 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_allmulticlass_10_non_smokers)
+
+visit1_subjects_allmulticlass_20<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='20']
+length(visit1_subjects_allmulticlass_20)
+
+visit2_subjects_allmulticlass_20<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='20']
+length(visit2_subjects_allmulticlass_20)
+
+persistent_subjects_allmulticlass_20<-visit2_subjects_allmulticlass_20[visit2_subjects_allmulticlass_20 %in% visit1_subjects_allmulticlass_20]
+length(persistent_subjects_allmulticlass_20)
+
+#exclude former smokers from 20
+
+persistent_subjects_allmulticlass_20_non_smokers<-persistent_subjects_allmulticlass_20[!(persistent_subjects_allmulticlass_20 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_allmulticlass_20_non_smokers)#empty
+
+
+visit1_subjects_allmulticlass_21<-VIP_data_subset_visit1_complete_cases$Subject_id[VIP_data_subset_visit1_complete_cases$compliance_multi_factor_all=='21']
+length(visit1_subjects_allmulticlass_21)
+
+visit2_subjects_allmulticlass_21<-VIP_data_subset_visit2_complete_cases$Subject_id[VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all=='21']
+length(visit2_subjects_allmulticlass_21)
+
+persistent_subjects_allmulticlass_21<-visit2_subjects_allmulticlass_21[visit2_subjects_allmulticlass_21 %in% visit1_subjects_allmulticlass_21]
+length(persistent_subjects_allmulticlass_21)
+
+#exclude former smokers from 21
+
+persistent_subjects_allmulticlass_21_non_smokers<-persistent_subjects_allmulticlass_21[!(persistent_subjects_allmulticlass_21 %in% 
+					VIP_data_all$Subject_id[VIP_data_all$sm_status==2 & !is.na(VIP_data_all$sm_status)])]
+length(persistent_subjects_allmulticlass_21_non_smokers)#empty
+
+
+#save enummers
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_strict_0,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_strict_0",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_strict_1_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_strict_1_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_strict_0_opposite,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_strict_0_opposite",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_strict_1_opposite_non_former_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_strict_1_opposite_non_former_smokers",row.names=F,col.names=F)
+
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_0,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_0",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_1_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_1_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_0_opposite,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_0_opposite",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_biclass_1_opposite_non_former_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_biclass_1_opposite_non_former_smokers",row.names=F,col.names=F)
+
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_multiclass_0,"enummer"], "../Results/persistantly_lean_subjects/enummers_multiclass_0",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_multiclass_1_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_multiclass_1_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_multiclass_2_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_multiclass_2_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_multiclass_minus1_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_multiclass_minus1_non_former_smokers",row.names=F,col.names=F)
+
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_00,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_00",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_11,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_11",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_22,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_22",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_01_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_01_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_02_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_02_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_12_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_12_non_smokers",row.names=F,col.names=F)
+write.table(VIP_data_subset_visit1_complete_cases[VIP_data_subset_visit1_complete_cases$Subject_id %in% persistent_subjects_allmulticlass_10_non_smokers,"enummer"], "../Results/persistantly_lean_subjects/enummers_allmulticlass_10_non_former_smokers",row.names=F,col.names=F)
+
+
+
+
+

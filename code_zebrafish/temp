@@ -1,0 +1,77 @@
+#extract out the group and time variable
+
+if(type=="B1"){
+	
+	if(condition=="DarkApoLow"){
+		
+		timeFctr<-full_together[,11]
+		groupVar<-full_together[,137]
+		
+	}else if(condition=="DarkApoHigh"){
+		
+		timeFctr<-full_together[,16]
+		groupVar<-full_together[,187]
+		
+	}else{
+		
+		timeFctr<-full_together[,16]
+		groupVar<-full_together[,190]
+	}
+	
+} else{
+	
+	if(condition=="DarkApoLow"){
+		
+		timeFctr<-full_together[,361]
+		groupVar<-full_together[,599]
+		
+	}else if(condition=="DarkApoHigh"){
+		
+		timeFctr<-full_together[,503]
+		groupVar<-full_together[,838]
+		
+	}else{
+		
+		timeFctr<-full_together[,514]
+		groupVar<-full_together[,859]
+	}
+}
+
+
+
+full_together<-full_together[,-grep("^Length.*Count$",colnames(full_together))]
+
+ny<-colnames(full_together)[-grep("TimeFactor|Group",colnames(full_together))]
+
+form <- multivariateFormula(ny,c("TimeFactor","Group","Length5BoutCountProportion","TotalBoutCount","Length4BoutCountProportion","Length6PlusBoutCountProportion","Length2BoutCountProportion","Length1BoutCountProportion","Length3BoutCountProportion"))
+
+fam <- rep("poisson",length(ny))
+
+genus.scglr <- scglr(formula=form,data =full_together,family=fam,K=1)
+
+
+genus.scglr <- scglr(formula=form,data=full_together,family=fam,K=100)
+
+
+ny<-colnames(full_together)[grep("Scoot|Bend",colnames(full_together))]
+
+
+genus.scglr <- scglr(formula="TotalBoutCount~TimeFactor+Group",data=full_together,family=fam,K=100)
+
+ny<-colnames(full_together)[-grep("Transition|TimeFactor|Group",colnames(full_together))]
+
+
+
+
+
+
+
+Husson, Lê and Pagès (2011). Exploratory Multivariate Analysis By Example Using R.
+
+FactoMineR uses the square correlation ratios (which in curvilinear relationships are equal to the eta^2 values) to plot the variables.
+
+When interpreting the biplot, the greater the perpendicular distance from the axis to the point, the stronger the correlation between the axis and the point.
+
+Also the cosine of the angular distance between any two variables indicates the magnitude of correlation between them. You have to do a similar analysis on categories to gain insight into the direction of effect.
+
+

@@ -1,0 +1,412 @@
+#run python scripts
+
+#Light
+ls *Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light Control ;done
+ls *Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light 3microM ;done
+ls *Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light 1microM ;done
+ls *Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light 10microM ;done
+
+# in all 6  do this, as these are empty
+cd Light
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+cd ..
+
+ls NDMCH*Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light 100microM ;done
+ls NDMCH*Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light 50microM ;done
+ls NDMCH*Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Light 25microM ;done
+
+
+#Dark
+ls *Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark Control ;done
+ls *Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark 3microM ;done
+ls *Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark 1microM ;done
+ls *Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark 10microM ;done
+
+# in all 6  do this, as these are empty
+cd Dark
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+cd ..
+
+ls NDMCH*Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark 100microM ;done
+ls NDMCH*Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark 50microM ;done
+ls NDMCH*Dark | grep -v Light | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line Dark 25microM ;done
+
+
+#LightDark
+ls *LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark Control ;done
+ls *LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark 3microM ;done
+ls *LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark 1microM ;done
+ls *LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark 10microM ;done
+
+# in all 6  do this, as these are empty
+cd LightDark
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+cd ..
+
+ls NDMCH*LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark 100microM ;done
+ls NDMCH*LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark 50microM ;done
+ls NDMCH*LightDark | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line LightDark 25microM ;done
+
+
+#DarkApoLow
+ls *DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow Control ;done
+ls *DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow 3microM ;done
+ls *DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow 1microM ;done
+ls *DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow 10microM ;done
+
+# in all 6  do this, as these are empty
+cd DarkApoLow
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+cd ..
+
+ls NDMCH*DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow 100microM ;done
+ls NDMCH*DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow 50microM ;done
+ls NDMCH*DarkApoLow | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoLow 25microM ;done
+
+
+
+#DarkApoHigh
+ls *DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh Control ;done
+ls *DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh 3microM ;done
+ls *DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh 1microM ;done
+ls *DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh 10microM ;done
+
+# in all 6  do this, as these are empty
+cd DarkApoHigh
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+cd ..
+
+ls NDMCH*DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh 100microM ;done
+ls NDMCH*DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh 50microM ;done
+ls NDMCH*DarkApoHigh | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkApoHigh 25microM ;done
+
+
+
+#DarkPTZ
+ls *DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ Control ;done
+ls *DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ 3microM ;done
+ls *DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ 1microM ;done
+ls *DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ 10microM ;done
+
+# in all 6  do this, as these are empty
+cd DarkPTZ
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+cd ..
+
+ls NDMCH*DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ 100microM ;done
+ls NDMCH*DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ 50microM ;done
+ls NDMCH*DarkPTZ | while read line;do python3 ../../../../code/simple_motif_search/simple_motif_search.py $line DarkPTZ 25microM ;done
+
+
+
+#COMBINE ALL THE CONTROL SUBJECTS FROM DIFFERENT EXPERIMENTS
+
+#Light
+cd Light
+rm Natural_Control*
+cat *Control*motif2 > Natural_Control_Light_motif2
+cat *Control*motif3 > Natural_Control_Light_motif3
+cat *Control*motif4 > Natural_Control_Light_motif4
+cat *Control*motif5 > Natural_Control_Light_motif5
+cd ..
+
+
+#Dark
+cd Dark
+rm Natural_Control*
+cat *Control*motif2 > Natural_Control_Dark_motif2
+cat *Control*motif3 > Natural_Control_Dark_motif3
+cat *Control*motif4 > Natural_Control_Dark_motif4
+cat *Control*motif5 > Natural_Control_Dark_motif5
+cd ..
+
+
+#LightDark
+cd LightDark
+rm Natural_Control*
+cat *Control*motif2 > Natural_Control_LightDark_motif2
+cat *Control*motif3 > Natural_Control_LightDark_motif3
+cat *Control*motif4 > Natural_Control_LightDark_motif4
+cat *Control*motif5 > Natural_Control_LightDark_motif5
+cd ..
+
+
+#DarkApoLow
+cd DarkApoLow
+rm Disease_Control*
+cat *Control*motif2 > Disease_Control_DarkApoLow_motif2
+cat *Control*motif3 > Disease_Control_DarkApoLow_motif3
+cat *Control*motif4 > Disease_Control_DarkApoLow_motif4
+cat *Control*motif5 > Disease_Control_DarkApoLow_motif5
+cd ..
+
+
+#DarkApoHigh
+cd DarkApoHigh
+rm Disease_Control*
+cat *Control*motif2 > Disease_Control_DarkApoHigh_motif2
+cat *Control*motif3 > Disease_Control_DarkApoHigh_motif3
+cat *Control*motif4 > Disease_Control_DarkApoHigh_motif4
+cat *Control*motif5 > Disease_Control_DarkApoHigh_motif5
+cd ..
+
+
+#DarkPTZ
+cd DarkPTZ
+rm Disease_Control*
+cat *Control*motif2 > Disease_Control_DarkPTZ_motif2
+cat *Control*motif3 > Disease_Control_DarkPTZ_motif3
+cat *Control*motif4 > Disease_Control_DarkPTZ_motif4
+cat *Control*motif5 > Disease_Control_DarkPTZ_motif5
+cd ..
+
+
+####################################################################
+#Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Control_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Aripiprazole_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Aripiprazole_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Aripiprazole_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Cariprazine_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Cariprazine_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Cariprazine_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Clozapine_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Clozapine_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Clozapine_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_CNO_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_CNO_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_CNO_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Haloperidol_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Haloperidol_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_Haloperidol_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_NDMC_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_NDMC_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_NDMC_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_NDMCHigh_100microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_NDMCHigh_50microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_NDMCHigh_25microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_OSU6162_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_OSU6162_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_OSU6162_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP1_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP1_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP1_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP2_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP2_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP2_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP814_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP814_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP814_1microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP931_10microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP931_3microM_Light
+Rscript merge_simple_motif_counts_and_analyze.R Light Natural_PCAP931_1microM_Light
+
+#Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Control_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Aripiprazole_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Aripiprazole_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Aripiprazole_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Cariprazine_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Cariprazine_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Cariprazine_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Clozapine_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Clozapine_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Clozapine_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_CNO_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_CNO_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_CNO_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Haloperidol_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Haloperidol_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_Haloperidol_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_NDMC_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_NDMC_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_NDMC_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_NDMCHigh_100microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_NDMCHigh_50microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_NDMCHigh_25microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_OSU6162_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_OSU6162_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_OSU6162_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP1_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP1_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP1_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP2_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP2_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP2_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP814_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP814_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP814_1microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP931_10microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP931_3microM_Dark
+Rscript merge_simple_motif_counts_and_analyze.R Dark Natural_PCAP931_1microM_Dark
+
+#LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Control_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Aripiprazole_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Aripiprazole_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Aripiprazole_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Cariprazine_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Cariprazine_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Cariprazine_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Clozapine_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Clozapine_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Clozapine_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_CNO_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_CNO_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_CNO_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Haloperidol_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Haloperidol_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_Haloperidol_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_NDMC_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_NDMC_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_NDMC_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_NDMCHigh_100microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_NDMCHigh_50microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_NDMCHigh_25microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_OSU6162_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_OSU6162_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_OSU6162_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP1_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP1_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP1_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP2_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP2_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP2_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP814_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP814_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP814_1microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP931_10microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP931_3microM_LightDark
+Rscript merge_simple_motif_counts_and_analyze.R LightDark Natural_PCAP931_1microM_LightDark
+
+#DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Control_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Aripiprazole_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Aripiprazole_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Aripiprazole_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Cariprazine_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Cariprazine_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Cariprazine_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Clozapine_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Clozapine_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Clozapine_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_CNO_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_CNO_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_CNO_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Haloperidol_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Haloperidol_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_Haloperidol_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_NDMC_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_NDMC_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_NDMC_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_NDMCHigh_100microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_NDMCHigh_50microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_NDMCHigh_25microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_OSU6162_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_OSU6162_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_OSU6162_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP1_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP1_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP1_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP2_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP2_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP2_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP814_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP814_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP814_1microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP931_10microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP931_3microM_DarkApoLow
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoLow Disease_PCAP931_1microM_DarkApoLow
+
+#DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Control_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Aripiprazole_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Aripiprazole_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Aripiprazole_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Cariprazine_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Cariprazine_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Cariprazine_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Clozapine_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Clozapine_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Clozapine_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_CNO_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_CNO_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_CNO_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Haloperidol_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Haloperidol_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_Haloperidol_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_NDMC_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_NDMC_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_NDMC_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_NDMCHigh_100microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_NDMCHigh_50microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_NDMCHigh_25microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_OSU6162_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_OSU6162_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_OSU6162_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP1_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP1_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP1_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP2_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP2_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP2_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP814_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP814_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP814_1microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP931_10microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP931_3microM_DarkApoHigh
+Rscript merge_simple_motif_counts_and_analyze.R DarkApoHigh Disease_PCAP931_1microM_DarkApoHigh
+
+#DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Control_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Aripiprazole_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Aripiprazole_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Aripiprazole_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Cariprazine_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Cariprazine_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Cariprazine_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Clozapine_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Clozapine_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Clozapine_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_CNO_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_CNO_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_CNO_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Haloperidol_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Haloperidol_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_Haloperidol_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_NDMC_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_NDMC_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_NDMC_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_NDMCHigh_100microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_NDMCHigh_50microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_NDMCHigh_25microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_OSU6162_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_OSU6162_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_OSU6162_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP1_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP1_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP1_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP2_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP2_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP2_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP814_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP814_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP814_1microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP931_10microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP931_3microM_DarkPTZ
+Rscript merge_simple_motif_counts_and_analyze.R DarkPTZ Disease_PCAP931_1microM_DarkPTZ
+
+
+

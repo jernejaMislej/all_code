@@ -1,0 +1,101 @@
+#run with condor in the Code folder --------------------------------
+#calculate genetic relatedness
+gcta64 --bfile /mnt/lustre/Active_Projects/Multimodality/Privateheritability/genetics/GLACIERV2.HRCimputed.plink2 --autosome --make-grm  --out ../Results/GCTA_results_and_data/GLACIERV2.HRCimputed.plink2_relat_cross
+#-------------------------------------------------------------------
+
+#dont have to run with condor, run in the GCTA_results_and_data folder-----------------------------------
+#remove cryptic relatedness
+gcta64  --grm GLACIERV2.HRCimputed.plink2_relat_cross  --grm-cutoff 0.025 --make-grm  --out GLACIERV2.HRCimputed.plink2_relat_cross_rm_025
+
+#variance explained
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --out resistance_continuous
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 2 --out log_bmi_basic_residuals
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 3 --out log_bmi
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 4 --out susceptible_case_control_compliant_1 
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 5 --out resistance_case_control_compliant_1 
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 6 --out resistance_case_control_susceptible_1
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 7 --out susceptible_case_control_compliant_2
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 8 --out resistance_case_control_susceptible_2
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 9 --out resistance_case_control_compliant_2
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 10 --out case_bmi_low_control_bmi_middle
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 11 --out case_bmi_high_control_bmi_middle
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 12 --out case_bmi_high_control_susceptible
+
+
+gcta64 --reml  --grm GLACIERV2.HRCimputed.plink2_relat_cross_rm_025  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 13 --out case_bmi_low_control_resistance
+
+
+#-------------------------------------------------------------------
+
+#-------------------------------------------------------------------
+
+#dont have to run with condor, run in the GCTA_results_and_data folder-----------------------------------
+#remove cryptic relatedness
+gcta64  --grm GLACIERV2.HRCimputed.plink2_relat_cross  --grm-cutoff 0.0625 --make-grm  --out GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625
+
+#variance explained
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --out resistance_continuous_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 2 --out log_bmi_basic_residuals_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 3 --out log_bmi_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 4 --out susceptible_case_control_compliant_1_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 5 --out resistance_case_control_compliant_1_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 6 --out resistance_case_control_susceptible_1_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 7 --out susceptible_case_control_compliant_2_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 8 --out resistance_case_control_susceptible_2_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 9 --out resistance_case_control_compliant_2_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 10 --out case_bmi_low_control_bmi_middle_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 11 --out case_bmi_high_control_bmi_middle_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 12 --out case_bmi_high_control_susceptible_0625
+
+
+gcta64 --reml  --grm  ../../GLACIERV2.HRCimputed.plink2_relat_cross_rm_0625  --pheno ../persistantly_lean_subjects/final_persistant_phenotype_dataset_final.phen --mpheno 13 --out case_bmi_low_control_resistance_0625
+
+
+#-------------------------------------------------------------------
+

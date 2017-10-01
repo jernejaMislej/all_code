@@ -1,0 +1,30 @@
+#Light
+cd Light
+Rscript ../../../../code/final_datasets/generate_dataset_together_B2.R Light
+cd ..
+
+#Dark
+cd Dark
+Rscript ../../../../code/final_datasets/generate_dataset_together_B2.R Dark
+cd ..
+
+#LightDark
+cd LightDark
+Rscript ../../../../code/final_datasets/generate_dataset_together_B2.R LightDark
+cd ..
+
+#DarkApoLow
+cd DarkApoLow
+Rscript ../../../../code/final_datasets/generate_dataset_together_B2.R DarkApoLow
+cd ..
+
+#DarkApoHigh
+cd DarkApoHigh
+Rscript ../../../../code/final_datasets/generate_dataset_together_B2.R DarkApoHigh
+cd ..
+
+#DarkPTZ
+cd DarkPTZ
+Rscript ../../../../code/final_datasets/generate_dataset_together_B2.R DarkPTZ
+cd ..
+

@@ -1,0 +1,2312 @@
+#-----------------------motif search for longer motifs-----------------------------------------
+
+
+#---------------------------R code------------------------------------------------------------
+
+
+#Load packages
+library(reshape2)
+library(plotrix)
+
+#args is the experiment condition and group
+args <- commandArgs(trailingOnly = TRUE)
+
+baseFile=paste('../../processed_data/simple_motif_search/',args[1],'/',args[2], sep="")
+file_motif2=paste(baseFile,'_motif2', sep="")
+file_motif3=paste(baseFile,'_motif3', sep="")
+file_motif4=paste(baseFile,'_motif4', sep="")
+file_motif5=paste(baseFile,'_motif5', sep="")
+file_motif6=paste(baseFile,'_motif6', sep="")
+file_motif7=paste(baseFile,'_motif7', sep="")
+file_motif8=paste(baseFile,'_motif8', sep="")
+file_motif9=paste(baseFile,'_motif9', sep="")
+file_motif10=paste(baseFile,'_motif10', sep="")
+
+
+
+#read data
+All_motif2 <- read.csv(file_motif2, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif3 <- read.csv(file_motif3, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif4 <- read.csv(file_motif4, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif5 <- read.csv(file_motif5, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif6 <- read.csv(file_motif6, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif7 <- read.csv(file_motif7, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif8 <- read.csv(file_motif8, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif9 <- read.csv(file_motif9, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+All_motif10 <- read.csv(file_motif10, header = FALSE, sep = ",", row.names = NULL, fill=TRUE)
+
+
+#merge motifs and their counts
+All_motif2_Merged <-aggregate(V2~V1,data=All_motif2,FUN=sum)
+All_motif3_Merged <-aggregate(V2~V1,data=All_motif3,FUN=sum)
+All_motif4_Merged <-aggregate(V2~V1,data=All_motif4,FUN=sum)
+All_motif5_Merged <-aggregate(V2~V1,data=All_motif5,FUN=sum)
+All_motif6_Merged <-aggregate(V2~V1,data=All_motif6,FUN=sum)
+All_motif7_Merged <-aggregate(V2~V1,data=All_motif7,FUN=sum)
+All_motif8_Merged <-aggregate(V2~V1,data=All_motif8,FUN=sum)
+All_motif9_Merged <-aggregate(V2~V1,data=All_motif9,FUN=sum)
+All_motif10_Merged <-aggregate(V2~V1,data=All_motif10,FUN=sum)
+
+
+colnames(All_motif2_Merged)<-c("Motif","Count")
+colnames(All_motif3_Merged)<-c("Motif","Count")
+colnames(All_motif4_Merged)<-c("Motif","Count")
+colnames(All_motif5_Merged)<-c("Motif","Count")
+colnames(All_motif6_Merged)<-c("Motif","Count")
+colnames(All_motif7_Merged)<-c("Motif","Count")
+colnames(All_motif8_Merged)<-c("Motif","Count")
+colnames(All_motif9_Merged)<-c("Motif","Count")
+colnames(All_motif10_Merged)<-c("Motif","Count")
+
+#add a column representing percentages
+All_motif2_Merged$CountPrecentage<-round((All_motif2_Merged$Count/sum(All_motif2_Merged[,2]))*100,2)
+All_motif3_Merged$CountPrecentage<-round((All_motif3_Merged$Count/sum(All_motif3_Merged[,2]))*100,2)
+All_motif4_Merged$CountPrecentage<-round((All_motif4_Merged$Count/sum(All_motif4_Merged[,2]))*100,2)
+All_motif5_Merged$CountPrecentage<-round((All_motif5_Merged$Count/sum(All_motif5_Merged[,2]))*100,2)
+All_motif6_Merged$CountPrecentage<-round((All_motif6_Merged$Count/sum(All_motif6_Merged[,2]))*100,2)
+All_motif7_Merged$CountPrecentage<-round((All_motif7_Merged$Count/sum(All_motif7_Merged[,2]))*100,2)
+All_motif8_Merged$CountPrecentage<-round((All_motif8_Merged$Count/sum(All_motif8_Merged[,2]))*100,2)
+All_motif9_Merged$CountPrecentage<-round((All_motif9_Merged$Count/sum(All_motif9_Merged[,2]))*100,2)
+All_motif10_Merged$CountPrecentage<-round((All_motif10_Merged$Count/sum(All_motif10_Merged[,2]))*100,2)
+
+
+#write the results for the simple motif search
+write.table(All_motif2_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif2",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif3_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif3",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif4_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif4",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif5_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif5",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif6_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif6",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif7_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif7",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif8_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif8",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif9_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif9",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+write.table(All_motif10_Merged, file=paste("../../results/output/simple_motif_search/", args[2],"_motif10",sep=""), row.names=F,col.names=T, append = FALSE, sep=",")
+
+
+#make boxplots for each motif length for the first 10 counts
+
+#extract the first 10
+All_motif2_Merged_first10<-na.omit(All_motif2_Merged[with(All_motif2_Merged,order(-Count)),][1:10,])
+All_motif3_Merged_first10<-na.omit(All_motif3_Merged[with(All_motif3_Merged,order(-Count)),][1:10,])
+All_motif4_Merged_first10<-na.omit(All_motif4_Merged[with(All_motif4_Merged,order(-Count)),][1:10,])
+All_motif5_Merged_first10<-na.omit(All_motif5_Merged[with(All_motif5_Merged,order(-Count)),][1:10,])
+All_motif6_Merged_first10<-na.omit(All_motif6_Merged[with(All_motif6_Merged,order(-Count)),][1:10,])
+All_motif7_Merged_first10<-na.omit(All_motif7_Merged[with(All_motif7_Merged,order(-Count)),][1:10,])
+All_motif8_Merged_first10<-na.omit(All_motif8_Merged[with(All_motif8_Merged,order(-Count)),][1:10,])
+All_motif9_Merged_first10<-na.omit(All_motif9_Merged[with(All_motif9_Merged,order(-Count)),][1:10,])
+All_motif10_Merged_first10<-na.omit(All_motif10_Merged[with(All_motif10_Merged,order(-Count)),][1:10,])
+
+#plot
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif2_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif2_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif2_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif2_Merged[,2])," motif counts of length 2",sep=""), xlab="Motifs of length 2", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif2_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif2_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif2_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif2_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif2_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif3_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif3_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif3_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif3_Merged[,2])," motif counts of length 3",sep=""), xlab="Motifs of length 3", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif3_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif3_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif3_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif3_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif3_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif4_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif4_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif4_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif4_Merged[,2])," motif counts of length 4",sep=""), xlab="Motifs of length 4", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif4_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif4_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif4_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif4_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif4_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif5_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif5_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif5_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif5_Merged[,2])," motif counts of length 5",sep=""), xlab="Motifs of length 5", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif5_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif5_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif5_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif5_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif5_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif6_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif6_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif6_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif6_Merged[,2])," motif counts of length 6",sep=""), xlab="Motifs of length 6", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif6_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif6_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif6_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif6_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif6_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif7_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif7_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif7_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif7_Merged[,2])," motif counts of length 7",sep=""), xlab="Motifs of length 7", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif7_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif7_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif7_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif7_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif7_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif8_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif8_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif8_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif8_Merged[,2])," motif counts of length 8",sep=""), xlab="Motifs of length 8", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif8_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif8_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif8_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif8_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif8_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif9_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif9_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif9_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif9_Merged[,2])," motif counts of length 9",sep=""), xlab="Motifs of length 9", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif9_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif9_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif9_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif9_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif9_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_10/',args[2],"_barplot_first10_motif10_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif10_Merged_first10$CountPrecentage, yaxt='n',names.arg=All_motif10_Merged_first10$Motif, main=paste(args[2],", first 10 precentages of total ",sum(All_motif10_Merged[,2])," motif counts of length 10",sep=""), xlab="Motifs of length 10", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif10_Merged_first10$CountPrecentage)))
+boxed.labels(bpl,All_motif10_Merged_first10$CountPrecentage+3,sprintf('%d%s', All_motif10_Merged_first10$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif10_Merged_first10$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif10_Merged_first10$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+
+#make boxplots for each motif length for the first 20 counts
+
+#extract the first 20
+All_motif2_Merged_first20<-na.omit(All_motif2_Merged[with(All_motif2_Merged,order(-Count)),][1:20,])
+All_motif3_Merged_first20<-na.omit(All_motif3_Merged[with(All_motif3_Merged,order(-Count)),][1:20,])
+All_motif4_Merged_first20<-na.omit(All_motif4_Merged[with(All_motif4_Merged,order(-Count)),][1:20,])
+All_motif5_Merged_first20<-na.omit(All_motif5_Merged[with(All_motif5_Merged,order(-Count)),][1:20,])
+All_motif6_Merged_first20<-na.omit(All_motif6_Merged[with(All_motif6_Merged,order(-Count)),][1:20,])
+All_motif7_Merged_first20<-na.omit(All_motif7_Merged[with(All_motif7_Merged,order(-Count)),][1:20,])
+All_motif8_Merged_first20<-na.omit(All_motif8_Merged[with(All_motif8_Merged,order(-Count)),][1:20,])
+All_motif9_Merged_first20<-na.omit(All_motif9_Merged[with(All_motif9_Merged,order(-Count)),][1:20,])
+All_motif10_Merged_first20<-na.omit(All_motif10_Merged[with(All_motif10_Merged,order(-Count)),][1:20,])
+
+#plot
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif2_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif2_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif2_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif2_Merged[,2])," motif counts of length 2",sep=""), xlab="Motifs of length 2", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif2_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif2_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif2_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif2_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif2_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif3_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif3_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif3_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif3_Merged[,2])," motif counts of length 3",sep=""), xlab="Motifs of length 3", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif3_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif3_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif3_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif3_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif3_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif4_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif4_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif4_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif4_Merged[,2])," motif counts of length 4",sep=""), xlab="Motifs of length 4", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif4_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif4_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif4_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif4_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif4_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif5_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif5_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif5_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif5_Merged[,2])," motif counts of length 5",sep=""), xlab="Motifs of length 5", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif5_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif5_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif5_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif5_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif5_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif6_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif6_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif6_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif6_Merged[,2])," motif counts of length 6",sep=""), xlab="Motifs of length 6", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif6_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif6_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif6_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif6_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif6_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif7_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif7_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif7_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif7_Merged[,2])," motif counts of length 7",sep=""), xlab="Motifs of length 7", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif7_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif7_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif7_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif7_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif7_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif8_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif8_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif8_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif8_Merged[,2])," motif counts of length 8",sep=""), xlab="Motifs of length 8", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif8_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif8_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif8_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif8_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif8_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif9_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif9_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif9_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif9_Merged[,2])," motif counts of length 9",sep=""), xlab="Motifs of length 9", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif9_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif9_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif9_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif9_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif9_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_20/',args[2],"_barplot_first20_motif10_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif10_Merged_first20$CountPrecentage, yaxt='n',names.arg=All_motif10_Merged_first20$Motif, main=paste(args[2],", first 20 precentages of total ",sum(All_motif10_Merged[,2])," motif counts of length 10",sep=""), xlab="Motifs of length 10", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif10_Merged_first20$CountPrecentage)))
+boxed.labels(bpl,All_motif10_Merged_first20$CountPrecentage+3,sprintf('%d%s', All_motif10_Merged_first20$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif10_Merged_first20$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif10_Merged_first20$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+
+#extract the first 30
+All_motif2_Merged_first30<-na.omit(All_motif2_Merged[with(All_motif2_Merged,order(-Count)),][1:30,])
+All_motif3_Merged_first30<-na.omit(All_motif3_Merged[with(All_motif3_Merged,order(-Count)),][1:30,])
+All_motif4_Merged_first30<-na.omit(All_motif4_Merged[with(All_motif4_Merged,order(-Count)),][1:30,])
+All_motif5_Merged_first30<-na.omit(All_motif5_Merged[with(All_motif5_Merged,order(-Count)),][1:30,])
+All_motif6_Merged_first30<-na.omit(All_motif6_Merged[with(All_motif6_Merged,order(-Count)),][1:30,])
+All_motif7_Merged_first30<-na.omit(All_motif7_Merged[with(All_motif7_Merged,order(-Count)),][1:30,])
+All_motif8_Merged_first30<-na.omit(All_motif8_Merged[with(All_motif8_Merged,order(-Count)),][1:30,])
+All_motif9_Merged_first30<-na.omit(All_motif9_Merged[with(All_motif9_Merged,order(-Count)),][1:30,])
+All_motif10_Merged_first30<-na.omit(All_motif10_Merged[with(All_motif10_Merged,order(-Count)),][1:30,])
+
+#plot
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif2_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif2_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif2_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif2_Merged[,2])," motif counts of length 2",sep=""), xlab="Motifs of length 2", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif2_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif2_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif2_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif2_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif2_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif3_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif3_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif3_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif3_Merged[,2])," motif counts of length 3",sep=""), xlab="Motifs of length 3", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif3_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif3_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif3_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif3_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif3_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif4_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif4_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif4_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif4_Merged[,2])," motif counts of length 4",sep=""), xlab="Motifs of length 4", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif4_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif4_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif4_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif4_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif4_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif5_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif5_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif5_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif5_Merged[,2])," motif counts of length 5",sep=""), xlab="Motifs of length 5", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif5_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif5_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif5_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif5_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif5_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif6_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif6_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif6_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif6_Merged[,2])," motif counts of length 6",sep=""), xlab="Motifs of length 6", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif6_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif6_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif6_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif6_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif6_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif7_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif7_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif7_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif7_Merged[,2])," motif counts of length 7",sep=""), xlab="Motifs of length 7", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif7_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif7_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif7_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif7_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif7_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif8_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif8_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif8_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif8_Merged[,2])," motif counts of length 8",sep=""), xlab="Motifs of length 8", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif8_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif8_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif8_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif8_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif8_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif9_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif9_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif9_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif9_Merged[,2])," motif counts of length 9",sep=""), xlab="Motifs of length 9", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif9_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif9_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif9_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif9_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif9_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+png(paste('../../results/plots/simple_motif_search/first_30/',args[2],"_barplot_first30_motif10_count.png", sep=""),width=1500, height=750)
+bpl<-barplot(All_motif10_Merged_first30$CountPrecentage, yaxt='n',names.arg=All_motif10_Merged_first30$Motif, main=paste(args[2],", first 30 precentages of total ",sum(All_motif10_Merged[,2])," motif counts of length 10",sep=""), xlab="Motifs of length 10", ylab="Percentage of motif counts", ylim=c(0,10+max(All_motif10_Merged_first30$CountPrecentage)))
+boxed.labels(bpl,All_motif10_Merged_first30$CountPrecentage+3,sprintf('%d%s', All_motif10_Merged_first30$Count, '\n counts'), bg='transparent', border=FALSE, cex=0.85)
+axis(side = 2, at = seq(0,10+max(All_motif10_Merged_first30$CountPrecentage),by=10), labels = paste0(seq(0,10+max(All_motif10_Merged_first30$CountPrecentage),by=10), "%"), cex.axis = 1)
+dev.off()
+
+#---------------------------R code------------------------------------------------------------
+
+#---------------------------Python------------------------------------------------------------
+
+
+#!/usr/bin/python3
+
+import sys
+import re
+import csv
+
+printFlag=0
+motif2Dictionary={}
+motif3Dictionary={}
+motif4Dictionary={}
+motif5Dictionary={}
+motif6Dictionary={}
+motif7Dictionary={}
+motif8Dictionary={}
+motif9Dictionary={}
+motif10Dictionary={}
+
+#process the sequences per 5-minute recording
+with open(sys.argv[1],'r') as seqFile:
+
+	for line in seqFile:
+		if line.find('>')!=-1 and line.find('Individual:')!=-1:
+			printFlag=1
+			continue
+		if printFlag==1:
+			if len(line)>1:
+				#extract all the bouts
+				boutsList=re.findall('b.*?(?=b)',line.rstrip().replace('R','').replace('L',''))
+				#if there are bouts, search for motif inside them
+				if len(boutsList)>0:
+					for bout in boutsList:
+						if len(bout)>2:
+							for pos in range(1,len(bout)-1):
+								if bout[pos:pos+2] in motif2Dictionary:
+									motif2Dictionary[bout[pos:pos+2]]=motif2Dictionary[bout[pos:pos+2]]+1
+								else:
+									motif2Dictionary[bout[pos:pos+2]]=1
+						if len(bout)>3:
+							for pos in range(1,len(bout)-2):
+								if bout[pos:pos+3] in motif3Dictionary:
+									motif3Dictionary[bout[pos:pos+3]]=motif3Dictionary[bout[pos:pos+3]]+1
+								else:
+									motif3Dictionary[bout[pos:pos+3]]=1
+						if len(bout)>4:
+							for pos in range(1,len(bout)-3):
+								if bout[pos:pos+4] in motif4Dictionary:
+									motif4Dictionary[bout[pos:pos+4]]=motif4Dictionary[bout[pos:pos+4]]+1
+								else:
+									motif4Dictionary[bout[pos:pos+4]]=1
+						if len(bout)>5:
+							for pos in range(1,len(bout)-4):
+								if bout[pos:pos+5] in motif5Dictionary:
+									motif5Dictionary[bout[pos:pos+5]]=motif5Dictionary[bout[pos:pos+5]]+1
+								else:
+									motif5Dictionary[bout[pos:pos+5]]=1
+						if len(bout)>6:
+							for pos in range(1,len(bout)-5):
+								if bout[pos:pos+6] in motif6Dictionary:
+									motif6Dictionary[bout[pos:pos+6]]=motif6Dictionary[bout[pos:pos+6]]+1
+								else:
+									motif6Dictionary[bout[pos:pos+6]]=1
+						if len(bout)>7:
+							for pos in range(1,len(bout)-6):
+								if bout[pos:pos+7] in motif7Dictionary:
+									motif7Dictionary[bout[pos:pos+7]]=motif7Dictionary[bout[pos:pos+7]]+1
+								else:
+									motif7Dictionary[bout[pos:pos+7]]=1
+						if len(bout)>8:
+							for pos in range(1,len(bout)-7):
+								if bout[pos:pos+8] in motif8Dictionary:
+									motif8Dictionary[bout[pos:pos+8]]=motif8Dictionary[bout[pos:pos+8]]+1
+								else:
+									motif8Dictionary[bout[pos:pos+8]]=1
+						if len(bout)>9:
+							for pos in range(1,len(bout)-8):
+								if bout[pos:pos+9] in motif9Dictionary:
+									motif9Dictionary[bout[pos:pos+9]]=motif9Dictionary[bout[pos:pos+9]]+1
+								else:
+									motif9Dictionary[bout[pos:pos+9]]=1
+						if len(bout)>10:
+							for pos in range(1,len(bout)-9):
+								if bout[pos:pos+10] in motif10Dictionary:
+									motif10Dictionary[bout[pos:pos+10]]=motif10Dictionary[bout[pos:pos+10]]+1
+								else:
+									motif10Dictionary[bout[pos:pos+10]]=1																											
+						
+			printFlag=0
+
+
+
+condition=sys.argv[2]
+
+drug=sys.argv[1][:-7] #drug
+drug+='_'+sys.argv[3] #Control or dosage of disease substrat
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif2','wt') as Motif2File:
+
+	writerMotif2File = csv.writer(Motif2File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif2Dictionary.items():
+   		writerMotif2File.writerow([key, value])
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif3','wt') as Motif3File:
+
+	writerMotif3File = csv.writer(Motif3File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif3Dictionary.items():
+   		writerMotif3File.writerow([key, value])
+   		
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif4','wt') as Motif4File:
+
+	writerMotif4File = csv.writer(Motif4File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif4Dictionary.items():
+   		writerMotif4File.writerow([key, value])
+   		
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif5','wt') as Motif5File:
+
+	writerMotif5File = csv.writer(Motif5File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif5Dictionary.items():
+   		writerMotif5File.writerow([key, value])
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif6','wt') as Motif6File:
+
+	writerMotif6File = csv.writer(Motif6File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif6Dictionary.items():
+   		writerMotif6File.writerow([key, value])
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif7','wt') as Motif7File:
+
+	writerMotif7File = csv.writer(Motif7File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif7Dictionary.items():
+   		writerMotif7File.writerow([key, value])
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif8','wt') as Motif8File:
+
+	writerMotif8File = csv.writer(Motif8File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif8Dictionary.items():
+   		writerMotif8File.writerow([key, value])
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif9','wt') as Motif9File:
+
+	writerMotif9File = csv.writer(Motif9File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif9Dictionary.items():
+   		writerMotif9File.writerow([key, value])
+
+with open('../../../../processed_data/simple_motif_search/'+condition+'/Disease_'+drug+ '_' + condition +'_motif10','wt') as Motif10File:
+
+	writerMotif10File = csv.writer(Motif10File, delimiter=',',quotechar='', quoting=csv.QUOTE_NONE)
+	for key, value in motif10Dictionary.items():
+   		writerMotif10File.writerow([key, value])
+
+  		
+
+
+#---------------------------Python------------------------------------------------------------
+
+
+
+#-----------------------motif search for longer motifs-----------------------------------------
+
+
+#--------------cluster analysis---------------------------------------------
+
+#--------------------------------OLD------------------------------------------
+
+
+
+plot(Disease_10microM_DarkPTZ_all_test[c("Control"),133:143],Disease_10microM_DarkPTZ_all_test[2,133:143],col="blue",xlim=c(-6,6),ylim=c(-6,6),ylab="Control",xlab=row.names(Disease_10microM_DarkPTZ_all)[2])
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),122:132],Disease_10microM_DarkPTZ_all_test[2,111:121],col="orange")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),122:132],Disease_10microM_DarkPTZ_all_test[2,122:132],col="green")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),100:110],Disease_10microM_DarkPTZ_all_test[2,100:110],col="red")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),99:109],Disease_10microM_DarkPTZ_all_test[2,99:109],col="pink")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),88:98],Disease_10microM_DarkPTZ_all_test[2,88:98],col="cyan")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),77:87],Disease_10microM_DarkPTZ_all_test[2,77:87],col="brown")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),66:76],Disease_10microM_DarkPTZ_all_test[2,66:76],col="magenta")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),55:65],Disease_10microM_DarkPTZ_all_test[2,55:65],col="yellow")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),44:54],Disease_10microM_DarkPTZ_all_test[2,44:54],col="black")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),33:43],Disease_10microM_DarkPTZ_all_test[2,33:43],col="gray")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),22:32],Disease_10microM_DarkPTZ_all_test[2,22:32],col="violet")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),11:21],Disease_10microM_DarkPTZ_all_test[2,11:21],col="chartreuse")
+points(Disease_10microM_DarkPTZ_all_test[c("Control"),1:10],Disease_10microM_DarkPTZ_all_test[2,1:10],col="darkgoldenrod1")
+
+
+#assign different Subjects
+Disease_Aripiprazole_10microM_DarkPTZ$Subject<-Disease_Aripiprazole_10microM_DarkPTZ$Subject+144
+Disease_Cariprazine_10microM_DarkPTZ$Subject<-Disease_Cariprazine_10microM_DarkPTZ$Subject+288
+Disease_Clozapine_10microM_DarkPTZ$Subject<-Disease_Clozapine_10microM_DarkPTZ$Subject+144*3
+Disease_CNO_10microM_DarkPTZ$Subject<-Disease_CNO_10microM_DarkPTZ$Subject+144*4
+Disease_Haloperidol_10microM_DarkPTZ$Subject<-Disease_Haloperidol_10microM_DarkPTZ$Subject+144*5
+Disease_NDMC_10microM_DarkPTZ$Subject<-Disease_NDMC_10microM_DarkPTZ$Subject+144*6
+Disease_NDMCHigh_100microM_DarkPTZ$Subject<-Disease_NDMCHigh_100microM_DarkPTZ$Subject+144*7
+Disease_OSU6162_10microM_DarkPTZ$Subject<-Disease_OSU6162_10microM_DarkPTZ$Subject+144*8
+Disease_PCAP1_10microM_DarkPTZ$Subject<-Disease_PCAP1_10microM_DarkPTZ$Subject+144*9
+Disease_PCAP2_10microM_DarkPTZ$Subject<-Disease_PCAP2_10microM_DarkPTZ$Subject+144*10
+Disease_PCAP814_10microM_DarkPTZ$Subject<-Disease_PCAP814_10microM_DarkPTZ$Subject+144*11
+Disease_PCAP931_10microM_DarkPTZ$Subject<-Disease_PCAP931_10microM_DarkPTZ$Subject+144*12
+
+
+#add row names for each
+Disease_Control_DarkPTZ$Condition<-rep("Disease_Control_DarkPTZ",times=length(Disease_Control_DarkPTZ[,1]))
+Disease_Aripiprazole_10microM_DarkPTZ$Condition<-rep("Disease_Aripiprazole_10microM_DarkPTZ",times=length(Disease_Aripiprazole_10microM_DarkPTZ[,1]))
+Disease_Cariprazine_10microM_DarkPTZ$Condition<-rep("Disease_Cariprazine_10microM_DarkPTZ",times=length(Disease_Cariprazine_10microM_DarkPTZ[,1]))
+Disease_Clozapine_10microM_DarkPTZ$Condition<-rep("Disease_Clozapine_10microM_DarkPTZ",times=length(Disease_Clozapine_10microM_DarkPTZ[,1]))
+Disease_CNO_10microM_DarkPTZ$Condition<-rep("Disease_CNO_10microM_DarkPTZ",times=length(Disease_CNO_10microM_DarkPTZ[,1]))
+Disease_Haloperidol_10microM_DarkPTZ$Condition<-rep("Disease_Haloperidol_10microM_DarkPTZ",times=length(Disease_Haloperidol_10microM_DarkPTZ[,1]))
+Disease_NDMC_10microM_DarkPTZ$Condition<-rep("Disease_NDMC_10microM_DarkPTZ",times=length(Disease_NDMC_10microM_DarkPTZ[,1]))
+Disease_NDMCHigh_100microM_DarkPTZ$Condition<-rep("Disease_NDMCHigh_100microM_DarkPTZ",times=length(Disease_NDMCHigh_100microM_DarkPTZ[,1]))
+Disease_OSU6162_10microM_DarkPTZ$Condition<-rep("Disease_OSU6162_10microM_DarkPTZ",times=length(Disease_OSU6162_10microM_DarkPTZ[,1]))
+Disease_PCAP1_10microM_DarkPTZ$Condition<-rep("Disease_PCAP1_10microM_DarkPTZ",times=length(Disease_PCAP1_10microM_DarkPTZ[,1]))
+Disease_PCAP2_10microM_DarkPTZ$Condition<-rep("Disease_PCAP2_10microM_DarkPTZ",times=length(Disease_PCAP2_10microM_DarkPTZ[,1]))
+Disease_PCAP814_10microM_DarkPTZ$Condition<-rep("Disease_PCAP814_10microM_DarkPTZ",times=length(Disease_PCAP814_10microM_DarkPTZ[,1]))
+Disease_PCAP931_10microM_DarkPTZ$Condition<-rep("Disease_PCAP931_10microM_DarkPTZ",times=length(Disease_PCAP931_10microM_DarkPTZ[,1]))
+
+
+#combine
+Disease_10microM_DarkPTZ<-rbind(Disease_Control_DarkPTZ,Disease_Aripiprazole_10microM_DarkPTZ, Disease_Cariprazine_10microM_DarkPTZ, Disease_Clozapine_10microM_DarkPTZ, Disease_CNO_10microM_DarkPTZ,
+		Disease_Haloperidol_10microM_DarkPTZ, Disease_NDMC_10microM_DarkPTZ, Disease_NDMCHigh_100microM_DarkPTZ, Disease_OSU6162_10microM_DarkPTZ, 
+		Disease_PCAP1_10microM_DarkPTZ, Disease_PCAP2_10microM_DarkPTZ, Disease_PCAP814_10microM_DarkPTZ, Disease_PCAP931_10microM_DarkPTZ)
+
+
+#reorder columns
+
+Disease_10microM_DarkPTZ<-Disease_10microM_DarkPTZ[ , c(13,1,3,12,2,4:11)]
+
+#factor Subject and Condition
+Disease_10microM_DarkPTZ$Subject<-as.factor(Disease_10microM_DarkPTZ$Subject)
+Disease_10microM_DarkPTZ$Condition<-as.factor(Disease_10microM_DarkPTZ$Condition)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##correct missing count
+#group2_data<-rbind(group2_data[1:935,],c(72,0,7),group3_data[936:1078,],c(72,0,8),group3_data[1079,1122],c(117,0,8),group3_data[1080,])
+#
+#
+#group3_data<-rbind(group3_data[1:148,],c(5,0,13),group3_data[149:155,])
+#rownames(group3_data)[150:156]<-c(150:156)
+#group4_data<-rbind(group4_data[1:125,],c(6,0,11),group4_data[126:136,],c(6,0,12),group4_data[137:147,],c(6,0,13),group4_data[148:153,])
+#rownames(group4_data)[126:156]<-c(126:156)
+
+
+
+
+
+#png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group2_data$Group[1],".png"),width=1500,height=750)
+#plot(aggregate(BoutCount~TimeFactor,data=group2_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group2_data,FUN=var)[,2],
+#		xlab="Mean",ylab="Var")
+#dev.off()
+#summary(lm(aggregate(BoutCount~TimeFactor,data=group2_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group2_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group3_data$Group[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group3_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group3_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group3_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group3_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group4_data$Group[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group4_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group4_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group4_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group4_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group9_data$Group[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group9_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group9_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group9_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group9_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group5_data$Group[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group5_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group5_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group5_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group5_data,FUN=var)[,2]))
+
+#png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group6_data$Group[1],".png"),width=1500,height=750)
+#plot(aggregate(BoutCount~TimeFactor,data=group6_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group6_data,FUN=var)[,2],
+#		xlab="Mean",ylab="Var")
+#dev.off()
+#summary(lm(aggregate(BoutCount~TimeFactor,data=group6_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group6_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group7_data$Group[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group7_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group7_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group7_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group7_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_",group8_data$Group[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group8_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group8_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group8_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group8_data,FUN=var)[,2]))
+
+
+
+
+
+#extract the drug from the control(temporary thing)
+
+group9_data<-group2_data[group2_data$Subject %in% c(1:12),]#Aripiprazole Light Control
+group10_data<-group2_data[group2_data$Subject %in% c(13:24),]#Cariprazine Light Control
+group11_data<-group2_data[group2_data$Subject %in% c(25:36),]#Clozapine Light Control
+
+group12_data<-group6_data[group6_data$Subject %in% c(1:12),]#Aripiprazole Dark Control
+group13_data<-group6_data[group6_data$Subject %in% c(13:24),]#Cariprazine Dark Control
+group14_data<-group6_data[group6_data$Subject %in% c(25:36),]#Clozapine Dark Control
+
+#add condition, group, drug identifier
+group1_data$Group<-rep("10microM",times=length(group1_data[,1]))
+group3_data$Group<-rep("10microM",times=length(group3_data[,1]))
+group4_data$Group<-rep("10microM",times=length(group4_data[,1]))
+group5_data$Group<-rep("10microM",times=length(group5_data[,1]))
+group7_data$Group<-rep("10microM",times=length(group7_data[,1]))
+group8_data$Group<-rep("10microM",times=length(group8_data[,1]))
+group9_data$Group<-rep("Control",times=length(group9_data[,1]))
+group10_data$Group<-rep("Control",times=length(group10_data[,1]))
+group11_data$Group<-rep("Control",times=length(group11_data[,1]))
+group12_data$Group<-rep("Control",times=length(group12_data[,1]))
+group13_data$Group<-rep("Control",times=length(group13_data[,1]))
+group14_data$Group<-rep("Control",times=length(group14_data[,1]))
+
+
+group1_data$Drug<-rep("Aripiprazole",times=length(group1_data[,1]))
+group3_data$Drug<-rep("Cariprazine",times=length(group3_data[,1]))
+group4_data$Drug<-rep("Clozapine",times=length(group4_data[,1]))
+group9_data$Drug<-rep("Aripiprazole",times=length(group9_data[,1]))
+group10_data$Drug<-rep("Cariprazine",times=length(group10_data[,1]))
+group11_data$Drug<-rep("Clozapine",times=length(group11_data[,1]))
+
+group5_data$Drug<-rep("Aripiprazole",times=length(group5_data[,1]))
+group7_data$Drug<-rep("Cariprazine",times=length(group7_data[,1]))
+group8_data$Drug<-rep("Clozapine",times=length(group8_data[,1]))
+group12_data$Drug<-rep("Aripiprazole",times=length(group12_data[,1]))
+group13_data$Drug<-rep("Cariprazine",times=length(group13_data[,1]))
+group14_data$Drug<-rep("Clozapine",times=length(group14_data[,1]))
+
+
+group1_data$Condition<-rep("Light",times=length(group1_data[,1]))
+group3_data$Condition<-rep("Light",times=length(group3_data[,1]))
+group4_data$Condition<-rep("Light",times=length(group4_data[,1]))
+group9_data$Condition<-rep("Light",times=length(group9_data[,1]))
+group10_data$Condition<-rep("Light",times=length(group10_data[,1]))
+group11_data$Condition<-rep("Light",times=length(group11_data[,1]))
+
+
+group5_data$Condition<-rep("Dark",times=length(group5_data[,1]))
+group7_data$Condition<-rep("Dark",times=length(group7_data[,1]))
+group8_data$Condition<-rep("Dark",times=length(group8_data[,1]))
+group12_data$Condition<-rep("Dark",times=length(group12_data[,1]))
+group13_data$Condition<-rep("Dark",times=length(group13_data[,1]))
+group14_data$Condition<-rep("Dark",times=length(group14_data[,1]))
+
+#change the subject enumeration to provide different subject factors
+group3_data$Subject<-group3_data$Subject+12
+group4_data$Subject<-group4_data$Subject+12*2
+group5_data$Subject<-group5_data$Subject+12*3
+group7_data$Subject<-group7_data$Subject+12*4
+group8_data$Subject<-group8_data$Subject+12*5
+group9_data$Subject<-group9_data$Subject+12*6
+group10_data$Subject<-group10_data$Subject+12*7
+group11_data$Subject<-group11_data$Subject+12*8
+group12_data$Subject<-group12_data$Subject+12*9
+group13_data$Subject<-group13_data$Subject+12*10
+group14_data$Subject<-group14_data$Subject+12*11
+
+#make Subject and Group factor
+group1_data$Subject<-as.factor(group1_data$Subject)
+group3_data$Subject<-as.factor(group3_data$Subject)
+group4_data$Subject<-as.factor(group4_data$Subject)
+group5_data$Subject<-as.factor(group5_data$Subject)
+group7_data$Subject<-as.factor(group7_data$Subject)
+group8_data$Subject<-as.factor(group8_data$Subject)
+group9_data$Subject<-as.factor(group9_data$Subject)
+group10_data$Subject<-as.factor(group10_data$Subject)
+group11_data$Subject<-as.factor(group11_data$Subject)
+group12_data$Subject<-as.factor(group12_data$Subject)
+group13_data$Subject<-as.factor(group13_data$Subject)
+group14_data$Subject<-as.factor(group14_data$Subject)
+
+
+group1_data$Group<-as.factor(group1_data$Group)
+group3_data$Group<-as.factor(group3_data$Group)
+group4_data$Group<-as.factor(group4_data$Group)
+group5_data$Group<-as.factor(group5_data$Group)
+group7_data$Group<-as.factor(group7_data$Group)
+group8_data$Group<-as.factor(group8_data$Group)
+group9_data$Group<-as.factor(group9_data$Group)
+group10_data$Group<-as.factor(group10_data$Group)
+group11_data$Group<-as.factor(group11_data$Group)
+group12_data$Group<-as.factor(group12_data$Group)
+group13_data$Group<-as.factor(group13_data$Group)
+group14_data$Group<-as.factor(group14_data$Group)
+
+
+group1_data$Condition<-as.factor(group1_data$Condition)
+group3_data$Condition<-as.factor(group3_data$Condition)
+group4_data$Condition<-as.factor(group4_data$Condition)
+group5_data$Condition<-as.factor(group5_data$Condition)
+group7_data$Condition<-as.factor(group7_data$Condition)
+group8_data$Condition<-as.factor(group8_data$Condition)
+group9_data$Condition<-as.factor(group9_data$Condition)
+group10_data$Condition<-as.factor(group10_data$Condition)
+group11_data$Condition<-as.factor(group11_data$Condition)
+group12_data$Condition<-as.factor(group12_data$Condition)
+group13_data$Condition<-as.factor(group13_data$Condition)
+group14_data$Condition<-as.factor(group14_data$Condition)
+
+
+group1_data$Drug<-as.factor(group1_data$Drug)
+group3_data$Drug<-as.factor(group3_data$Drug)
+group4_data$Drug<-as.factor(group4_data$Drug)
+group5_data$Drug<-as.factor(group5_data$Drug)
+group7_data$Drug<-as.factor(group7_data$Drug)
+group8_data$Drug<-as.factor(group8_data$Drug)
+group9_data$Drug<-as.factor(group9_data$Drug)
+group10_data$Drug<-as.factor(group10_data$Drug)
+group11_data$Drug<-as.factor(group11_data$Drug)
+group12_data$Drug<-as.factor(group12_data$Drug)
+group13_data$Drug<-as.factor(group13_data$Drug)
+group14_data$Drug<-as.factor(group14_data$Drug)
+
+#combining
+all_groups<-rbind(group9_data,group10_data,group11_data,group12_data,group13_data,group14_data,group1_data,group3_data,group4_data,
+		group5_data,group7_data,group8_data)
+
+attach(all_groups)
+
+#check the model with poisson, cant really do that due to overdispersion
+#modely<-glmer(BoutCount~TimeFactor+Group+TimeFactor*Group+(1|Subject/TimeFactor), family = poisson(link = "log"))
+#summary(modely)
+
+#check if there is a linear relationship between the mean and var for the dependant variable in all groups
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group1_data$Condition[1], group1_data$Group[1], group1_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group1_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group1_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group1_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group1_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group3_data$Condition[1], group3_data$Group[1], group3_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group3_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group3_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group3_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group3_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group4_data$Condition[1], group4_data$Group[1], group4_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group4_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group4_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group4_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group4_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group5_data$Condition[1], group5_data$Group[1], group5_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group5_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group5_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group5_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group5_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group7_data$Condition[1], group7_data$Group[1], group7_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group7_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group7_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group7_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group7_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group8_data$Condition[1], group8_data$Group[1], group8_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group8_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group8_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group8_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group8_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group9_data$Condition[1], group9_data$Group[1], group9_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group9_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group9_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group9_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group9_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group10_data$Condition[1], group10_data$Group[1], group10_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group10_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group10_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group10_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group10_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group11_data$Condition[1], group11_data$Group[1], group11_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group11_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group11_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group11_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group11_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group12_data$Condition[1], group12_data$Group[1], group12_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group12_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group12_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group12_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group12_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group13_data$Condition[1], group13_data$Group[1], group13_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group13_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group13_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group13_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group13_data,FUN=var)[,2]))
+
+png(paste0("~/git/zebrafish_action_sequence_project/results/plots/short_bout_analysis/Mean_vs_Var_", group14_data$Condition[1], group14_data$Group[1], group14_data$Drug[1],".png"),width=1500,height=750)
+plot(aggregate(BoutCount~TimeFactor,data=group14_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group14_data,FUN=var)[,2],
+		xlab="Mean",ylab="Var")
+dev.off()
+summary(lm(aggregate(BoutCount~TimeFactor,data=group14_data,FUN=mean)[,2]~aggregate(BoutCount~TimeFactor,data=group14_data,FUN=var)[,2]))
+
+#check with quasipoisson
+fit_counts<-glmmPQL(BoutCount~Drug+Condition+Group+TimeFactor+Drug/TimeFactor, random=~1|Subject/TimeFactor,family=quasipoisson,data=all_groups)
+
+
+
+fit_counts<-glmmPQL(BoutCount~Drug+Condition+Group+TimeFactor+
+				Condition*TimeFactor+Drug*TimeFactor+Group*TimeFactor+Condition*Group+Drug*Group+Condition*Drug+ 
+				Condition*Group*Drug+Drug*TimeFactor*Group+Drug*TimeFactor*Condition+
+				Condition*Drug*Group*TimeFactor,random=~1|Subject/TimeFactor,family=quasipoisson,data=all_groups)
+summary(fit_counts)
+
+
+
+#finish
+detach(all_groups)
+
+all_groups<-rbind(group9_data,group10_data,group11_data,group1_data,group3_data,group4_data)
+
+attach(all_groups)
+
+
+fit_counts<-glmmPQL(BoutCount~Drug+Group+TimeFactor+
+				Drug*TimeFactor+Group*TimeFactor+Drug*Group+ 
+				Drug*TimeFactor*Group,random=~1|Subject/TimeFactor,family=quasipoisson,data=all_groups)
+summary(fit_counts)
+
+
+
+
+#overdisperssion function
+overdisp_fun <- function(model) {
+	## number of variance parameters in 
+	##   an n-by-n variance-covariance matrix
+	vpars <- function(m) {
+		nrow(m)*(nrow(m)+1)/2
+	}
+	model.df <- sum(sapply(VarCorr(model),vpars))+length(fixef(model))
+	rdf <- nrow(model.frame(model))-model.df
+	rp <- residuals(model,type="pearson")
+	Pearson.chisq <- sum(rp^2)
+	prat <- Pearson.chisq/rdf
+	pval <- pchisq(Pearson.chisq, df=rdf, lower.tail=FALSE)
+	c(chisq=Pearson.chisq,ratio=prat,rdf=rdf,p=pval)
+}
+
+
+
+
+
+#-------------------------------3.5.--------------------------------------------------
+
+fit_counts<-glmmPQL(BoutCount~Drug+Condition+Group+TimeFactor+
+				Condition*TimeFactor+Drug*TimeFactor+Group*TimeFactor+Condition*Group+Drug*Group+Condition*Drug+ 
+				Condition*Group*Drug+Drug*TimeFactor*Group+Drug*TimeFactor*Condition+
+				Condition*Drug*Group*TimeFactor,random=~1|Subject/TimeFactor,family=quasipoisson,data=all_groups)
+summary(fit_counts)
+
+
+
+#finish
+detach(all_groups)
+
+all_groups<-rbind(group9_data,group10_data,group11_data,group1_data,group3_data,group4_data)
+
+attach(all_groups)
+
+
+fit_counts<-glmmPQL(BoutCount~Drug+Group+TimeFactor+
+				Drug*TimeFactor+Group*TimeFactor+Drug*Group+ 
+				Drug*TimeFactor*Group,random=~1|Subject/TimeFactor,family=quasipoisson,data=all_groups)
+summary(fit_counts)
+
+
+
+#----proportions of bout counts-----
+
+group1_data<-read.table("Natural_Aripiprazole_10microM_Light_proportion_length_1_bouts.txt")
+group2_data<-read.table("Natural_Control_Light_proportion_length_1_bouts.txt")
+group3_data<-read.table("Natural_Cariprazine_10microM_Light_proportion_length_1_bouts.txt")
+group4_data<-read.table("Natural_Clozapine_10microM_Light_proportion_length_1_bouts.txt")
+
+colnames(group1_data)<-c("Subject","BoutProportion","TimeFactor")
+colnames(group2_data)<-c("Subject","BoutProportion","TimeFactor")
+colnames(group3_data)<-c("Subject","BoutProportion","TimeFactor")
+colnames(group4_data)<-c("Subject","BoutProportion","TimeFactor")
+
+#correct missing Proportion
+group3_data<-rbind(group3_data[1:148,],c(5,0,13),group3_data[149:155,])
+rownames(group3_data)[150:156]<-c(150:156)
+group4_data<-rbind(group4_data[1:125,],c(6,0,11),group4_data[126:136,],c(6,0,12),group4_data[137:147,],c(6,0,13),group4_data[148:153,])
+rownames(group4_data)[126:156]<-c(126:156)
+
+
+#ensure no zeros
+group1_data$BoutProportion<-group1_data$BoutProportion+1
+group2_data$BoutProportion<-group2_data$BoutProportion+1
+group3_data$BoutProportion<-group3_data$BoutProportion+1
+group4_data$BoutProportion<-group4_data$BoutProportion+1
+
+#add idnetifier column
+group1_data$Group<-rep("Aripiprazole_10microM_Light",times=length(group1_data[,1]))
+group2_data$Group<-rep("Control_Light",times=length(group2_data[,1]))
+group3_data$Group<-rep("Cariprazine_10microM_Light",times=length(group3_data[,1]))
+group4_data$Group<-rep("Clozapine_10microM_Light",times=length(group4_data[,1]))
+
+#change the subject enumeration to provide different subject factors
+group1_data$Subject<-rep(145:156,times=13)
+group3_data$Subject<-rep(157:168,times=13)
+group4_data$Subject<-rep(169:180,times=13)
+
+#make Subject and Group factor
+group1_data$Subject<-as.factor(group1_data$Subject)
+group2_data$Subject<-as.factor(group2_data$Subject)
+group3_data$Subject<-as.factor(group3_data$Subject)
+group4_data$Subject<-as.factor(group4_data$Subject)
+
+group1_data$Group<-as.factor(group1_data$Group)
+group2_data$Group<-as.factor(group2_data$Group)
+group3_data$Group<-as.factor(group3_data$Group)
+group4_data$Group<-as.factor(group4_data$Group)
+
+#combining
+all_groups<-rbind(group1_data,group2_data,group3_data,group4_data)
+attach(all_groups)
+
+#check the model
+modely<-glmer(BoutProportion~TimeFactor+Group+TimeFactor*Group+(1|Subject/TimeFactor), family = poisson(link = "log"))
+summary(modely)
+
+detach(all_groups)
+
+
+
+
+
+
+#----proportions of turns-----
+
+
+group1_data<-read.table("Natural_Aripiprazole_10microM_Light_proportion_length_1_Scoots.txt")
+group2_data<-read.table("Natural_Control_Light_proportion_length_1_Scoots.txt")
+group3_data<-read.table("Natural_Cariprazine_10microM_Light_proportion_length_1_Scoots.txt")
+group4_data<-read.table("Natural_Clozapine_10microM_Light_proportion_length_1_Scoots.txt")
+
+colnames(group1_data)<-c("Subject","TurnProportion","TimeFactor")
+colnames(group2_data)<-c("Subject","TurnProportion","TimeFactor")
+colnames(group3_data)<-c("Subject","TurnProportion","TimeFactor")
+colnames(group4_data)<-c("Subject","TurnProportion","TimeFactor")
+
+#correct missing Proportion
+group3_data<-rbind(group3_data[1:148,],c(5,0,13),group3_data[149:155,])
+rownames(group3_data)[150:156]<-c(150:156)
+group4_data<-rbind(group4_data[1:125,],c(6,0,11),group4_data[126:136,],c(6,0,12),group4_data[137:147,],c(6,0,13),group4_data[148:153,])
+rownames(group4_data)[126:156]<-c(126:156)
+
+
+#ensure no zeros
+group1_data$TurnProportion<-group1_data$TurnProportion+1
+group2_data$TurnProportion<-group2_data$TurnProportion+1
+group3_data$TurnProportion<-group3_data$TurnProportion+1
+group4_data$TurnProportion<-group4_data$TurnProportion+1
+
+#add idnetifier column
+group1_data$Group<-rep("Aripiprazole_10microM_Light",times=length(group1_data[,1]))
+group2_data$Group<-rep("Control_Light",times=length(group2_data[,1]))
+group3_data$Group<-rep("Cariprazine_10microM_Light",times=length(group3_data[,1]))
+group4_data$Group<-rep("Clozapine_10microM_Light",times=length(group4_data[,1]))
+
+#change the subject enumeration to provide different subject factors
+group1_data$Subject<-rep(145:156,times=13)
+group3_data$Subject<-rep(157:168,times=13)
+group4_data$Subject<-rep(169:180,times=13)
+
+#make Subject and Group factor
+group1_data$Subject<-as.factor(group1_data$Subject)
+group2_data$Subject<-as.factor(group2_data$Subject)
+group3_data$Subject<-as.factor(group3_data$Subject)
+group4_data$Subject<-as.factor(group4_data$Subject)
+
+group1_data$Group<-as.factor(group1_data$Group)
+group2_data$Group<-as.factor(group2_data$Group)
+group3_data$Group<-as.factor(group3_data$Group)
+group4_data$Group<-as.factor(group4_data$Group)
+
+#combining
+all_groups<-rbind(group1_data,group2_data,group3_data,group4_data)
+attach(all_groups)
+
+#check the model
+modely<-glmer(TurnProportion~TimeFactor+Group+TimeFactor*Group+(1|Subject/TimeFactor), family = poisson(link = "log"))
+summary(modely)
+
+
+modely<-lmer(TurnProportion~TimeFactor+Group+TimeFactor*Group+(1|Subject))
+
+detach(all_groups)
+
+
+
+#try with negative bionomial, estimate theta first
+model_nb_theta<-summary(glm.nb(Length1BoutCount~TimeFactor+Group+AllBoutCount+TimeFactor*AllBoutCount+TimeFactor*Group))[[18]]
+
+#make subject random, not sure if nesting time within subject as random is ok
+model_nb<-glmer(Length1BoutCount~TimeFactor+Group+AllBoutCount+TimeFactor*AllBoutCount+TimeFactor*Group+(1|Subject), family = negative.binomial(model_nb_theta))
+
+summary(model_nb)
+
+
+#check with quasipoisson
+model_quasipoisson<-glmmPQL(Length1BoutCount~TimeFactor+Group+TimeFactor*Group, random=~1|Subject/TimeFactor,family=quasipoisson,data=all_dataset)
+
+summary(model_quasipoisson)
+
+
+
+
+aggregate(dataset[dataset$TimeFactor==time_frame,turnCounter] ~ Subject, data = dataset[dataset$TimeFactor==time_frame,], function(x,y){
+	y<-dataset[dataset$TimeFactor==time_frame,c("BoutLength")]
+	return(round(mean(x[y==1])*1000))})[,2]
+	
+data.table(dat, key = "key")
+
+
+sapply(split(cbind(dataset[dataset$TimeFactor==time_frame,turnCounter], dataset[dataset$TimeFactor==time_frame,c("BoutLength")]), 
+	dataset[dataset$TimeFactor==time_frame,c("Subject")]),function(x){
+	end<-length(x)/2
+	start<-length(x)/2 +1
+	end2<-length(x)
+	return(mean(x[1:end][x[start:end2]==1]))})
+
+	
+	
+	
+	
+	
+	
+
+colrs<-c("darkorange4","darkorange4","darkorange3","darkorange3","darkorange2","darkorange2","darkorange2","darkorange1","darkorange1","darkorange1"
+		,"darkorange","darkorange","darkorange")
+
+
+colrs<-c("darkorchid4","darkorchid4","darkorchid3","darkorchid3","darkorchid2","darkorchid2","darkorchid2","darkorchid1","darkorchid1","darkorchid1","darkorchid","darkorchid","darkorchid")
+points(all_dataset_means[Group=="Control",7],all_dataset_means[Group=="PCAP814_10microM",7],cex=1.6,col=colrs,xlim=c(-6,6),ylim=c(-6,6),pch=19)
+colrs<-c("bisque4","bisque4","bisque3","bisque3","bisque2","bisque2","bisque2","bisque1","bisque1","bisque1","bisque","bisque","bisque")
+points(all_dataset_means[Group=="Control",8],all_dataset_means[Group=="PCAP814_10microM",8],cex=1.6,col=colrs,xlim=c(-6,6),ylim=c(-6,6),pch=19)
+colrs<-c("aquamarine4","aquamarine4","aquamarine3","aquamarine3","aquamarine2","aquamarine2","aquamarine2","aquamarine1","aquamarine1","aquamarine1","aquamarine","aquamarine","aquamarine")
+points(all_dataset_means[Group=="Control",9],all_dataset_means[Group=="PCAP814_10microM",9],cex=1.6,col=colrs,xlim=c(-6,6),ylim=c(-6,6),pch=19)
+colrs<-c("firebrick4","firebrick4","firebrick3","firebrick3","firebrick2","firebrick2","firebrick2","firebrick1","firebrick1","firebrick1","firebrick","firebrick","firebrick")
+points(all_dataset_means[Group=="Control",10],all_dataset_means[Group=="PCAP814_10microM",10],cex=1.6,col=colrs,xlim=c(-6,6),ylim=c(-6,6),pch=19)
+	
+	
+	
+	
+	#plot for all groups(control + 36)
+plot(min(model_quasipoisson_coeff):max(model_quasipoisson_coeff),rep(0,times=length(min(model_quasipoisson_coeff):max(model_quasipoisson_coeff)))
+	,xlim=c(min(model_quasipoisson_coeff),max(model_quasipoisson_coeff))
+	,ylim=c(min(model_quasipoisson_coeff),max(model_quasipoisson_coeff)),ylab="r",xlab="r",type="l")
+	
+	
+	
+	
+	points(model_quasipoisson_coeff[2:4],model_quasipoisson_coeff[(2+37):(4+37)], cex=2.1, pch=c(15,17,19),col="royalblue4")#Aripiprazole
+points(model_quasipoisson_coeff[5:7],model_quasipoisson_coeff[(5+37):(7+37)], cex=2.1, pch=c(15,17,19),col="seagreen4")#Cariprazine
+points(model_quasipoisson_coeff[8:10],model_quasipoisson_coeff[(8+37):(10+37)], cex=2.1, pch=c(15,17,19),col="saddlebrown")#Clozapine
+points(model_quasipoisson_coeff[11:13],model_quasipoisson_coeff[(11+37):(13+37)], cex=2.1, pch=c(15,17,19),col="red")#CNO
+points(model_quasipoisson_coeff[14:16],model_quasipoisson_coeff[(14+37):(16+37)], cex=2.1, pch=c(15,17,19),col="purple1")#Haloperidol
+points(model_quasipoisson_coeff[17:19],model_quasipoisson_coeff[(17+37):(19+37)], cex=2.1, pch=c(15,17,19),col="turquoise2")#NDMC
+points(model_quasipoisson_coeff[20:22],model_quasipoisson_coeff[(20+37):(22+37)], cex=2.1, pch=c(15,17,19),col="chartreuse")#NDMCHigh
+points(model_quasipoisson_coeff[23:25],model_quasipoisson_coeff[(23+37):(25+37)], cex=2.1, pch=c(15,17,19),col="deeppink")#OSU6162
+points(model_quasipoisson_coeff[26:28],model_quasipoisson_coeff[(26+37):(28+37)], cex=2.1, pch=c(15,17,19),col="orange1")#PCAP1
+points(model_quasipoisson_coeff[29:31],model_quasipoisson_coeff[(29+37):(31+37)], cex=2.1, pch=c(15,17,19),col="yellow1")#PCAP2
+points(model_quasipoisson_coeff[32:34],model_quasipoisson_coeff[(32+37):(34+37)], cex=2.1, pch=c(15,17,19),col="paleturquoise1")#PCAP814
+points(model_quasipoisson_coeff[35:37],model_quasipoisson_coeff[(35+37):(37+37)], cex=2.1, pch=c(15,17,19),col="lightpink")#PCAP931
+points(0,0,pch=19,cex=2.1,col="black")
+	
+	plot(seq(min(model_quasipoisson_coeff[2:37])-0.1,max(model_quasipoisson_coeff[2:37])+0.1,0.01),
+		rep(0,times=length(seq(min(model_quasipoisson_coeff[2:37])-0.1,max(model_quasipoisson_coeff[2:37])+0.1,0.01))),
+		xlim=c(min(model_quasipoisson_coeff[2:37])-0.1,max(model_quasipoisson_coeff[2:37])+0.1),
+		ylim=c(min(model_quasipoisson_coeff[39:(37+37)])-0.1,max(model_quasipoisson_coeff[39:(37+37)])+0.1),
+		ylab="change in time",xlab="overall change",type="l",
+		main="regression coefficient of total bout count,\n relative to control")
+lines(rep(0,times=length(seq(min(model_quasipoisson_coeff[39:(37+37)])-0.1,max(model_quasipoisson_coeff[39:(37+37)])+0.1,0.01))),
+		seq(min(model_quasipoisson_coeff[39:(37+37)])-0.1,max(model_quasipoisson_coeff[39:(37+37)])+0.1,0.01))
+
+points(model_quasipoisson_coeff[2:4],model_quasipoisson_coeff[(2+37):(4+37)], cex=2.1, pch=c(15,17,19),col="royalblue4")#Aripiprazole
+points(model_quasipoisson_coeff[5:7],model_quasipoisson_coeff[(5+37):(7+37)], cex=2.1, pch=c(15,17,19),col="seagreen4")#Cariprazine
+points(model_quasipoisson_coeff[8:10],model_quasipoisson_coeff[(8+37):(10+37)], cex=2.1, pch=c(15,17,19),col="saddlebrown")#Clozapine
+points(model_quasipoisson_coeff[11:13],model_quasipoisson_coeff[(11+37):(13+37)], cex=2.1, pch=c(15,17,19),col="red")#CNO
+points(model_quasipoisson_coeff[14:16],model_quasipoisson_coeff[(14+37):(16+37)], cex=2.1, pch=c(15,17,19),col="purple1")#Haloperidol
+points(model_quasipoisson_coeff[17:19],model_quasipoisson_coeff[(17+37):(19+37)], cex=2.1, pch=c(15,17,19),col="turquoise2")#NDMC
+points(model_quasipoisson_coeff[20:22],model_quasipoisson_coeff[(20+37):(22+37)], cex=2.1, pch=c(15,17,19),col="chartreuse")#NDMCHigh
+points(model_quasipoisson_coeff[23:25],model_quasipoisson_coeff[(23+37):(25+37)], cex=2.1, pch=c(15,17,19),col="deeppink")#OSU6162
+points(model_quasipoisson_coeff[26:28],model_quasipoisson_coeff[(26+37):(28+37)], cex=2.1, pch=c(15,17,19),col="orange1")#PCAP1
+points(model_quasipoisson_coeff[29:31],model_quasipoisson_coeff[(29+37):(31+37)], cex=2.1, pch=c(15,17,19),col="yellow1")#PCAP2
+points(model_quasipoisson_coeff[32:34],model_quasipoisson_coeff[(32+37):(34+37)], cex=2.1, pch=c(15,17,19),col="paleturquoise1")#PCAP814
+points(model_quasipoisson_coeff[35:37],model_quasipoisson_coeff[(35+37):(37+37)], cex=2.1, pch=c(15,17,19),col="lightpink")#PCAP931
+points(0,0,pch=19,cex=2.1,col="black")
+
+legend(min(model_quasipoisson_coeff[2:37])-0.1, max(model_quasipoisson_coeff[39:(37+37)])+0.1, 
+		c("Control","Aripiprazole","Cariprazine","Clozapine","CNO","Haloperidol",
+				"NDMC","NDMCHigh","OSU6162","PCAP1","PCAP2", "PCAP814","PCAP931", "1 microM","3 microM","10 microM"), cex=1, 
+		col=c("black","royalblue4","seagreen4","saddlebrown","red","purple1","turquoise2", "chartreuse", "deeppink", "orange1", 
+				"yellow1", "paleturquoise1", "lightpink","gray","gray","gray"), pch = c(19,19,19,19,19,19,19,19,19,19,19,19,19,2,1,0))
+
+
+	
+	
+	#length 1
+count_length_1_bouts<-c()
+
+for(time_frame in 1:13){
+	
+	count_length_1_bouts<-c(count_length_1_bouts, aggregate(BoutLength ~ Subject, data = dataset[dataset$TimeFactor==time_frame,], function(x){return(length(x[x==1]))})[,2])
+}
+
+#length 2
+count_length_2_bouts<-c()
+
+for(time_frame in 1:13){
+	
+	count_length_2_bouts<-c(count_length_2_bouts, aggregate(BoutLength ~ Subject, data = dataset[dataset$TimeFactor==time_frame,], function(x){return(length(x[x==2]))})[,2])
+}
+
+#length 3
+count_length_3_bouts<-c()
+
+for(time_frame in 1:13){
+	
+	count_length_3_bouts<-c(count_length_3_bouts, aggregate(BoutLength ~ Subject, data = dataset[dataset$TimeFactor==time_frame,], function(x){return(length(x[x==3]))})[,2])
+}
+
+
+	
+		
+	#length 1
+	
+	proportion_length_1_turns<-c()
+	
+	for(time_frame in 1:13){
+		
+		proportion_length_1_turns<-c(proportion_length_1_turns, sapply(split(cbind(dataset[dataset$TimeFactor==time_frame,turnCounter], dataset[dataset$TimeFactor==time_frame,c("BoutLength")]), 
+								dataset[dataset$TimeFactor==time_frame,c("Subject")]),function(x){
+							end<-length(x)/2
+							start<-length(x)/2 +1
+							end2<-length(x)
+							return(mean(x[1:end][x[start:end2]==1]))}))
+	}
+	
+	turnMeans_length1<-cbind(turnMeans_length1, proportion_length_1_turns)
+	
+	
+	#length 2
+	
+	proportion_length_2_turns<-c()
+	
+	for(time_frame in 1:13){
+		
+		proportion_length_2_turns<-c(proportion_length_2_turns, sapply(split(cbind(dataset[dataset$TimeFactor==time_frame,turnCounter], dataset[dataset$TimeFactor==time_frame,c("BoutLength")]), 
+								dataset[dataset$TimeFactor==time_frame,c("Subject")]),function(x){
+							end<-length(x)/2
+							start<-length(x)/2 +1
+							end2<-length(x)
+							return(mean(x[1:end][x[start:end2]==2]))}))
+	}
+	
+	turnMeans_length2<-cbind(turnMeans_length2, proportion_length_2_turns)
+	
+	
+	#length 3
+	
+	proportion_length_3_turns<-c()
+	
+	for(time_frame in 1:13){
+		
+		proportion_length_3_turns<-c(proportion_length_3_turns, sapply(split(cbind(dataset[dataset$TimeFactor==time_frame,turnCounter], dataset[dataset$TimeFactor==time_frame,c("BoutLength")]), 
+								dataset[dataset$TimeFactor==time_frame,c("Subject")]),function(x){
+							end<-length(x)/2
+							start<-length(x)/2 +1
+							end2<-length(x)
+							return(mean(x[1:end][x[start:end2]==3]))}))
+	}
+	
+	turnMeans_length3<-cbind(turnMeans_length3, proportion_length_3_turns)
+	
+	
+	
+	classes_true<-matrix(0,ncol=37,nrow=length(dataset_test[,1]))
+classes_predicted<-matrix(0,ncol=37,nrow=length(dataset_test[,1]))
+groups<-levels(dataset_full$Group)
+for(group in 1:37){	
+	classes_true[dataset_test$Group==groups[group],group]<-1
+	classes_predicted[predicted==groups[group],group]<-1
+}
+
+auc(roc(classes_true[,1],classes_predicted[,1]))
+
+AUC::auc(AUC::roc(classes_predicted[,1],classes_true[,1]))
+
+#create fake random variables
+
+random_variables<-matrix(runif(length(na.omit(dataset)[,1])), nrow=length(na.omit(dataset)[,1]),ncol=10)
+colnames(random_variables)<-paste0("random_variable",1:10)
+
+rf <- randomForest(Group ~., data=cbind(na.omit(dataset[,-((1:length(colnames(dataset)))[colnames(dataset)=="TimeFactor"])]),
+				random_variables),ntree = 1000,scale=TRUE)
+
+variable_importance<-importance(rf)
+variable_importance_row_names<-rownames(variable_importance)[order(variable_importance)]
+variable_importance<-as.data.frame(variable_importance[order(variable_importance)])
+rownames(variable_importance)<-variable_importance_row_names
+
+#selected variables
+selected_variables<-c(rownames(variable_importance)[((1:length(variable_importance[,1]))[grep("random",rownames(variable_importance))][10]+1):
+				length(variable_importance[,1])],"TimeFactor","Group")
+
+
+
+conf_table<-table(predicted,selected_dataset_test$Group)
+n = sum(conf_table) # number of instances
+nc = nrow(conf_table) # number of classes
+diag = diag(conf_table) # number of correctly classified instances per class 
+rowsums = apply(conf_table, 1, sum) # number of instances per class
+colsums = apply(conf_table, 2, sum) # number of predictions per class
+p = rowsums / n # distribution of instances over the actual classes
+q = colsums / n # distribution of instances over the predicted classes
+
+accuracy = sum(diag) / n 
+
+accuracy 
+
+precision = diag / colsums 
+recall = diag / rowsums 
+f1 = 2 * precision * recall / (precision + recall) 
+
+data.frame(precision, recall, f1) 
+
+#results have decreased
+
+
+#check different cut offs, 0.25 is best
+rf <- randomForest(Group ~., data=dataset_full[,-((1:length(colnames(dataset_full)))[colnames(dataset_full)=="TimeFactor"])],
+				ntree = 1000,scale=TRUE)
+variable_importance<-importance(rf)
+variable_importance_row_names<-rownames(variable_importance)[order(variable_importance)]
+variable_importance<-as.data.frame(variable_importance[order(variable_importance)])
+rownames(variable_importance)<-variable_importance_row_names
+
+
+selected_variables_25<-c(rownames(variable_importance)[variable_importance>=0.25],"TimeFactor","Group")
+
+#check results for selected variables
+selected_dataset_full<-na.omit(dataset[,selected_variables_25])
+selected_dataset_learn<-selected_dataset_full[selected_dataset_full$TimeFactor<=6,-((1:length(colnames(selected_dataset_full)))[colnames(selected_dataset_full)=="TimeFactor"])]
+selected_dataset_test<-selected_dataset_full[selected_dataset_full$TimeFactor>6,-((1:length(colnames(selected_dataset_full)))[colnames(selected_dataset_full)=="TimeFactor"])]
+
+rf_selected <- randomForest(Group ~., data=selected_dataset_learn,ntree = 1000)
+predicted<-predict(rf_selected,selected_dataset_test)
+
+conf_table<-table(predicted,selected_dataset_test$Group)
+n = sum(conf_table) # number of instances
+nc = nrow(conf_table) # number of classes
+diag = diag(conf_table) # number of correctly classified instances per class 
+rowsums = apply(conf_table, 1, sum) # number of instances per class
+colsums = apply(conf_table, 2, sum) # number of predictions per class
+p = rowsums / n # distribution of instances over the actual classes
+q = colsums / n # distribution of instances over the predicted classes
+
+accuracy = sum(diag) / n 
+
+accuracy 
+
+precision = diag / colsums 
+recall = diag / rowsums 
+f1 = 2 * precision * recall / (precision + recall) 
+
+data.frame(precision, recall, f1) 
+
+
+#compare Light and Dark
+#common_var_Light_Dark<-intersect(colnames(dataset_Light),colnames(dataset_Dark))
+#
+#control_Light<-dataset_Light[dataset_Light$Group=="Control",common_var_Light_Dark]
+#control_Light$Group<-rep("Control_Light",times=13)
+#control_Light$Group<-as.factor(control_Light$Group)
+#
+#control_Dark<-dataset_Dark[dataset_Dark$Group=="Control",common_var_Light_Dark]
+#control_Dark$Group<-rep("Control_Dark",times=13)
+#control_Dark$Group<-as.factor(control_Dark$Group)
+#
+#control_Light_Dark<-rbind(control_Light,control_Dark)
+#count_vars<-length(grep("Length.*Count", colnames(control_Light_Dark)))
+#control_Light_Dark<-cbind(control_Light_Dark,apply(control_Light_Dark[,grep("Length.*Count", colnames(control_Light_Dark))],2,function(x) x/control_Light_Dark$TotalBoutCount))
+#
+#colnames(control_Light_Dark)[c((length(control_Light_Dark[1,])-(count_vars-1)):length(control_Light_Dark[1,]))]<-paste0(colnames(control_Light_Dark)[c((length(control_Light_Dark[1,])-
+#									(count_vars-1)):length(control_Light_Dark[1,]))],"Proportion")
+#control_Light_Dark[,c(grep("Proportion", colnames(control_Light_Dark)))]<-apply(control_Light_Dark[,c(grep("Proportion", colnames(control_Light_Dark)))],2,function(x) round(x*100))
+#control_Light_Dark[,c(grep("Count", colnames(control_Light_Dark)))]<-apply(control_Light_Dark[,c(grep("Count", colnames(control_Light_Dark)))],2,function(x) round(x))
+
+
+	
+control_DarkApoHigh<-dataset_DarkApoHigh[dataset_DarkApoHigh$Group=="Control",common_var_Dark_Healthy_Disease]
+control_DarkApoHigh$Group<-rep("Control_DarkApoHigh",times=13)
+control_DarkApoHigh$Group<-as.factor(control_DarkApoHigh$Group)
+
+control_DarkPTZ<-dataset_DarkPTZ[dataset_DarkPTZ$Group=="Control",common_var_Dark_Healthy_Disease]
+control_DarkPTZ$Group<-rep("Control_DarkPTZ",times=13)
+control_DarkPTZ$Group<-as.factor(control_DarkPTZ$Group)
+
+	
+	>>> len(["".join(map(str, comb)) for comb in itertools.product("SCOJEGHI", repeat=2)])
+64
+>>> len(["".join(map(str, comb)) for comb in itertools.product("SCOJEGHI", repeat=3)])
+512
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#ALL TOGETHER
+
+#PTZ---------------------------------
+files<-list.files()
+
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("PTZ",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_PTZ/healthy_vs_PTZ_drug_effect.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with PTZ")
+
+dev.off()
+
+#BOUT COUNT AND COUNT PER LENGTH
+
+#PTZ---------------------------------
+files<-list.files()
+files<-files[grep("BoutCount",files)]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("PTZ",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_PTZ/healthy_vs_PTZ_drug_effect_bout_count_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with PTZ\nbased on bout count and bout count per bout length only")
+
+dev.off()
+
+
+#TURN PROPORTIONS PER LENGTH
+
+#PTZ---------------------------------
+files<-list.files()
+files<-files[c(grep("Bends",files),grep("Scoots",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("PTZ",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_PTZ/healthy_vs_PTZ_drug_effect_turn_proportion_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with PTZ\nbased on turn proportions per bout length only")
+
+dev.off()
+
+#TURN TRANSITIONS LENGTH 2 PER BOUT LENGTH
+
+
+#PTZ---------------------------------
+files<-list.files()
+files<-files[c(grep("Transition_.._",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("PTZ",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_PTZ/healthy_vs_PTZ_drug_effect_transitions2_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with PTZ\nbased on transitions of length 2 per bout length only")
+
+dev.off()
+
+#TURN TRANSITIONS LENGTH 3 PER BOUT LENGTH
+
+#PTZ---------------------------------
+files<-list.files()
+files<-files[c(grep("Transition_..._",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("PTZ",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_PTZ/healthy_vs_PTZ_drug_effect_transitions3_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with PTZ\nbased on transitions of length 3 per bout length only")
+
+dev.off()
+
+
+
+
+
+#ALL TOGETHER
+
+
+#ApoLow---------------------------------
+files<-list.files()
+
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoLow",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoLow/healthy_vs_ApoLow_drug_effect.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoLow")
+
+dev.off()
+
+
+
+#BOUT COUNT AND COUNT PER LENGTH
+
+#ApoLow---------------------------------
+files<-list.files()
+files<-files[grep("BoutCount",files)]
+
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoLow",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoLow/healthy_vs_ApoLow_drug_effect_bout_count_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoLow\nbased on bout count and bout count per bout length only")
+
+dev.off()
+
+
+
+
+#TURN PROPORTIONS PER LENGTH
+
+
+#ApoLow---------------------------------
+files<-list.files()
+files<-files[c(grep("Bends",files),grep("Scoots",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoLow",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoLow/healthy_vs_ApoLow_drug_effect_turn_proportion_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoLow\nbased on turn proportions per bout length only")
+
+dev.off()
+
+
+
+
+#TURN TRANSITIONS LENGTH 2 PER BOUT LENGTH
+
+
+#ApoLow---------------------------------
+files<-list.files()
+files<-files[c(grep("Transition_.._",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoLow",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoLow/healthy_vs_ApoLow_drug_effect_transitions2_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoLow\nbased on transitions of length 2 per bout length only")
+
+dev.off()
+
+
+
+
+
+#TURN TRANSITIONS LENGTH 3 PER BOUT LENGTH
+
+
+#ApoLow---------------------------------
+files<-list.files()
+files<-files[c(grep("Transition_..._",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoLow",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoLow/healthy_vs_ApoLow_drug_effect_transitions3_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoLow\nbased on transitions of length 3 per bout length only")
+
+dev.off()
+
+
+
+
+#ALL TOGETHER
+
+
+#ApoHigh---------------------------------
+files<-list.files()
+
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoHigh",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoHigh/healthy_vs_ApoHigh_drug_effect.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoHigh")
+
+dev.off()
+
+
+#BOUT COUNT AND COUNT PER LENGTH
+
+#ApoHigh---------------------------------
+files<-list.files()
+files<-files[grep("BoutCount",files)]
+
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoHigh",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoHigh/healthy_vs_ApoHigh_drug_effect_bout_count_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoHigh\nbased on bout count and bout count per bout length only")
+
+dev.off()
+
+
+
+#TURN PROPORTIONS PER LENGTH
+
+#ApoHigh---------------------------------
+files<-list.files()
+files<-files[c(grep("Bends",files),grep("Scoots",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoHigh",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoHigh/healthy_vs_ApoHigh_drug_effect_turn_proportion_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoHigh\nbased on turn proportions per bout length only")
+
+dev.off()
+
+
+
+
+#TURN TRANSITIONS LENGTH 2 PER BOUT LENGTH
+
+#ApoHigh---------------------------------
+files<-list.files()
+files<-files[c(grep("Transition_.._",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoHigh",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoHigh/healthy_vs_ApoHigh_drug_effect_transitions2_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoHigh\nbased on transitions of length 2 per bout length only")
+
+dev.off()
+
+
+
+#TURN TRANSITIONS LENGTH 3 PER BOUT LENGTH
+
+#ApoHigh---------------------------------
+files<-list.files()
+files<-files[c(grep("Transition_..._",files))]
+fil<-files[1]
+
+effect_sizes<-read.table(fil,header=TRUE)
+
+drugs<-substr(rownames(effect_sizes)[2:74], 6, nchar(rownames(effect_sizes)[2:74]))
+
+all_effect_sizes<-cbind(effect_sizes[2:74,1],effect_sizes[75:147,])
+all_effect_sizes<-as.data.frame(all_effect_sizes)
+rownames(all_effect_sizes)<-drugs
+
+
+for (fil in files[-1]){
+	
+	
+	effect_sizes<-read.table(fil,header=TRUE, row.names=NULL)
+	
+	all_effect_sizes<-cbind(all_effect_sizes, effect_sizes[2:74,2],effect_sizes[75:147,2])
+	
+	
+	
+}
+
+all_effect_sizes<-rbind(all_effect_sizes,numeric(length(all_effect_sizes[1,])))
+rownames(all_effect_sizes)[length(all_effect_sizes[,1])]<-"Control_Dark"
+d <- dist(all_effect_sizes)
+
+#increase all distance with 1 to ensure no negative values when doing log
+
+d<-d+1
+
+d_log<-log10(d)
+
+hc_log <- hclust(d_log) 
+
+
+clusMember<-rep("darkolivegreen3",length(rownames(all_effect_sizes)))
+clusMember[grep("ApoHigh",rownames(all_effect_sizes))]<-"paleturquoise4"
+clusMember[49]<-"orange2"
+clusMember[74]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(all_effect_sizes)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/git/zebrafish_action_sequence_project/results/plots/final_analysis/dendrograms/healthy_vs_disease_ApoHigh/healthy_vs_ApoHigh_drug_effect_transitions3_var_only.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc_log), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with ApoHigh\nbased on transitions of length 3 per bout length only")
+
+dev.off()
+
+
+	
+	

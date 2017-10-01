@@ -1,0 +1,195 @@
+plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)")> lines(seq(3,3.5,0.1),seq(3,3.5,0.1),col="red")
+lines(seq(3,3.5,0.1),overweight_bmi,col="orange")
+lines(seq(3,3.5,0.1),normal_bmi,col="orange")
+lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="blue")
+length(empty_vector)<-length(VIP_data_subset_visit2_complete_cases[,1])
+> 
+> 
+> 
+> 
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="blue")
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> ubset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="deepskyblue4")
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> ubset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="limegreen")
+> 
+
+
+
+
+
+plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)")
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="blue")
+> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="blue")
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]], col="limegreen")
+> ubset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]], col="limegreen")
+> 
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="limegreen")
+> ubset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="limegreen")
+> 
+> 
+> 
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)")
+
+> 
+> 
+> 
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="blue")> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="blue")> 
+> 
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data> ubset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]], col="limegreen")
+> 
+> 
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> ubset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="gray")
+> 
+> 
+> 
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)",col="orange")> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="blue")> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="blue")> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> ubset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="gray")
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="black")> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="black")> 
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data> ubset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]], col="gray")
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)")> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")
+> upper_lim_vector[]<-upper_lim
+> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")
+> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="black")> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="black")> 
+> 
+> 
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_limit]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_caError in eval(expr, envir, enclos) : object 'upper_limit' not found
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_case> bmi)>=upper_lim], col="limegreen")
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)",col="orange")> 
+> 
+> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")
+> upper_lim_vector[]<-lower_lim()
+Error: could not find function "lower_lim"
+> upper_lim_vector[]<-lower_lim
+> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")
+> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="black")
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="black")
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data
++ 
++ 
++ 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_li> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_c> plete_cases$bmi)<=predicted_values_visit1_intervals[,2]], col="gray")
+> 
+> 
+> 
+> 
+> 
+> history()
+> 
+> 
+> 
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)",col="orange")
+> upper_lim_vector[]<-upper_lim
+> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")
+> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="black")
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="black")
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_liError: unexpected '>' in "points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)>=upp"
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=predicted_values_visit1_intervals[,2]]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_c> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_li> , col="limegreen")
+> 
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)",col="orange")> upper_lim_vector[]<-lower_lim> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="black")> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="black")> 
+> 
+> 
+> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)>=upper_li> , col="gray")
+> 
+> 
+> 
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)",col="orange")
+> lines(seq(3,3.5,0.1),upper_lim_vector,col="red")
+> lines(predicted_values_visit1_intervals[,2]~predicted_values_visit1$fit, col="black")
+> lines(predicted_values_visit1_intervals[,3]~predicted_values_visit1$fit, col="black")
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=lower_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)<=lower_li> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)<=lower_lim]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_complete_cases$bmi)<=lower_li> , col="limegreen")
+> 
+> 
+> 
+> points(log(VIP_data_subset_visit1_complete_cases$bmi)[log(VIP_data_subset_visit1_complete_cases$bmi)>=predicted_values_visit1_intervals[,3]]~predicted_values_visit1$fit[log(VIP_data_subset_visit1_c> plete_cases$bmi)>=predicted_values_visit1_intervals[,3]], col="gray")
+> 
+> 
+> 
+> 
+> 
+>
+
+
+
+
+
+
+length(normal_bmi)<-length(seq(2.8,4.2,0.1))
+> normal_bmi[]<-log(25)
+> lines(normal_bmi,seq(2.8,4.2,0.1),col="orange",lw=2)
+> normal_bmi<-vector()
+> length(normal_bmi)<-length(seq(2.6,4.4,0.1))
+> normal_bmi[]<-log(25)
+> lines(normal_bmi,seq(2.6,4.4,0.1),col="orange",lw=2)
+> 
+> 
+> 
+> lines(seq(3,3.5,0.1),overweight_bmi,col="red",lw=2)
+> length(overweight_bmi)<-length(seq(2.6,4.4,0.1))
+> lines(overweight_bmi,seq(2.6,4.4,0.1),col="red",lw=2)
+> overweight_bmi[]<-log(30)
+> lines(overweight_bmi,seq(2.6,4.4,0.1),col="red",lw=2)
+> legend(3.05,4.2,legend=c("BMI 25", "BMI 30"),col=c("orange","red"))
+> legend(3.05,4.2,legend=c("BMI 25", "BMI 30"),col=c("orange","red"),lty=1)
+> plot(log(VIP_data_subset_visit1_complete_cases$bmi)~predicted_values_visit1$fit,xlab="predicted log(BMI)",ylab="true log(BMI)")
+> lines(seq(3,3.5,0.1),normal_bmi,col="orange",lw=2)
+Error in xy.coords(x, y) : 'x' and 'y' lengths differ
+> length(normal_bmi)<-length(seq(3,3.5,0.1))
+> lines(seq(3,3.5,0.1),normal_bmi,col="orange",lw=2)
+> length(normal_bmi)<-length(seq(2.6,4.4,0.1))
+> normal_bmi[]<-log(25)
+> lines(normal_bmi,seq(2.6,4.4,0.1),col="orange",lw=2)
+> lines(overweight_bmi,seq(2.6,4.4,0.1),col="red",lw=2)
+> length(overweight_bmi)<-length(seq(3,3.5,0.1))
+> overweight_bmi[]<-log(30)
+> lines(seq(3,3.5,0.1),overweight_bmi,col="red",lw=2)
+> legend(3.05,4.2,legend=c("BMI 25", "BMI 30"),col=c("orange","red"),lty=1)
+> log(30)
+[1] 3.401197
+> log(25)
+[1] 3.218876
+

@@ -1,0 +1,115 @@
+
+#without NDMCHigh, since the dosage is different
+
+#Light
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light Control ;done
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light 1microM ;done
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light 3microM ;done
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light 10microM ;done
+
+#Dark
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark Control ;done
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark 1microM ;done
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark 3microM ;done
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark 10microM ;done
+
+#LightDark
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark Control ;done
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark 1microM ;done
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark 3microM ;done
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark 10microM ;done
+
+#DarkApoLow
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow Control ;done
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow 1microM ;done
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow 3microM ;done
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow 10microM ;done
+
+#DarkApoHigh
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh Control ;done
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh 1microM ;done
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh 3microM ;done
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh 10microM ;done
+
+#DarkPTZ
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ Control ;done
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ 1microM ;done
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ 3microM ;done
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ 10microM ;done
+
+#for NDMCHigh, since the dosage is different
+
+#Light
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light Control ;done
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light 25microM ;done
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light 50microM ;done
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Light 100microM ;done
+
+#Dark
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark Control ;done
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark 25microM ;done
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark 50microM ;done
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line Dark 100microM ;done
+
+#LightDark
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark Control ;done
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark 25microM ;done
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark 50microM ;done
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line LightDark 100microM ;done
+
+#DarkApoLow
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow Control ;done
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow 25microM ;done
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow 50microM ;done
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoLow 100microM ;done
+
+#DarkApoHigh
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh Control ;done
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh 25microM ;done
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh 50microM ;done
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkApoHigh 100microM ;done
+
+#DarkPTZ
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ Control ;done
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ 25microM ;done
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ 50microM ;done
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/transitions_per_time/transitions_per_time_extract_data_B2.py $line DarkPTZ 100microM ;done
+
+
+#combine controls
+cd Light
+rm Natural_Control_Light_word2
+rm Natural_Control_Light_word3
+Rscript ../../../../code/transitions_per_time/merge_control_B.R Natural Light
+cd ..
+
+cd Dark
+rm Natural_Control_Dark_word2
+rm Natural_Control_Dark_word3
+Rscript ../../../../code/transitions_per_time/merge_control_B.R Natural Dark
+cd ..
+
+cd LightDark
+rm Natural_Control_LightDark_word2
+rm Natural_Control_LightDark_word3
+Rscript ../../../../code/transitions_per_time/merge_control_B.R Natural LightDark
+cd ..
+
+cd DarkApoLow
+rm Disease_Control_DarkApoLow_word2
+rm Disease_Control_DarkApoLow_word3
+Rscript ../../../../code/transitions_per_time/merge_control_B.R Disease DarkApoLow
+cd ..
+
+cd DarkApoHigh
+rm Disease_Control_DarkApoHigh_word2
+rm Disease_Control_DarkApoHigh_word3
+Rscript ../../../../code/transitions_per_time/merge_control_B.R Disease DarkApoHigh
+cd ..
+
+cd DarkPTZ
+rm Disease_Control_DarkPTZ_word2
+rm Disease_Control_DarkPTZ_word3
+Rscript ../../../../code/transitions_per_time/merge_control_B.R Disease DarkPTZ
+cd ..
+

@@ -1,0 +1,92 @@
+#COMBINE ALL THE CONTROL SUBJECTS FROM DIFFERENT EXPERIMENTS
+
+#Light
+cd Light
+rm All*
+cat *_BoutLength > AllLight_BoutLength
+cat *_TimeFactor > AllLight_TimeFactor
+cat *_ScootsProportion > AllLight_ScootsProportion
+cat *_JBendsProportion > AllLight_JBendsProportion
+cat *_CBendsProportion > AllLight_CBendsProportion
+cat *_OBendsProportion > AllLight_OBendsProportion
+cat *_EBendsProportion > AllLight_EBendsProportion
+cat *_GBendsProportion > AllLight_GBendsProportion
+cat *_HBendsProportion > AllLight_HBendsProportion
+cat *_IBendsProportion > AllLight_IBendsProportion
+cd ..
+
+#Dark
+cd Dark
+rm All*
+cat *_BoutLength > AllDark_BoutLength
+cat *_TimeFactor > AllDark_TimeFactor
+cat *_ScootsProportion > AllDark_ScootsProportion
+cat *_JBendsProportion > AllDark_JBendsProportion
+cat *_CBendsProportion > AllDark_CBendsProportion
+cat *_OBendsProportion > AllDark_OBendsProportion
+cat *_EBendsProportion > AllDark_EBendsProportion
+cat *_GBendsProportion > AllDark_GBendsProportion
+cat *_HBendsProportion > AllDark_HBendsProportion
+cat *_IBendsProportion > AllDark_IBendsProportion
+cd ..
+
+#LightDark
+cd LightDark
+rm All*
+cat *_BoutLength > AllLightDark_BoutLength
+cat *_TimeFactor > AllLightDark_TimeFactor
+cat *_ScootsProportion > AllLightDark_ScootsProportion
+cat *_JBendsProportion > AllLightDark_JBendsProportion
+cat *_CBendsProportion > AllLightDark_CBendsProportion
+cat *_OBendsProportion > AllLightDark_OBendsProportion
+cat *_EBendsProportion > AllLightDark_EBendsProportion
+cat *_GBendsProportion > AllLightDark_GBendsProportion
+cat *_HBendsProportion > AllLightDark_HBendsProportion
+cat *_IBendsProportion > AllLightDark_IBendsProportion
+cd ..
+
+#DarkApoLow
+cd DarkApoLow
+rm All*
+cat *_BoutLength > AllDarkApoLow_BoutLength
+cat *_TimeFactor > AllDarkApoLow_TimeFactor
+cat *_ScootsProportion > AllDarkApoLow_ScootsProportion
+cat *_JBendsProportion > AllDarkApoLow_JBendsProportion
+cat *_CBendsProportion > AllDarkApoLow_CBendsProportion
+cat *_OBendsProportion > AllDarkApoLow_OBendsProportion
+cat *_EBendsProportion > AllDarkApoLow_EBendsProportion
+cat *_GBendsProportion > AllDarkApoLow_GBendsProportion
+cat *_HBendsProportion > AllDarkApoLow_HBendsProportion
+cat *_IBendsProportion > AllDarkApoLow_IBendsProportion
+cd ..
+
+#DarkApoHigh
+cd DarkApoHigh
+rm All*
+cat *_BoutLength > AllDarkApoHigh_BoutLength
+cat *_TimeFactor > AllDarkApoHigh_TimeFactor
+cat *_ScootsProportion > AllDarkApoHigh_ScootsProportion
+cat *_JBendsProportion > AllDarkApoHigh_JBendsProportion
+cat *_CBendsProportion > AllDarkApoHigh_CBendsProportion
+cat *_OBendsProportion > AllDarkApoHigh_OBendsProportion
+cat *_EBendsProportion > AllDarkApoHigh_EBendsProportion
+cat *_GBendsProportion > AllDarkApoHigh_GBendsProportion
+cat *_HBendsProportion > AllDarkApoHigh_HBendsProportion
+cat *_IBendsProportion > AllDarkApoHigh_IBendsProportion
+cd ..
+
+#DarkPTZ
+cd DarkPTZ
+rm All*
+cat *_BoutLength > AllDarkPTZ_BoutLength
+cat *_TimeFactor > AllDarkPTZ_TimeFactor
+cat *_ScootsProportion > AllDarkPTZ_ScootsProportion
+cat *_JBendsProportion > AllDarkPTZ_JBendsProportion
+cat *_CBendsProportion > AllDarkPTZ_CBendsProportion
+cat *_OBendsProportion > AllDarkPTZ_OBendsProportion
+cat *_EBendsProportion > AllDarkPTZ_EBendsProportion
+cat *_GBendsProportion > AllDarkPTZ_GBendsProportion
+cat *_HBendsProportion > AllDarkPTZ_HBendsProportion
+cat *_IBendsProportion > AllDarkPTZ_IBendsProportion
+cd ..
+

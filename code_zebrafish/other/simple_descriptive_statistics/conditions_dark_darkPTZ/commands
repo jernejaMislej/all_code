@@ -1,0 +1,33 @@
+#COMBINE ALL THE CONTROL SUBJECTS FROM DIFFERENT EXPERIMENTS
+
+#HEALTHY CONTROL 
+
+#DARK
+
+cat $(ls *DarkLengths | grep -v Light) > ../grouped/AllDarkLengths
+cat $(ls *DarkLengthsMean | grep -v Light) > ../grouped/AllDarkLengthsMean
+cat $(ls *DarkmeanLengthOfBout | grep -v Light) > ../grouped/AllDarkMeanLengthOfBout
+cat $(ls *DarkmeanLengthOfBoutMean | grep -v Light) > ../grouped/AllDarkMeanLengthOfBoutMean
+cat $(ls *DarksdLengthOfBout | grep -v Light) > ../grouped/AllDarkSdLengthOfBout
+cat $(ls *DarksdLengthOfBoutMean | grep -v Light) > ../grouped/AllDarkSdLengthOfBoutMean
+cat $(ls *DarkNumberOfBouts | grep -v Light) > ../grouped/AllDarkNumberOfBouts
+cat $(ls *DarkNumberOfBoutsMean | grep -v Light) > ../grouped/AllDarkNumberOfBoutsMean
+
+#PTZ
+
+cat *LightDarkPTZLengths > ../grouped/AllLightDarkPTZLengths
+cat *LightDarkPTZLengthsMean > ../grouped/AllLightDarkPTZLengthsMean
+cat *LightDarkPTZmeanLengthOfBout > ../grouped/AllLightDarkPTZMeanLengthOfBout
+cat *LightDarkPTZmeanLengthOfBoutMean > ../grouped/AllLightDarkPTZMeanLengthOfBoutMean
+cat *LightDarkPTZsdLengthOfBout > ../grouped/AllLightDarkPTZSdLengthOfBout
+cat *LightDarkPTZsdLengthOfBoutMean > ../grouped/AllLightDarkSdPTZLengthOfBoutMean
+cat *LightDarkPTZNumberOfBouts > ../grouped/AllLightDarkPTZNumberOfBouts
+cat *LightDarkPTZNumberOfBoutsMean > ../grouped/AllLightDarkPTZNumberOfBoutsMean
+
+#---------------------------------------------------------------------------
+
+#GET JUST THE DATA(FOR MATLAB)
+rm *Data
+ls All*| while read line;do cat $line | cut -d"," -f2-15 > "${line}Data";done
+
+

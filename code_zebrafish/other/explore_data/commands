@@ -1,0 +1,8 @@
+Rscript extract_and_explore_data_characteristics.R Light
+Rscript extract_and_explore_data_characteristics.R Dark
+Rscript extract_and_explore_data_characteristics.R LightDark
+Rscript extract_and_explore_data_characteristics.R DarkApoLow
+Rscript extract_and_explore_data_characteristics.R DarkApoHigh
+Rscript extract_and_explore_data_characteristics.R DarkPTZ
+
+

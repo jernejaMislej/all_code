@@ -1,0 +1,88 @@
+rm All*
+
+#HEALTHY CONTROL 
+
+#DARK
+
+cat $(ls *DarkScootProportion | grep -v Light) > AllDarkScootProportion
+cat $(ls *DarkOBendProportion | grep -v Light) > AllDarkOBendProportion
+cat $(ls *DarkJBendProportion | grep -v Light) > AllDarkJBendProportion
+cat $(ls *DarkCBendProportion | grep -v Light) > AllDarkCBendProportion
+cat $(ls *DarkEBendProportion | grep -v Light) > AllDarkEBendProportion
+cat $(ls *DarkGBendProportion | grep -v Light) > AllDarkGBendProportion
+cat $(ls *DarkHBendProportion | grep -v Light) > AllDarkHBendProportion
+cat $(ls *DarkIBendProportion | grep -v Light) > AllDarkIBendProportion
+cat $(ls *DarkLeftProportion | grep -v Light) > AllDarkLeftProportion
+cat $(ls *DarkRightProportion | grep -v Light) > AllDarkRightProportion
+
+#LIGHT
+
+cat *LightScootProportion > AllLightScootProportion
+cat *LightOBendProportion > AllLightOBendProportion
+cat *LightJBendProportion > AllLightJBendProportion
+cat *LightCBendProportion > AllLightCBendProportion
+cat *LightEBendProportion > AllLightEBendProportion
+cat *LightGBendProportion > AllLightGBendProportion
+cat *LightHBendProportion > AllLightHBendProportion
+cat *LightIBendProportion > AllLightIBendProportion
+cat *LightLeftProportion > AllLightLeftProportion
+cat *LightRightProportion > AllLightRightProportion
+
+#LIGHTDARK
+
+cat *LightDarkScootProportion > AllLightDarkScootProportion
+cat *LightDarkOBendProportion > AllLightDarkOBendProportion
+cat *LightDarkJBendProportion > AllLightDarkJBendProportion
+cat *LightDarkCBendProportion > AllLightDarkCBendProportion
+cat *LightDarkEBendProportion > AllLightDarkEBendProportion
+cat *LightDarkGBendProportion > AllLightDarkGBendProportion
+cat *LightDarkHBendProportion > AllLightDarkHBendProportion
+cat *LightDarkIBendProportion > AllLightDarkIBendProportion
+cat *LightDarkLeftProportion > AllLightDarkLeftProportion
+cat *LightDarkRightProportion > AllLightDarkRightProportion
+
+#DISEASE CONTROL 
+
+#APO HIGH
+
+cat $(ls *DarkApoHighScootProportion | grep -v Light) > AllDarkApoHighScootProportion
+cat $(ls *DarkApoHighOBendProportion | grep -v Light) > AllDarkApoHighOBendProportion
+cat $(ls *DarkApoHighJBendProportion | grep -v Light) > AllDarkApoHighJBendProportion
+cat $(ls *DarkApoHighCBendProportion | grep -v Light) > AllDarkApoHighCBendProportion
+cat $(ls *DarkApoHighEBendProportion | grep -v Light) > AllDarkApoHighEBendProportion
+cat $(ls *DarkApoHighGBendProportion | grep -v Light) > AllDarkApoHighGBendProportion
+cat $(ls *DarkApoHighHBendProportion | grep -v Light) > AllDarkApoHighHBendProportion
+cat $(ls *DarkApoHighIBendProportion | grep -v Light) > AllDarkApoHighIBendProportion
+cat $(ls *DarkApoHighLeftProportion | grep -v Light) > AllDarkApoHighLeftProportion
+cat $(ls *DarkApoHighRightProportion | grep -v Light) > AllDarkApoHighRightProportion
+
+#APO LOW
+
+cat *LightApoLowScootProportion > AllLightApoLowScootProportion
+cat *LightApoLowOBendProportion > AllLightApoLowOBendProportion
+cat *LightApoLowJBendProportion > AllLightApoLowJBendProportion
+cat *LightApoLowCBendProportion > AllLightApoLowCBendProportion
+cat *LightApoLowEBendProportion > AllLightApoLowEBendProportion
+cat *LightApoLowGBendProportion > AllLightApoLowGBendProportion
+cat *LightApoLowHBendProportion > AllLightApoLowHBendProportion
+cat *LightApoLowIBendProportion > AllLightApoLowIBendProportion
+cat *LightApoLowLeftProportion > AllLightApoLowLeftProportion
+cat *LightApoLowRightProportion > AllLightApoLowRightProportion
+
+#PTZ
+
+cat *LightDarkPTZScootProportion > AllLightDarkPTZScootProportion
+cat *LightDarkPTZOBendProportion > AllLightDarkPTZOBendProportion
+cat *LightDarkPTZJBendProportion > AllLightDarkPTZJBendProportion
+cat *LightDarkPTZCBendProportion > AllLightDarkPTZCBendProportion
+cat *LightDarkPTZEBendProportion > AllLightDarkPTZEBendProportion
+cat *LightDarkPTZGBendProportion > AllLightDarkPTZGBendProportion
+cat *LightDarkPTZHBendProportion > AllLightDarkPTZHBendProportion
+cat *LightDarkPTZIBendProportion > AllLightDarkPTZIBendProportion
+cat *LightDarkPTZLeftProportion > AllLightDarkPTZLeftProportion
+cat *LightDarkPTZRightProportion > AllLightDarkPTZRightProportion
+
+#GET JUST THE DATA(FOR MATLAB)
+rm *Data
+ls All*| while read line;do cat $line | cut -d"," -f2-15 > "${line}Data";done
+

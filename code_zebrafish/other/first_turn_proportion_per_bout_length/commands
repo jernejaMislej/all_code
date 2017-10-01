@@ -1,0 +1,8 @@
+Rscript explore_turn_proportion_per_bout_length.R Light
+Rscript explore_turn_proportion_per_bout_length.R Dark
+Rscript explore_turn_proportion_per_bout_length.R LightDark
+Rscript explore_turn_proportion_per_bout_length.R DarkApoLow
+Rscript explore_turn_proportion_per_bout_length.R DarkApoHigh
+Rscript explore_turn_proportion_per_bout_length.R DarkPTZ
+
+

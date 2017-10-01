@@ -1,0 +1,235 @@
+
+#Natural for Light,Dark,LightDark, Disease for ApoLow, ApoHigh, PTZ
+
+
+
+#without NDMCHigh, since the dosage is different
+
+#Light
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light Control ;done
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light 1microM ;done
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light 3microM ;done
+ls *Light | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light 10microM ;done
+
+#Dark
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark Control ;done
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark 1microM ;done
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark 3microM ;done
+ls *Dark | grep -v NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark 10microM ;done
+
+#LightDark
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark Control ;done
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark 1microM ;done
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark 3microM ;done
+ls *LightDark | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark 10microM ;done
+
+#DarkApoLow
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow Control ;done
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow 1microM ;done
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow 3microM ;done
+ls *DarkApoLow | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow 10microM ;done
+
+#DarkApoHigh
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh Control ;done
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh 1microM ;done
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh 3microM ;done
+ls *DarkApoHigh | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh 10microM ;done
+
+#DarkPTZ
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ Control ;done
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ 1microM ;done
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ 3microM ;done
+ls *DarkPTZ | grep -v NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ 10microM ;done
+
+#for NDMCHigh, since the dosage is different
+
+#Light
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light Control ;done
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light 25microM ;done
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light 50microM ;done
+ls *Light | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Light 100microM ;done
+
+#Dark
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark Control ;done
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark 25microM ;done
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark 50microM ;done
+ls *Dark | grep NDMCHigh | grep -v Light | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line Dark 100microM ;done
+
+#LightDark
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark Control ;done
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark 25microM ;done
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark 50microM ;done
+ls *LightDark | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line LightDark 100microM ;done
+
+#DarkApoLow
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow Control ;done
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow 25microM ;done
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow 50microM ;done
+ls *DarkApoLow | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoLow 100microM ;done
+
+#DarkApoHigh
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh Control ;done
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh 25microM ;done
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh 50microM ;done
+ls *DarkApoHigh | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkApoHigh 100microM ;done
+
+#DarkPTZ
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ Control ;done
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ 25microM ;done
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ 50microM ;done
+ls *DarkPTZ | grep NDMCHigh | while read line;do python3 ../../../../code/other/bout_length_turn_proportion_time_factor_dataset_all/generate_boutLength_turnProportion_timeFactor_dataset_all.py $line DarkPTZ 100microM ;done
+
+
+
+
+
+
+
+
+
+
+#combine controls
+
+cd Light
+rm Natural_Control_Light_BoutLength
+rm Natural_Control_Light_TimeFactor
+rm Natural_Control_Light_ScootsProportion
+rm Natural_Control_Light_JBendsProportion
+rm Natural_Control_Light_CBendsProportion
+rm Natural_Control_Light_OBendsProportion
+rm Natural_Control_Light_EBendsProportion
+rm Natural_Control_Light_GBendsProportion
+rm Natural_Control_Light_HBendsProportion
+rm Natural_Control_Light_IBendsProportion
+
+cat *Control*_BoutLength > Natural_Control_Light_BoutLength
+cat *Control*_TimeFactor > Natural_Control_Light_TimeFactor
+cat *Control*_ScootsProportion > Natural_Control_Light_ScootsProportion
+cat *Control*_JBendsProportion > Natural_Control_Light_JBendsProportion
+cat *Control*_CBendsProportion > Natural_Control_Light_CBendsProportion
+cat *Control*_OBendsProportion > Natural_Control_Light_OBendsProportion
+cat *Control*_EBendsProportion > Natural_Control_Light_EBendsProportion
+cat *Control*_GBendsProportion > Natural_Control_Light_GBendsProportion
+cat *Control*_HBendsProportion > Natural_Control_Light_HBendsProportion
+cat *Control*_IBendsProportion > Natural_Control_Light_IBendsProportion
+cd ..
+
+cd Dark
+rm Natural_Control_Dark_BoutLength
+rm Natural_Control_Dark_TimeFactor
+rm Natural_Control_Dark_ScootsProportion
+rm Natural_Control_Dark_JBendsProportion
+rm Natural_Control_Dark_CBendsProportion
+rm Natural_Control_Dark_OBendsProportion
+rm Natural_Control_Dark_EBendsProportion
+rm Natural_Control_Dark_GBendsProportion
+rm Natural_Control_Dark_HBendsProportion
+rm Natural_Control_Dark_IBendsProportion
+
+cat *Control*_BoutLength > Natural_Control_Dark_BoutLength
+cat *Control*_TimeFactor > Natural_Control_Dark_TimeFactor
+cat *Control*_ScootsProportion > Natural_Control_Dark_ScootsProportion
+cat *Control*_JBendsProportion > Natural_Control_Dark_JBendsProportion
+cat *Control*_CBendsProportion > Natural_Control_Dark_CBendsProportion
+cat *Control*_OBendsProportion > Natural_Control_Dark_OBendsProportion
+cat *Control*_EBendsProportion > Natural_Control_Dark_EBendsProportion
+cat *Control*_GBendsProportion > Natural_Control_Dark_GBendsProportion
+cat *Control*_HBendsProportion > Natural_Control_Dark_HBendsProportion
+cat *Control*_IBendsProportion > Natural_Control_Dark_IBendsProportion
+cd ..
+
+cd LightDark
+rm Natural_Control_LightDark_BoutLength
+rm Natural_Control_LightDark_TimeFactor
+rm Natural_Control_LightDark_ScootsProportion
+rm Natural_Control_LightDark_JBendsProportion
+rm Natural_Control_LightDark_CBendsProportion
+rm Natural_Control_LightDark_OBendsProportion
+rm Natural_Control_LightDark_EBendsProportion
+rm Natural_Control_LightDark_GBendsProportion
+rm Natural_Control_LightDark_HBendsProportion
+rm Natural_Control_LightDark_IBendsProportion
+
+cat *Control*_BoutLength > Natural_Control_LightDark_BoutLength
+cat *Control*_TimeFactor > Natural_Control_LightDark_TimeFactor
+cat *Control*_ScootsProportion > Natural_Control_LightDark_ScootsProportion
+cat *Control*_JBendsProportion > Natural_Control_LightDark_JBendsProportion
+cat *Control*_CBendsProportion > Natural_Control_LightDark_CBendsProportion
+cat *Control*_OBendsProportion > Natural_Control_LightDark_OBendsProportion
+cat *Control*_EBendsProportion > Natural_Control_LightDark_EBendsProportion
+cat *Control*_GBendsProportion > Natural_Control_LightDark_GBendsProportion
+cat *Control*_HBendsProportion > Natural_Control_LightDark_HBendsProportion
+cat *Control*_IBendsProportion > Natural_Control_LightDark_IBendsProportion
+cd ..
+
+cd DarkApoLow
+rm Disease_Control_DarkApoLow_BoutLength
+rm Disease_Control_DarkApoLow_TimeFactor
+rm Disease_Control_DarkApoLow_ScootsProportion
+rm Disease_Control_DarkApoLow_JBendsProportion
+rm Disease_Control_DarkApoLow_CBendsProportion
+rm Disease_Control_DarkApoLow_OBendsProportion
+rm Disease_Control_DarkApoLow_EBendsProportion
+rm Disease_Control_DarkApoLow_GBendsProportion
+rm Disease_Control_DarkApoLow_HBendsProportion
+rm Disease_Control_DarkApoLow_IBendsProportion
+
+cat *Control*_BoutLength > Disease_Control_DarkApoLow_BoutLength
+cat *Control*_TimeFactor > Disease_Control_DarkApoLow_TimeFactor
+cat *Control*_ScootsProportion > Disease_Control_DarkApoLow_ScootsProportion
+cat *Control*_JBendsProportion > Disease_Control_DarkApoLow_JBendsProportion
+cat *Control*_CBendsProportion > Disease_Control_DarkApoLow_CBendsProportion
+cat *Control*_OBendsProportion > Disease_Control_DarkApoLow_OBendsProportion
+cat *Control*_EBendsProportion > Disease_Control_DarkApoLow_EBendsProportion
+cat *Control*_GBendsProportion > Disease_Control_DarkApoLow_GBendsProportion
+cat *Control*_HBendsProportion > Disease_Control_DarkApoLow_HBendsProportion
+cat *Control*_IBendsProportion > Disease_Control_DarkApoLow_IBendsProportion
+cd ..
+
+cd DarkApoHigh
+rm Disease_Control_DarkApoHigh_BoutLength
+rm Disease_Control_DarkApoHigh_TimeFactor
+rm Disease_Control_DarkApoHigh_ScootsProportion
+rm Disease_Control_DarkApoHigh_JBendsProportion
+rm Disease_Control_DarkApoHigh_CBendsProportion
+rm Disease_Control_DarkApoHigh_OBendsProportion
+rm Disease_Control_DarkApoHigh_EBendsProportion
+rm Disease_Control_DarkApoHigh_GBendsProportion
+rm Disease_Control_DarkApoHigh_HBendsProportion
+rm Disease_Control_DarkApoHigh_IBendsProportion
+
+cat *Control*_BoutLength > Disease_Control_DarkApoHigh_BoutLength
+cat *Control*_TimeFactor > Disease_Control_DarkApoHigh_TimeFactor
+cat *Control*_ScootsProportion > Disease_Control_DarkApoHigh_ScootsProportion
+cat *Control*_JBendsProportion > Disease_Control_DarkApoHigh_JBendsProportion
+cat *Control*_CBendsProportion > Disease_Control_DarkApoHigh_CBendsProportion
+cat *Control*_OBendsProportion > Disease_Control_DarkApoHigh_OBendsProportion
+cat *Control*_EBendsProportion > Disease_Control_DarkApoHigh_EBendsProportion
+cat *Control*_GBendsProportion > Disease_Control_DarkApoHigh_GBendsProportion
+cat *Control*_HBendsProportion > Disease_Control_DarkApoHigh_HBendsProportion
+cat *Control*_IBendsProportion > Disease_Control_DarkApoHigh_IBendsProportion
+cd ..
+
+cd DarkPTZ
+rm Disease_Control_DarkPTZ_BoutLength
+rm Disease_Control_DarkPTZ_TimeFactor
+rm Disease_Control_DarkPTZ_ScootsProportion
+rm Disease_Control_DarkPTZ_JBendsProportion
+rm Disease_Control_DarkPTZ_CBendsProportion
+rm Disease_Control_DarkPTZ_OBendsProportion
+rm Disease_Control_DarkPTZ_EBendsProportion
+rm Disease_Control_DarkPTZ_GBendsProportion
+rm Disease_Control_DarkPTZ_HBendsProportion
+rm Disease_Control_DarkPTZ_IBendsProportion
+
+cat *Control*_BoutLength > Disease_Control_DarkPTZ_BoutLength
+cat *Control*_TimeFactor > Disease_Control_DarkPTZ_TimeFactor
+cat *Control*_ScootsProportion > Disease_Control_DarkPTZ_ScootsProportion
+cat *Control*_JBendsProportion > Disease_Control_DarkPTZ_JBendsProportion
+cat *Control*_CBendsProportion > Disease_Control_DarkPTZ_CBendsProportion
+cat *Control*_OBendsProportion > Disease_Control_DarkPTZ_OBendsProportion
+cat *Control*_EBendsProportion > Disease_Control_DarkPTZ_EBendsProportion
+cat *Control*_GBendsProportion > Disease_Control_DarkPTZ_GBendsProportion
+cat *Control*_HBendsProportion > Disease_Control_DarkPTZ_HBendsProportion
+cat *Control*_IBendsProportion > Disease_Control_DarkPTZ_IBendsProportion
+cd ..

@@ -1,0 +1,122 @@
+#COMBINE ALL THE CONTROL SUBJECTS FROM DIFFERENT EXPERIMENTS
+
+
+#DarkApoLow
+cd DarkApoLow
+rm All*
+cat *_BoutCount_Normal > AllDarkApoLow_BoutCount_Normal
+cat *_SequenceLength_Normal > AllDarkApoLow_SequenceLength_Normal
+cat *_ScootsProportion_Normal > AllDarkApoLow_ScootsProportion_Normal
+cat *_JBendsProportion_Normal > AllDarkApoLow_JBendsProportion_Normal
+cat *_CBendsProportion_Normal > AllDarkApoLow_CBendsProportion_Normal
+cat *_OBendsProportion_Normal > AllDarkApoLow_OBendsProportion_Normal
+cat *_EBendsProportion_Normal > AllDarkApoLow_EBendsProportion_Normal
+cat *_GBendsProportion_Normal > AllDarkApoLow_GBendsProportion_Normal
+cat *_HBendsProportion_Normal > AllDarkApoLow_HBendsProportion_Normal
+cat *_IBendsProportion_Normal > AllDarkApoLow_IBendsProportion_Normal
+cat *_BoutCount_Outlier > AllDarkApoLow_BoutCount_Outlier
+cat *_SequenceLength_Outlier > AllDarkApoLow_SequenceLength_Outlier
+cat *_ScootsProportion_Outlier > AllDarkApoLow_ScootsProportion_Outlier
+cat *_JBendsProportion_Outlier > AllDarkApoLow_JBendsProportion_Outlier
+cat *_CBendsProportion_Outlier > AllDarkApoLow_CBendsProportion_Outlier
+cat *_OBendsProportion_Outlier > AllDarkApoLow_OBendsProportion_Outlier
+cat *_EBendsProportion_Outlier > AllDarkApoLow_EBendsProportion_Outlier
+cat *_GBendsProportion_Outlier > AllDarkApoLow_GBendsProportion_Outlier
+cat *_HBendsProportion_Outlier > AllDarkApoLow_HBendsProportion_Outlier
+cat *_IBendsProportion_Outlier > AllDarkApoLow_IBendsProportion_Outlier
+cat *_motif2_Normal > AllDarkApoLow_motif2_Normal
+cat *_motif3_Normal > AllDarkApoLow_motif3_Normal
+cat *_motif4_Normal > AllDarkApoLow_motif4_Normal
+cat *_motif5_Normal > AllDarkApoLow_motif5_Normal
+cat *_motif6_Normal > AllDarkApoLow_motif6_Normal
+cat *_motif7_Normal > AllDarkApoLow_motif7_Normal
+cat *_motif8_Normal > AllDarkApoLow_motif8_Normal
+cat *_motif9_Normal > AllDarkApoLow_motif9_Normal
+cat *_motif10_Normal > AllDarkApoLow_motif10_Normal
+cat *_motif2_Outlier > AllDarkApoLow_motif2_Outlier
+cat *_motif3_Outlier > AllDarkApoLow_motif3_Outlier
+cat *_motif4_Outlier > AllDarkApoLow_motif4_Outlier
+cat *_motif5_Outlier > AllDarkApoLow_motif5_Outlier
+cat *_motif6_Outlier > AllDarkApoLow_motif6_Outlier
+cat *_motif7_Outlier > AllDarkApoLow_motif7_Outlier
+cat *_motif8_Outlier > AllDarkApoLow_motif8_Outlier
+cat *_motif9_Outlier > AllDarkApoLow_motif9_Outlier
+cat *_motif10_Outlier > AllDarkApoLow_motif10_Outlier
+cat *_BoutCount_Unknown > AllDarkApoLow_BoutCount_Unknown
+cat *_SequenceLength_Unknown > AllDarkApoLow_SequenceLength_Unknown
+cat *_ScootsProportion_Unknown > AllDarkApoLow_ScootsProportion_Unknown
+cat *_JBendsProportion_Unknown > AllDarkApoLow_JBendsProportion_Unknown
+cat *_CBendsProportion_Unknown > AllDarkApoLow_CBendsProportion_Unknown
+cat *_OBendsProportion_Unknown > AllDarkApoLow_OBendsProportion_Unknown
+cat *_EBendsProportion_Unknown > AllDarkApoLow_EBendsProportion_Unknown
+cat *_GBendsProportion_Unknown > AllDarkApoLow_GBendsProportion_Unknown
+cat *_HBendsProportion_Unknown > AllDarkApoLow_HBendsProportion_Unknown
+cat *_IBendsProportion_Unknown > AllDarkApoLow_IBendsProportion_Unknown
+cd ..
+
+
+
+cat *_BoutCount_Unknown > AllDarkApoHigh_BoutCount_Unknown
+cat *_SequenceLength_Unknown > AllDarkApoHigh_SequenceLength_Unknown
+cat *_ScootsProportion_Unknown > AllDarkApoHigh_ScootsProportion_Unknown
+cat *_JBendsProportion_Unknown > AllDarkApoHigh_JBendsProportion_Unknown
+cat *_CBendsProportion_Unknown > AllDarkApoHigh_CBendsProportion_Unknown
+cat *_OBendsProportion_Unknown > AllDarkApoHigh_OBendsProportion_Unknown
+cat *_EBendsProportion_Unknown > AllDarkApoHigh_EBendsProportion_Unknown
+cat *_GBendsProportion_Unknown > AllDarkApoHigh_GBendsProportion_Unknown
+cat *_HBendsProportion_Unknown > AllDarkApoHigh_HBendsProportion_Unknown
+cat *_IBendsProportion_Unknown > AllDarkApoHigh_IBendsProportion_Unknown
+
+
+cat *_BoutCount_Unknown > AllDarkPTZ_BoutCount_Unknown
+cat *_SequenceLength_Unknown > AllDarkPTZ_SequenceLength_Unknown
+cat *_ScootsProportion_Unknown > AllDarkPTZ_ScootsProportion_Unknown
+cat *_JBendsProportion_Unknown > AllDarkPTZ_JBendsProportion_Unknown
+cat *_CBendsProportion_Unknown > AllDarkPTZ_CBendsProportion_Unknown
+cat *_OBendsProportion_Unknown > AllDarkPTZ_OBendsProportion_Unknown
+cat *_EBendsProportion_Unknown > AllDarkPTZ_EBendsProportion_Unknown
+cat *_GBendsProportion_Unknown > AllDarkPTZ_GBendsProportion_Unknown
+cat *_HBendsProportion_Unknown > AllDarkPTZ_HBendsProportion_Unknown
+cat *_IBendsProportion_Unknown > AllDarkPTZ_IBendsProportion_Unknown
+
+cat *_BoutCount_Unknown > AllDark_BoutCount_Unknown
+cat *_SequenceLength_Unknown > AllDark_SequenceLength_Unknown
+cat *_ScootsProportion_Unknown > AllDark_ScootsProportion_Unknown
+cat *_JBendsProportion_Unknown > AllDark_JBendsProportion_Unknown
+cat *_CBendsProportion_Unknown > AllDark_CBendsProportion_Unknown
+cat *_OBendsProportion_Unknown > AllDark_OBendsProportion_Unknown
+cat *_EBendsProportion_Unknown > AllDark_EBendsProportion_Unknown
+cat *_GBendsProportion_Unknown > AllDark_GBendsProportion_Unknown
+cat *_HBendsProportion_Unknown > AllDark_HBendsProportion_Unknown
+cat *_IBendsProportion_Unknown > AllDark_IBendsProportion_Unknown
+
+cat *_BoutCount_Unknown > AllLight_BoutCount_Unknown
+cat *_SequenceLength_Unknown > AllLight_SequenceLength_Unknown
+cat *_ScootsProportion_Unknown > AllLight_ScootsProportion_Unknown
+cat *_JBendsProportion_Unknown > AllLight_JBendsProportion_Unknown
+cat *_CBendsProportion_Unknown > AllLight_CBendsProportion_Unknown
+cat *_OBendsProportion_Unknown > AllLight_OBendsProportion_Unknown
+cat *_EBendsProportion_Unknown > AllLight_EBendsProportion_Unknown
+cat *_GBendsProportion_Unknown > AllLight_GBendsProportion_Unknown
+cat *_HBendsProportion_Unknown > AllLight_HBendsProportion_Unknown
+cat *_IBendsProportion_Unknown > AllLight_IBendsProportion_Unknown
+
+
+cat *_BoutCount_Unknown > AllLightDark_BoutCount_Unknown
+cat *_SequenceLength_Unknown > AllLightDark_SequenceLength_Unknown
+cat *_ScootsProportion_Unknown > AllLightDark_ScootsProportion_Unknown
+cat *_JBendsProportion_Unknown > AllLightDark_JBendsProportion_Unknown
+cat *_CBendsProportion_Unknown > AllLightDark_CBendsProportion_Unknown
+cat *_OBendsProportion_Unknown > AllLightDark_OBendsProportion_Unknown
+cat *_EBendsProportion_Unknown > AllLightDark_EBendsProportion_Unknown
+cat *_GBendsProportion_Unknown > AllLightDark_GBendsProportion_Unknown
+cat *_HBendsProportion_Unknown > AllLightDark_HBendsProportion_Unknown
+cat *_IBendsProportion_Unknown > AllLightDark_IBendsProportion_Unknown
+
+
+
+ls *DarkApoLow | grep -v Aripiprazole | grep -v Cariprazine | while read line ; do python ../../../code/outlier_analysis/remove_outliers.py $line ../../../results/output/outliers_exploration/${line}PredictedOutliers;done
+
+ls *DarkPTZ | while read line ; do python ../../../code/outlier_analysis/remove_outliers.py $line ../../../results/plots/outliers_exploration/DarkPTZ/${line}PredictedOutliers;done
+
+

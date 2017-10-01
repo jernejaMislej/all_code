@@ -1,0 +1,3615 @@
+#look at the distribution and the association and do spearmans rank correlation
+
+png("Results/environment_risk_score/variable_distributions/POLYsum1_distribution.png",width=2000, height=1000)
+hist(PUFAE)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_POLYsum1.png",width=2000, height=1000)
+plot(bmi~PUFAE,main=paste("spearman rank corr =",cor.test(bmi,PUFAE,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,PUFAE,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,PUFAE,method="spearman", exact=FALSE)
+# significant rho=0.0621343
+
+
+png("Results/environment_risk_score/variable_distributions/MONOsum1_distribution.png",width=2000, height=1000)
+hist(MUFAE)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_MONOsum1.png",width=2000, height=1000)
+plot(bmi~MUFAE,main=paste("spearman rank corr =",cor.test(bmi,MUFAE,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,MUFAE,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,MUFAE,method="spearman", exact=FALSE)
+# significant rho=0.080504
+
+
+
+png("Results/environment_risk_score/variable_distributions/mfetsum1_distribution.png",width=2000, height=1000)
+hist(SATFAT)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_mfetsum1.png",width=2000, height=1000)
+plot(bmi~SATFAT,main=paste("spearman rank corr =",cor.test(bmi,SATFAT,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,SATFAT,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,SATFAT,method="spearman", exact=FALSE)
+# significant rho=-0.01108597
+
+png("Results/environment_risk_score/variable_distributions/fettsum1_distribution.png",width=2000, height=1000)
+hist(TOTFAT)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_fettsum1.png",width=2000, height=1000)
+plot(bmi~TOTFAT,main=paste("spearman rank corr =",cor.test(bmi,TOTFAT,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,TOTFAT,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,TOTFAT,method="spearman", exact=FALSE)
+# significant rho=0.03746012
+
+
+#look at the distribution and the association and do spearmans rank correlation
+
+png("Results/environment_risk_score/variable_distributions/fibesum1_distribution.png",width=2000, height=1000)
+hist(fibesum1)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_fibesum1.png",width=2000, height=1000)
+plot(bmi~fibesum1,main=paste("spearman rank corr =",cor.test(bmi,fibesum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,fibesum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,fibesum1,method="spearman", exact=FALSE)
+# insignificant(p-value = 0.05462) rho=0.007723332
+
+
+
+
+png("Results/environment_risk_score/variable_distributions/acids_distribution.png",width=2000, height=1000)
+hist(FA)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_acids.png",width=2000, height=1000)
+plot(bmi~FA,main=paste("spearman rank corr =",cor.test(bmi,FA,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,FA,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,FA,method="spearman", exact=FALSE)
+# significant rho=0.04186043
+
+
+
+png("Results/environment_risk_score/variable_distributions/NATRsum1_distribution.png",width=2000, height=1000)
+hist(NATRsum1)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_NATRsum1.png",width=2000, height=1000)
+plot(bmi~NATRsum1,main=paste("spearman rank corr =",cor.test(bmi,NATRsum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,NATRsum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,NATRsum1,method="spearman", exact=FALSE)
+# significant rho=0.07778171
+
+
+
+png("Results/environment_risk_score/variable_distributions/kolhsum1_distribution.png",width=2000, height=1000)
+hist(CARBOHYDRATES)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_kolhsum1.png",width=2000, height=1000)
+plot(bmi~CARBOHYDRATES,main=paste("spearman rank corr =",cor.test(bmi,CARBOHYDRATES,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,CARBOHYDRATES,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,CARBOHYDRATES,method="spearman", exact=FALSE)
+# significant rho=-0.07445578
+
+
+
+png("Results/environment_risk_score/variable_distributions/sacksum1_distribution.png",width=2000, height=1000)
+hist(SUGAR)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_sacksum1.png",width=2000, height=1000)
+plot(bmi~SUGAR,main=paste("spearman rank corr =",cor.test(bmi,SUGAR,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,SUGAR,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,SUGAR,method="spearman", exact=FALSE)
+# significant rho=-0.1011804
+
+
+png("Results/environment_risk_score/variable_distributions/protsum1_distribution.png",width=2000, height=1000)
+hist(PROTEIN)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_protsum1.png",width=2000, height=1000)
+plot(bmi~PROTEIN,main=paste("spearman rank corr =",cor.test(bmi,PROTEIN,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,PROTEIN,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,PROTEIN,method="spearman", exact=FALSE)
+# significant rho=0.1104115
+
+#Dsum1(VitD)
+#VIP_data_subset$Dsum1_score<-0
+#look at the distribution and the association and do spearmans rank correlation
+
+png("Results/environment_risk_score/variable_distributions/Dsum1_distribution.png",width=2000, height=1000)
+hist(Dsum1)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_Dsum1.png",width=2000, height=1000)
+plot(bmi~Dsum1,main=paste("spearman rank corr =",cor.test(bmi,Dsum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,Dsum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,Dsum1,method="spearman", exact=FALSE)
+# significant rho=0.1098356
+
+#VIP_data_subset$Dsum1_score[(Dsum1 >= 10) & (Dsum1 <= 100) ]<-1
+
+#tokosum1(VitE)
+#VIP_data_subset$tokosum1_score<-0
+#look at the distribution and the association and do spearmans rank correlation
+
+png("Results/environment_risk_score/variable_distributions/tokosum1_distribution.png",width=2000, height=1000)
+hist(tokosum1)
+dev.off()
+png("Results/environment_risk_score/bmi_scatterplots/bmi_vs_tokosum1.png",width=2000, height=1000)
+plot(bmi~tokosum1,main=paste("spearman rank corr =",cor.test(bmi,tokosum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,tokosum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+cor.test(bmi,tokosum1,method="spearman", exact=FALSE)
+# significant rho=0.03490098
+
+#VIP_data_subset$tokosum1_score[(gender==1) & (tokosum1 >= 10) & (tokosum1<= 300)]<-1
+#VIP_data_subset$tokosum1_score[(gender==2) & (tokosum1 >= 8) & (tokosum1<= 300)]<-1
+
+#TIAMsum1
+#VIP_data_subset$TIAMsum1_score<-0
+#VIP_data_subset$TIAMsum1_score[(gender==1) & (TIAMsum1 >= 1.3)]<-1
+#VIP_data_subset$TIAMsum1_score[(gender==2) & (TIAMsum1 >= 1.1)]<-1
+
+#B2sum1
+#VIP_data_subset$B2sum1_score<-0
+#VIP_data_subset$B2sum1_score[(gender==1) & (B2sum1 >= 1.5)]<-1
+#VIP_data_subset$B2sum1_score[(gender==2) & (B2sum1 >= 1.2)]<-1
+
+#NIACsum1
+#VIP_data_subset$NIACsum1_score<-0
+#VIP_data_subset$NIACsum1_score[(gender==1) & (NIACsum1 >= 18) & (NIACsum1 <= 900)]<-1
+#VIP_data_subset$NIACsum1_score[(gender==2) & (NIACsum1 >= 14) & (NIACsum1 <= 900)]<-1
+
+#B6sum1
+#VIP_data_subset$B6sum1_score<-0
+#VIP_data_subset$B6sum1_score[(gender==1) & (B6sum1 >= 1.5) & (B6sum1 <= 25)]<-1
+#VIP_data_subset$B6sum1_score[(gender==2) & (B6sum1 >= 1.2) & (B6sum1 <= 25)]<-1
+
+#Folasum1
+#VIP_data_subset$Folasum1_score<-0
+#VIP_data_subset$Folasum1_score[(Folasum1 >= 300) & (Folasum1 <= 1000) ]<-1
+
+#B12sum1
+#VIP_data_subset$B12sum1_score<-0
+#VIP_data_subset$B12sum1_score[B12sum1 >= 2]<-1
+
+#askosum1(VitC)
+#VIP_data_subset$askosum1_score<-0
+#VIP_data_subset$askosum1_score[(askosum1 >= 75) & (askosum1 <= 1000) ]<-1
+
+#kalcsum1
+#VIP_data_subset$kalcsum1_score<-0
+#VIP_data_subset$kalcsum1_score[(kalcsum1 >= 800) & (kalcsum1 <= 2500) ]<-1
+
+#FOSFsum1
+#VIP_data_subset$kalcsum1_score<-0
+#VIP_data_subset$kalcsum1_score[(kalcsum1 >= 600) & (kalcsum1 <= 3000) ]<-1
+
+#KALIsum1
+#VIP_data_subset$KALIsum1_score<-0
+#VIP_data_subset$KALIsum1_score[(gender==1) & (KALIsum1 >= 3500) & (KALIsum1 <= 3700)]<-1
+#VIP_data_subset$KALIsum1_score[(gender==2) & (KALIsum1 >= 3100) & (KALIsum1 <= 3700)]<-1
+
+#MAGNsum1
+#VIP_data_subset$MAGNsum1_score<-0
+#VIP_data_subset$MAGNsum1_score[(gender==1) & (MAGNsum1 >= 350)]<-1
+#VIP_data_subset$MAGNsum1_score[(gender==2) & (MAGNsum1 >= 280)]<-1
+
+#jernsum1
+#VIP_data_subset$jernsum1_score<-0
+#VIP_data_subset$jernsum1_score[(jernsum1 >= 9) & (jernsum1 <= 25) ]<-1
+
+#ZINCsum1
+#VIP_data_subset$ZINCsum1_score<-0
+#VIP_data_subset$ZINCsum1_score[(gender==1) & (ZINCsum1 >= 9) & (ZINCsum1 <= 25)]<-1
+#VIP_data_subset$ZINCsum1_score[(gender==2) & (ZINCsum1 >= 7) & (ZINCsum1 <= 25)]<-1
+
+#JODIsum1
+#VIP_data_subset$JODIsum1_score<-0
+#VIP_data_subset$JODIsum1_score[(JODIsum1 >= 150) & (JODIsum1 <= 600) ]<-1
+
+#selesum1
+#VIP_data_subset$selesum1_score<-0
+#VIP_data_subset$selesum1_score[(gender==1) & (selesum1 >= 60) & (selesum1 <= 300)]<-1
+#VIP_data_subset$selesum1_score[(gender==2) & (selesum1 >= 50) & (selesum1 <= 300)]<-1
+
+
+#check other variables
+
+#discrete
+png("Results/environment_risk_score/other_variables/bmi_vs_utbild.png",width=2000, height=1000)
+boxplot(bmi~utbild)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g1a.png",width=2000, height=1000)
+boxplot(bmi~g1_a)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g1b.png",width=2000, height=1000)
+boxplot(bmi~g1_b)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g1c.png",width=2000, height=1000)
+boxplot(bmi~g1_c)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g1d.png",width=2000, height=1000)
+boxplot(bmi~g1_d)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g2a.png",width=2000, height=1000)
+boxplot(bmi~g2_a)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g2b.png",width=2000, height=1000)
+boxplot(bmi~g2_b)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g2c.png",width=2000, height=1000)
+boxplot(bmi~g2_c)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g2d.png",width=2000, height=1000)
+boxplot(bmi~g2_d)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g2e.png",width=2000, height=1000)
+boxplot(bmi~g2_e)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g3a.png",width=2000, height=1000)
+boxplot(bmi~g3_a)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g3b.png",width=2000, height=1000)
+boxplot(bmi~g3_b)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g3c.png",width=2000, height=1000)
+boxplot(bmi~g3_c)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g3d.png",width=2000, height=1000)
+boxplot(bmi~g3_d)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g3e.png",width=2000, height=1000)
+boxplot(bmi~g3_e)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g3f.png",width=2000, height=1000)
+boxplot(bmi~g3_f)
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g3g.png",width=2000, height=1000)
+boxplot(bmi~g3_g)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g4.png",width=2000, height=1000)
+boxplot(bmi~g4)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g5.png",width=2000, height=1000)
+boxplot(bmi~g5)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g6.png",width=2000, height=1000)
+boxplot(bmi~g6)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g7.png",width=2000, height=1000)
+boxplot(bmi~g7)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g8.png",width=2000, height=1000)
+boxplot(bmi~g8)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g9.png",width=2000, height=1000)
+boxplot(bmi~g9)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_g10.png",width=2000, height=1000)
+boxplot(bmi~g10)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_potport.png",width=2000, height=1000)
+boxplot(bmi~potport)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_kottport.png",width=2000, height=1000)
+boxplot(bmi~kottport)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_gronport.png",width=2000, height=1000)
+boxplot(bmi~gronport)
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_gronport.png",width=2000, height=1000)
+boxplot(bmi~gronport)
+dev.off()
+
+
+#continuous
+png("Results/environment_risk_score/other_variables/bmi_vs_g11ah.png",width=2000, height=1000)
+plot(bmi~g11a_h,main=paste("spearman rank corr =",cor.test(bmi,g11a_h,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,g11a_h,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_g11am.png",width=2000, height=1000)
+plot(bmi~g11a_m,main=paste("spearman rank corr =",cor.test(bmi,g11a_m,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,g11a_m,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+png("Results/environment_risk_score/other_variables/bmi_vs_ensum1.png",width=2000, height=1000)
+plot(bmi~ensum1,main=paste("spearman rank corr =",cor.test(bmi,ensum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,ensum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_protsum1.png",width=2000, height=1000)
+plot(bmi~protsum1,main=paste("spearman rank corr =",cor.test(bmi,protsum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,protsum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_protsum1_anim.png",width=2000, height=1000)
+plot(bmi~protsum1_anim,main=paste("spearman rank corr =",cor.test(bmi,protsum1_anim,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,protsum1_anim,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_protsum1_veg.png",width=2000, height=1000)
+plot(bmi~protsum1_veg,main=paste("spearman rank corr =",cor.test(bmi,protsum1_veg,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,protsum1_veg,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_FULLKsum1.png",width=2000, height=1000)
+plot(bmi~FULLKsum1,main=paste("spearman rank corr =",cor.test(bmi,FULLKsum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,FULLKsum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_alkosum1.png",width=2000, height=1000)
+plot(bmi~alkosum1,main=paste("spearman rank corr =",cor.test(bmi,alkosum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,alkosum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_TRANSsum1.png",width=2000, height=1000)
+plot(bmi~TRANSsum1,main=paste("spearman rank corr =",cor.test(bmi,TRANSsum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,TRANSsum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+png("Results/environment_risk_score/other_variables/bmi_vs_kolesum1.png",width=2000, height=1000)
+plot(bmi~kolesum1,main=paste("spearman rank corr =",cor.test(bmi,kolesum1,method="spearman", exact=FALSE)$estimate," with p-value ",cor.test(bmi,kolesum1,method="spearman", exact=FALSE)$p.value))
+dev.off()
+
+nutrients <- as.vector(c("PUFAE", "MUFAE", "SATFAT", "TOTFAT", "NATRsum1", "SUGAR", "CARBOHYDRATES", "PROTEIN", "TRANFAT", "FA", "B12sum1", "protsum1", "protsum1_anim", 
+				"NIACsum1", "ZINCsum1", "B6sum1", "TIAMsum1","B2sum1","tokosum1","askosum1","KALIsum1","jernsum1","MAGNsum1","kalcsum1","protsum1_veg","FULLKsum1"))
+
+
+all_variables<-cbind(age,agesq,gender,year,ffq,PUFAE, MUFAE, SATFAT, TOTFAT, NATRsum1, SUGAR, CARBOHYDRATES, PROTEIN, TRANFAT,
+		TRANFAT, FA, B12sum1, protsum1, protsum1_anim, NIACsum1, ZINCsum1, B6sum1, TIAMsum1,B2sum1,tokosum1,
+		askosum1,KALIsum1,jernsum1,MAGNsum1,kalcsum1,protsum1_veg,FULLKsum1)
+
+
+#VIP_data_subset$retisum1_score<-2
+#VIP_data_subset$retisum1_score[(gender==1) & (retisum1 >= 0.900) & (retisum1 <= 3.000)]<-1
+#VIP_data_subset$retisum1_score[(gender==2) & (retisum1 >= 0.700) & (retisum1 <= 3.000)]<-1
+#VIP_data_subset$retisum1_score[retisum1 > 3.000]<-0
+
+
+#normalize the diet score data, to be within 0 and 1
+#VIP_data_subset$normalized_diet_score_all<-(VIP_data_subset$diet_score_all)/max(VIP_data_subset$diet_score_all)
+VIP_data_subset$normalized_diet_score_macro_nutrient<-(VIP_data_subset$diet_score_macro_nutrient)/max(VIP_data_subset$diet_score_macro_nutrient)
+
+
+
+#variables used for obesity associated unhealthy environment
+
+attach(VIP_data)
+#get subject ids where any of the variables have na
+exclude_subject_id<-VIP_data[is.na(gender) | is.na(age) | is.na(g6) | is.na(enkver) | is.na(enkver2) | is.na(exclude) | is.na(ensum1) | 
+				is.na(protsum1) | is.na(kolhsum1) | is.na(sacksum1) | is.na(fibesum1) | is.na(alkosum1) | is.na(fettsum1) | is.na(mfetsum1) | 
+				is.na(MONOsum1) | is.na(POLYsum1) | is.na(FA182_sum1) | is.na(FA183_sum1) | is.na(FA204_sum1) | is.na(FA205_sum1) | is.na(FA226_sum1)
+				| is.na(MAGNsum1) | is.na(NATRsum1) | is.na(FOSFsum1) | is.na(selesum1) | is.na(ZINCsum1) | is.na(retisum1) | is.na(TIAMsum1) | 
+				is.na(Folasum1) | is.na(B2sum1) | is.na(NIACsum1) | is.na(B6sum1) | is.na(B12sum1) | is.na(askosum1) | is.na(Dsum1) | 
+				is.na(tokosum1) | is.na(jernsum1) | is.na(JODIsum1) | is.na(kalcsum1) | is.na(KALIsum1) | is.na(besok1) | is.na(efter_090901) 
+				| is.na(sm_status) | is.na(datum) | is.na(vikt) | is.na(bmi) | is.na(alkosum1),c("Subject_id")]
+
+#exclude those subjects, even if in the other visit all the values are there
+VIP_data_subset<-VIP_data[!(Subject_id %in% exclude_subject_id),]
+
+detach(VIP_data)
+
+
+
+#try making SALT and FA into tertiles
+#SALT
+SALT_tertiles_visit1<-quantile(SALT[!is.na(SALT) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+SALT_tertiles_visit2<-quantile(SALT[!is.na(SALT) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data$SALT_score[!is.na(SALT) & visit==1]<-0
+
+VIP_data$SALT_score[!is.na(SALT) & visit==1 & SALT>=SALT_tertiles_visit1[[1]] & SALT<SALT_tertiles_visit1[[2]]]<-1
+
+VIP_data$SALT_score[!is.na(SALT) & visit==1 & SALT>=SALT_tertiles_visit1[[2]]]<-2
+
+
+VIP_data$SALT_score[!is.na(SALT) & visit==2]<-0
+
+VIP_data$SALT_score[!is.na(SALT) & visit==2 & SALT>=SALT_tertiles_visit2[[1]] & SALT<SALT_tertiles_visit2[[2]] ]<-1
+
+VIP_data$SALT_score[!is.na(SALT) & visit==2 & SALT>=SALT_tertiles_visit2[[2]]]<-2
+
+#FA
+ACIDS_tertiles_visit1<-quantile(FA[!is.na(FA) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+ACIDS_tertiles_visit2<-quantile(FA[!is.na(FA) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data$ACIDS_score[!is.na(FA) & visit==1]<-0
+
+VIP_data$ACIDS_score[!is.na(FA) & visit==1 & FA>=ACIDS_tertiles_visit1[[1]] & FA<ACIDS_tertiles_visit1[[2]]]<-1
+
+VIP_data$ACIDS_score[!is.na(FA) & visit==1 & FA>=ACIDS_tertiles_visit1[[2]]]<-2
+
+
+VIP_data$ACIDS_score[!is.na(FA) & visit==2]<-0
+
+VIP_data$ACIDS_score[!is.na(FA) & visit==2 & FA>=ACIDS_tertiles_visit2[[1]] & FA<ACIDS_tertiles_visit2[[2]] ]<-1
+
+VIP_data$ACIDS_score[!is.na(FA) & visit==2 & FA>=ACIDS_tertiles_visit2[[2]]]<-2
+
+
+VIP_data$diet_score<-apply(VIP_data[,c(613,614,615,617,619,620,621,623,624)], 1, FUN=sum)
+
+
+
+
+VIP_data$travel_to_work[(g1_a==3 | g1_a==4) & !is.na(g1_a)]<-1
+VIP_data$travel_to_work[(g1_b==3 | g1_b==4) & !is.na(g1_b)]<-VIP_data$travel_to_work[(g1_b==3 | g1_b==4) & !is.na(g1_b)]+1
+VIP_data$travel_to_work[(g1_c==3 | g1_c==4) & !is.na(g1_c)]<-VIP_data$travel_to_work[(g1_c==3 | g1_c==4) & !is.na(g1_c)]+1
+VIP_data$travel_to_work[(g1_d==3 | g1_d==4) & !is.na(g1_d)]<-VIP_data$travel_to_work[(g1_d==3 | g1_d==4) & !is.na(g1_d)]+1
+
+#PA_frequency
+VIP_data$PA_frequency<-0
+VIP_data$PA_frequency[g6==3]<-1
+VIP_data$PA_frequency[g6==4 | g6==5]<-2
+
+
+#alcohol score
+VIP_data$ALKO_score<-0
+VIP_data$ALKO_score[(gender==1) & (alkosum1 < 20) ]<-1
+VIP_data$ALKO_score[(gender==2) & (alkosum1 < 10) ]<-1
+
+
+#smoking score
+#years from smoking stop
+time_from_sm_stop<-(age-sm_stop)
+VIP_data$SMOKING_score<-0
+VIP_data$SMOKING_score[(sm_status==3) | ((sm_status==2) & (!is.na(time_from_sm_stop)) & (time_from_sm_stop>=10)) |
+				((sm_status==5) & (!is.na(time_from_sm_stop)) & (time_from_sm_stop>=10))]<-1
+
+
+#final_environment_score, 1. with all diet score and 2. with only macro nutrients
+VIP_data$environment_score1<-apply(VIP_data[,c(640,642:644)], 1, FUN=sum)
+VIP_data$environment_score2<-apply(VIP_data[,c(641:644)], 1, FUN=sum)
+
+
+
+
+
+##baseline
+#VIP_data_baseline<-VIP_data[visit==1,]
+#detach(VIP_data)
+#attach(VIP_data_baseline)
+#
+##POLYsum1
+#PUFAE<-(100*9*POLYsum1)/ensum1
+#
+##MONOsum1
+#MUFAE<-(100*9*MONOsum1)/ensum1
+#
+##mfetsum1
+#SATFAT<-(100*9*mfetsum1)/ensum1
+#
+##fettsum1
+#TOTFAT<-(100*9*fettsum1)/ensum1
+#
+##acids
+#FA<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+#FA<-(100*9*FA)/ensum1
+#
+##kolhsum1
+#CARBOHYDRATES<-(100*4*kolhsum1)/ensum1
+#
+##sacksum1
+#SUGAR<-(100*4*sacksum1)/ensum1
+#
+##protsum1
+#PROTEIN<-(100*4*protsum1)/ensum1
+#
+##TRANSsum1
+#TRANFAT<-(100*9*TRANSsum1)/ensum1
+#
+##protsum1_anim
+#PROTEIN_ANIMAL<-(100*4*protsum1_anim)/ensum1
+#
+##kolesum1
+#CHOLESTEROL<-(100*4*kolesum1)/ensum1
+#
+##FULLKsum1
+#WHOLEGRAIN<-(100*4*FULLKsum1)/ensum1
+#
+##NATRsum1
+#SALT<-NATRsum1/1000
+#
+#
+#associations<-glm(log(bmi)~age + agesq + gender + year + ffq + PUFAE+ MUFAE + SATFAT + TOTFAT + SUGAR + CARBOHYDRATES + PROTEIN 
+#				+ TRANFAT + FA + PROTEIN_ANIMAL + CHOLESTEROL + WHOLEGRAIN + SALT, family = gaussian(link = "identity"))
+#
+##-------------------------------------------------------------------------------------------------------------------------------
+#
+##> summary(associations)
+##
+##Call:
+##		glm(formula = log(bmi) ~ age + agesq + gender + year + ffq + 
+##						PUFAE + MUFAE + SATFAT + TOTFAT + SUGAR + CARBOHYDRATES + 
+##						PROTEIN + TRANFAT + FA + PROTEIN_ANIMAL + CHOLESTEROL + WHOLEGRAIN + 
+##						SALT, family = gaussian(link = "identity"))
+##
+##Deviance Residuals: 
+##		Min        1Q    Median        3Q       Max  
+##-0.45529  -0.08976  -0.01186   0.07588   1.05180  
+##
+##Coefficients:
+##		Estimate Std. Error t value Pr(>|t|)    
+##		(Intercept)     6.951e-02  7.952e-01   0.087 0.930344    
+##		age            -5.259e-03  1.592e-03  -3.303 0.000956 ***
+##		agesq           8.766e-05  1.875e-05   4.676 2.94e-06 ***
+##		gender2        -4.372e-02  1.933e-03 -22.614  < 2e-16 ***
+##		year            1.455e-03  3.976e-04   3.661 0.000252 ***
+##		ffq1           -2.381e-03  2.885e-03  -0.825 0.409324    
+##		PUFAE           9.862e-03  2.155e-03   4.577 4.73e-06 ***
+##		MUFAE           1.612e-03  7.261e-04   2.220 0.026451 *  
+##		SATFAT         -8.117e-03  8.706e-04  -9.323  < 2e-16 ***
+##		TOTFAT          5.799e-03  7.876e-04   7.363 1.84e-13 ***
+##		SUGAR          -6.924e-04  4.021e-04  -1.722 0.085082 .  
+##		CARBOHYDRATES   2.860e-03  4.723e-04   6.056 1.41e-09 ***
+##		PROTEIN         5.166e-03  1.646e-03   3.139 0.001698 ** 
+##		TRANFAT        -9.193e-03  2.417e-03  -3.804 0.000143 ***
+##		FA             -1.233e-02  1.904e-03  -6.475 9.60e-11 ***
+##		PROTEIN_ANIMAL  4.363e-03  1.509e-03   2.892 0.003832 ** 
+##		CHOLESTEROL    -5.330e-01  1.406e-01  -3.793 0.000149 ***
+##		WHOLEGRAIN     -7.730e-04  1.355e-04  -5.707 1.16e-08 ***
+##		SALT            8.505e-03  1.215e-03   6.999 2.63e-12 ***
+##		---
+##		Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+##
+##(Dispersion parameter for gaussian family taken to be 0.01767671)
+##
+##Null deviance: 628.02  on 33160  degrees of freedom
+##Residual deviance: 585.84  on 33142  degrees of freedom
+##(1334 observations deleted due to missingness)
+##AIC: -39694
+##
+##Number of Fisher Scoring iterations: 2
+##
+##> 
+##		
+##-------------------------------------------------------------------------------------------------------------------------------
+#
+#
+##follow up
+#detach(VIP_data_baseline)
+#attach(VIP_data)
+#VIP_data_follow<-VIP_data[visit==2,]
+#detach(VIP_data)
+#attach(VIP_data_follow)
+#
+##POLYsum1
+#PUFAE<-(100*9*POLYsum1)/ensum1
+#
+##MONOsum1
+#MUFAE<-(100*9*MONOsum1)/ensum1
+#
+##mfetsum1
+#SATFAT<-(100*9*mfetsum1)/ensum1
+#
+##fettsum1
+#TOTFAT<-(100*9*fettsum1)/ensum1
+#
+##acids
+#FA<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+#FA<-(100*9*FA)/ensum1
+#
+##kolhsum1
+#CARBOHYDRATES<-(100*4*kolhsum1)/ensum1
+#
+##sacksum1
+#SUGAR<-(100*4*sacksum1)/ensum1
+#
+##protsum1
+#PROTEIN<-(100*4*protsum1)/ensum1
+#
+##TRANSsum1
+#TRANFAT<-(100*9*TRANSsum1)/ensum1
+#
+##protsum1_anim
+#PROTEIN_ANIMAL<-(100*4*protsum1_anim)/ensum1
+#
+##kolesum1
+#CHOLESTEROL<-(100*4*kolesum1)/ensum1
+#
+##FULLKsum1
+#WHOLEGRAIN<-(100*4*FULLKsum1)/ensum1
+#
+##NATRsum1
+#SALT<-NATRsum1/1000
+#
+#
+#associations<-glm(log(bmi)~age + agesq + gender + year + ffq + PUFAE+ MUFAE + SATFAT + TOTFAT + SUGAR + CARBOHYDRATES + PROTEIN 
+#				+ TRANFAT + FA + PROTEIN_ANIMAL + CHOLESTEROL + WHOLEGRAIN + SALT, family = gaussian(link = "identity"))
+#
+##-------------------------------------------------------------------------------------------------------------------------------
+##> summary(associations)
+##
+##Call:
+##		glm(formula = log(bmi) ~ age + agesq + gender + year + ffq + 
+##						PUFAE + MUFAE + SATFAT + TOTFAT + SUGAR + CARBOHYDRATES + 
+##						PROTEIN + TRANFAT + FA + PROTEIN_ANIMAL + CHOLESTEROL + WHOLEGRAIN + 
+##						SALT, family = gaussian(link = "identity"))
+##
+##Deviance Residuals: 
+##		Min        1Q    Median        3Q       Max  
+##-0.57579  -0.09590  -0.01131   0.08316   0.98868  
+##
+##Coefficients:
+##		Estimate Std. Error t value Pr(>|t|)    
+##		(Intercept)     1.897e+00  5.732e-01   3.309 0.000938 ***
+##		age             1.815e-03  1.830e-03   0.992 0.321311    
+##		agesq          -8.120e-06  1.779e-05  -0.456 0.648050    
+##		gender2        -3.560e-02  1.884e-03 -18.897  < 2e-16 ***
+##		year            3.797e-04  2.861e-04   1.327 0.184458    
+##		ffq1            1.859e-02  1.731e-02   1.074 0.282924    
+##		PUFAE           9.444e-03  2.470e-03   3.823 0.000132 ***
+##		MUFAE           3.307e-03  1.176e-03   2.812 0.004921 ** 
+##		SATFAT         -8.258e-03  1.055e-03  -7.829 5.07e-15 ***
+##		TOTFAT          8.315e-03  8.828e-04   9.419  < 2e-16 ***
+##		SUGAR          -3.103e-03  4.770e-04  -6.506 7.84e-11 ***
+##		CARBOHYDRATES   5.711e-03  4.309e-04  13.253  < 2e-16 ***
+##		PROTEIN         1.331e-04  1.594e-03   0.084 0.933436    
+##		TRANFAT        -1.320e-02  5.599e-03  -2.357 0.018418 *  
+##		FA             -1.351e-02  2.252e-03  -5.999 2.01e-09 ***
+##		PROTEIN_ANIMAL  1.009e-02  1.412e-03   7.145 9.19e-13 ***
+##		CHOLESTEROL    -3.940e-01  1.745e-01  -2.258 0.023962 *  
+##		WHOLEGRAIN     -9.997e-04  1.554e-04  -6.432 1.27e-10 ***
+##		SALT            1.306e-02  1.381e-03   9.456  < 2e-16 ***
+##		---
+##		Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+##
+##(Dispersion parameter for gaussian family taken to be 0.02066975)
+##
+##Null deviance: 737.47  on 33693  degrees of freedom
+##Residual deviance: 696.05  on 33675  degrees of freedom
+##(801 observations deleted due to missingness)
+##AIC: -35061
+##
+##Number of Fisher Scoring iterations: 2
+##
+##> 
+##-------------------------------------------------------------------------------------------------------------------------------
+#
+#
+#detach(VIP_data_follow)
+#attach(VIP_data)
+
+
+#visit 1
+diet_score2_visit1_tenths<-quantile(diet_score2[!is.na(diet_score2) & visit==1], prob = c(seq(0.1, 1, 0.1)),na.rm=TRUE)
+
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2<diet_score2_visit1_tenths[[1]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[1]] & diet_score2<diet_score2_visit1_tenths[[2]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[2]] & diet_score2<diet_score2_visit1_tenths[[3]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[3]] & diet_score2<diet_score2_visit1_tenths[[4]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[4]] & diet_score2<diet_score2_visit1_tenths[[5]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[5]] & diet_score2<diet_score2_visit1_tenths[[6]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[6]] & diet_score2<diet_score2_visit1_tenths[[7]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[7]] & diet_score2<diet_score2_visit1_tenths[[8]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[8]] & diet_score2<diet_score2_visit1_tenths[[9]]])
+length(diet_score2[!is.na(diet_score2) & visit==1 & diet_score2>=diet_score2_visit1_tenths[[9]]])
+
+#visit 2
+diet_score2_visit2_tenths<-quantile(diet_score2[!is.na(diet_score2) & visit==2], prob = c(seq(0.1, 1, 0.1)),na.rm=TRUE)
+
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2<diet_score2_visit2_tenths[[1]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[1]] & diet_score2<diet_score2_visit2_tenths[[2]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[2]] & diet_score2<diet_score2_visit2_tenths[[3]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[3]] & diet_score2<diet_score2_visit2_tenths[[4]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[4]] & diet_score2<diet_score2_visit2_tenths[[5]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[5]] & diet_score2<diet_score2_visit2_tenths[[6]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[6]] & diet_score2<diet_score2_visit2_tenths[[7]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[7]] & diet_score2<diet_score2_visit2_tenths[[8]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[8]] & diet_score2<diet_score2_visit2_tenths[[9]]])
+length(diet_score2[!is.na(diet_score2) & visit==2 & diet_score2>=diet_score2_visit2_tenths[[9]]])
+
+#bmi
+for (diet_category in 5:21){
+	#message(length(bmi[!is.na(diet_score2) & visit==1 & diet_score2==diet_category & !is.na(bmi) & bmi<18.5]))
+	message(length(bmi[!is.na(diet_score2) & visit==1 & diet_score2==diet_category & !is.na(bmi) & bmi>=18.5 & bmi<25]))
+	#message(length(bmi[!is.na(diet_score2) & visit==1 & diet_score2==diet_category & !is.na(bmi) & bmi>=25 & bmi<30]))
+	#message(length(bmi[!is.na(diet_score2) & visit==1 & diet_score2==diet_category & !is.na(bmi) & bmi>=30]))
+}
+#bmi
+for (diet_category in 5:21){
+	message(length(bmi[!is.na(diet_score2) & visit==2 & diet_score2==diet_category & !is.na(bmi) & bmi<18.5]))
+	#message(length(bmi[!is.na(diet_score2) & visit==2 & diet_score2==diet_category & !is.na(bmi) & bmi>=18.5 & bmi<25]))
+	#message(length(bmi[!is.na(diet_score2) & visit==2 & diet_score2==diet_category & !is.na(bmi) & bmi>=25 & bmi<30]))
+	#message(length(bmi[!is.na(diet_score2) & visit==2 & diet_score2==diet_category & !is.na(bmi) & bmi>=30]))
+}
+
+VIP_data_subset$diet_score2_PA<-diet_score2+(-1*min(diet_score2[!is.na(diet_score2)]))
+(max(VIP_data_subset$diet_score2_PA[!is.na(VIP_data_subset$diet_score2_PA)])/max(PA_score_sd_norm[!is.na(PA_score_sd_norm)]))
+
+
+
+
+#associations<-glm(bmi_log_sd_norm~age + agesq + gender_factor + year + ffq_factor +PUFAE + MUFAE + SATFAT + TOTFAT + SUGAR + CARBOHYDRATES 
+#				+ TRANFAT + FA + PROTEIN_ANIMAL + CHOLESTEROL + WHOLEGRAIN + SALT, family = gaussian(link = "identity"))
+
+#run regression with bmi not log trandformed and standardized and include only those that have clear recommendation cut points
+
+
+#check variation explained for each, but adjusting for the others
+
+#all_variables<-c("PUFAE","MUFAE","SATFAT","TOTFAT","SUGAR","CARBOHYDRATES","TRANFAT","FA","PROTEIN_ANIMAL","CHOLESTEROL","WHOLEGRAIN","SALT")
+#
+#variable_count<-1
+#for (variable in all_variables){
+#	
+#	partial_corr<-pcor.test(bmi_log_sd_norm[(!is.na(bmi_log_sd_norm) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_log_sd_norm) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+#			VIP_data_independant[(!is.na(bmi_log_sd_norm) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+#	message(variable)
+#	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+#	message(partial_corr[[2]])
+#
+#	variable_count<-variable_count+1
+#	
+#}
+
+
+#log transformed bmi
+#VIP_data_independant$bmi_log[!is.na(bmi)]<-log(bmi[!is.na(bmi)])
+#detach(VIP_data_independant)
+#attach(VIP_data_independant)
+#VIP_data_independant$bmi_log_sd_norm[!is.na(bmi_log_sd_norm)]<-(bmi_log_sd_norm[!is.na(bmi_log_sd_norm)]-mean(bmi_log_sd_norm[!is.na(bmi_log_sd_norm)]))/sd(bmi_log_sd_norm[!is.na(bmi_log_sd_norm)])
+
+#VIP_data_independant$age<-(age-mean(age))/sd(age) #dont standardize the age and year and agesq
+
+#VIP_data_independant$year_sd_norm<-(year-mean(year))/sd(year)
+
+
+#detach(VIP_data_independant)
+#attach(VIP_data_independant)
+#VIP_data_independant$agesq<-(VIP_data_independant$agesq-mean(VIP_data_independant$agesq))/sd(VIP_data_independant$agesq)
+
+#TRANSsum1
+#VIP_data_independant$TRANFAT<-(100*9*TRANSsum1)/ensum1
+#VIP_data_independant$TRANFAT[!is.na(ensum1)]<-(VIP_data_independant$TRANFAT[!is.na(ensum1)]-mean(VIP_data_independant$TRANFAT[!is.na(ensum1)]))/sd(VIP_data_independant$TRANFAT[!is.na(ensum1)])
+
+#protsum1_anim
+#VIP_data_independant$PROTEIN_ANIMAL<-(100*4*protsum1_anim)/ensum1
+#VIP_data_independant$PROTEIN_ANIMAL[!is.na(ensum1)]<-(VIP_data_independant$PROTEIN_ANIMAL[!is.na(ensum1)]-mean(VIP_data_independant$PROTEIN_ANIMAL[!is.na(ensum1)]))/sd(VIP_data_independant$PROTEIN_ANIMAL[!is.na(ensum1)])
+
+#kolesum1
+#VIP_data_independant$CHOLESTEROL<-(100*4*kolesum1)/ensum1
+#VIP_data_independant$CHOLESTEROL[!is.na(ensum1)]<-(VIP_data_independant$CHOLESTEROL[!is.na(ensum1)]-mean(VIP_data_independant$CHOLESTEROL[!is.na(ensum1)]))/sd(VIP_data_independant$CHOLESTEROL[!is.na(ensum1)])
+
+#FULLKsum1
+#VIP_data_independant$WHOLEGRAIN<-(100*4*FULLKsum1)/ensum1
+#VIP_data_independant$WHOLEGRAIN[!is.na(ensum1)]<-(VIP_data_independant$WHOLEGRAIN[!is.na(ensum1)]-mean(VIP_data_independant$WHOLEGRAIN[!is.na(ensum1)]))/sd(VIP_data_independant$WHOLEGRAIN[!is.na(ensum1)])
+
+
+
+
+#standard normal log transformed bmi
+VIP_data_subset$bmi_log_sd_norm[!is.na(bmi)]<-log(bmi[!is.na(bmi)])
+detach(VIP_data_subset)
+attach(VIP_data_subset)
+VIP_data_subset$bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==1]<-(bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==1]-
+			mean(bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==1]))/sd(bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==1])
+VIP_data_subset$bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==2]<-(bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==2]-
+			mean(bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==2]))/sd(bmi_log_sd_norm[!is.na(bmi_log_sd_norm) & visit==2])
+VIP_data_subset$age_sd_norm[visit==1]<-(age[visit==1]-mean(age[visit==1]))/sd(age[visit==1])
+VIP_data_subset$age_sd_norm[visit==2]<-(age[visit==2]-mean(age[visit==2]))/sd(age[visit==2])
+
+VIP_data_subset$year_sd_norm[visit==1]<-(year[visit==1]-mean(year[visit==1]))/sd(year[visit==1])
+VIP_data_subset$year_sd_norm[visit==2]<-(year[visit==2]-mean(year[visit==2]))/sd(year[visit==2])
+
+detach(VIP_data_subset)
+attach(VIP_data_subset)
+			
+			
+			VIP_data_subset$agesq_sd_norm[visit==1]<-(VIP_data_subset$agesq[visit==1]-mean(VIP_data_subset$agesq[visit==1]))/sd(VIP_data_subset$agesq[visit==1])
+VIP_data_subset$agesq_sd_norm[visit==2]<-(VIP_data_subset$agesq[visit==2]-mean(VIP_data_subset$agesq[visit==2]))/sd(VIP_data_subset$agesq[visit==2])
+			
+			
+			#POLYsum1
+VIP_data_subset$PUFAE<-(100*9*POLYsum1)/ensum1
+VIP_data_subset$PUFAE_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$PUFAE[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$PUFAE[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$PUFAE[!is.na(ensum1) & visit==1])
+VIP_data_subset$PUFAE_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$PUFAE[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$PUFAE[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$PUFAE[!is.na(ensum1) & visit==2])
+
+#MONOsum1
+VIP_data_subset$MUFAE<-(100*9*MONOsum1)/ensum1
+VIP_data_subset$MUFAE_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$MUFAE[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$MUFAE[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$MUFAE[!is.na(ensum1) & visit==1])
+VIP_data_subset$MUFAE_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$MUFAE[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$MUFAE[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$MUFAE[!is.na(ensum1) & visit==2])
+
+#mfetsum1
+VIP_data_subset$SATFAT<-(100*9*mfetsum1)/ensum1
+VIP_data_subset$SATFAT_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$SATFAT[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$SATFAT[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$SATFAT[!is.na(ensum1) & visit==1])
+VIP_data_subset$SATFAT_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$SATFAT[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$SATFAT[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$SATFAT[!is.na(ensum1) & visit==2])
+
+#fettsum1
+VIP_data_subset$TOTFAT<-(100*9*fettsum1)/ensum1
+VIP_data_subset$TOTFAT_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$TOTFAT[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$TOTFAT[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$TOTFAT[!is.na(ensum1) & visit==1])
+VIP_data_subset$TOTFAT_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$TOTFAT[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$TOTFAT[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$TOTFAT[!is.na(ensum1) & visit==2])
+
+#acids
+VIP_data_subset$FA<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+VIP_data_subset$FA<-(100*9*VIP_data_subset$FA)/ensum1
+VIP_data_subset$FA_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$FA[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$FA[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$FA[!is.na(ensum1) & visit==1])
+VIP_data_subset$FA_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$FA[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$FA[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$FA[!is.na(ensum1) & visit==2])
+
+#kolhsum1
+VIP_data_subset$CARBOHYDRATES<-(100*4*kolhsum1)/ensum1
+VIP_data_subset$CARBOHYDRATES_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$CARBOHYDRATES[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$CARBOHYDRATES[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$CARBOHYDRATES[!is.na(ensum1) & visit==1])
+VIP_data_subset$CARBOHYDRATES_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$CARBOHYDRATES[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$CARBOHYDRATES[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$CARBOHYDRATES[!is.na(ensum1) & visit==2])
+
+#sacksum1
+VIP_data_subset$SUGAR<-(100*4*sacksum1)/ensum1
+VIP_data_subset$SUGAR_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$SUGAR[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$SUGAR[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$SUGAR[!is.na(ensum1) & visit==1])
+VIP_data_subset$SUGAR_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$SUGAR[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$SUGAR[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$SUGAR[!is.na(ensum1) & visit==2])
+
+#protsum1
+VIP_data_subset$PROTEIN<-(100*4*protsum1)/ensum1
+VIP_data_subset$PROTEIN_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$PROTEIN[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$PROTEIN[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$PROTEIN[!is.na(ensum1) & visit==1])
+VIP_data_subset$PROTEIN_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$PROTEIN[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$PROTEIN[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$PROTEIN[!is.na(ensum1) & visit==2])
+
+#TRANSsum1
+VIP_data_subset$TRANFAT<-(100*9*TRANSsum1)/ensum1
+VIP_data_subset$TRANFAT_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$TRANFAT[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$TRANFAT[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$TRANFAT[!is.na(ensum1) & visit==1])
+VIP_data_subset$TRANFAT_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$TRANFAT[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$TRANFAT[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$TRANFAT[!is.na(ensum1) & visit==2])
+
+#protsum1_anim
+VIP_data_subset$PROTEIN_ANIMAL<-(100*4*protsum1_anim)/ensum1
+VIP_data_subset$PROTEIN_ANIMAL_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$PROTEIN_ANIMAL[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$PROTEIN_ANIMAL[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$PROTEIN_ANIMAL[!is.na(ensum1) & visit==1])
+VIP_data_subset$PROTEIN_ANIMAL_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$PROTEIN_ANIMAL[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$PROTEIN_ANIMAL[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$PROTEIN_ANIMAL[!is.na(ensum1) & visit==2])
+
+#kolesum1
+VIP_data_subset$CHOLESTEROL<-(100*4*kolesum1)/ensum1
+VIP_data_subset$CHOLESTEROL_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$CHOLESTEROL[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$CHOLESTEROL[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$CHOLESTEROL[!is.na(ensum1) & visit==1])
+VIP_data_subset$CHOLESTEROL_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$CHOLESTEROL[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$CHOLESTEROL[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$CHOLESTEROL[!is.na(ensum1) & visit==2])
+
+#FULLKsum1
+VIP_data_subset$WHOLEGRAIN<-(100*4*FULLKsum1)/ensum1
+VIP_data_subset$WHOLEGRAIN_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$WHOLEGRAIN[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$WHOLEGRAIN[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$WHOLEGRAIN[!is.na(ensum1) & visit==1])
+VIP_data_subset$WHOLEGRAIN_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$WHOLEGRAIN[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$WHOLEGRAIN[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$WHOLEGRAIN[!is.na(ensum1) & visit==2])
+
+#NATRsum1
+VIP_data_subset$SALT<-NATRsum1/1000
+VIP_data_subset$SALT_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$SALT[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$SALT[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$SALT[!is.na(ensum1) & visit==1])
+VIP_data_subset$SALT_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$SALT[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$SALT[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$SALT[!is.na(ensum1) & visit==2])
+
+detach(VIP_data_subset)
+attach(VIP_data_subset)
+
+#----------------------------------------------VISIT==1------------------------------------------------------------------
+
+#run multiple regression for all the components
+associations<-glm(bmi_log_sd_norm[visit==1]~age_sd_norm[visit==1] + agesq_sd_norm[visit==1] + gender_factor[visit==1] + year_sd_norm[visit==1] + ffq_factor[visit==1] + PUFAE_sd_norm[visit==1] + 
+				MUFAE_sd_norm[visit==1] + SATFAT_sd_norm[visit==1] + TOTFAT_sd_norm[visit==1] + SUGAR_sd_norm[visit==1] + CARBOHYDRATES_sd_norm[visit==1] + TRANFAT_sd_norm[visit==1] + 
+				FA_sd_norm[visit==1] + PROTEIN_ANIMAL_sd_norm[visit==1] + CHOLESTEROL_sd_norm[visit==1]+ WHOLEGRAIN_sd_norm[visit==1] + SALT_sd_norm[visit==1], family = gaussian(link = "identity"))
+
+summary(associations)
+
+#protein is  insignificant, since animal protein contains most of the variation
+
+#check variation explained for each, but adjusting for the others
+
+all_variables<-c("PUFAE_sd_norm","MUFAE_sd_norm","SATFAT_sd_norm","TOTFAT_sd_norm","SUGAR_sd_norm","CARBOHYDRATES_sd_norm","TRANFAT_sd_norm","FA_sd_norm","PROTEIN_ANIMAL_sd_norm",
+		"CHOLESTEROL_sd_norm","WHOLEGRAIN_sd_norm","SALT_sd_norm")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_log_sd_norm[(visit==1 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)]))],VIP_data_subset[(visit==1 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c(variable)],
+			VIP_data_subset[(visit==1 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c("age_sd_norm","agesq_sd_norm","year_sd_norm","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+#----------------------------------------------VISIT==1------------------------------------------------------------------
+
+#----------------------------------------------VISIT==2------------------------------------------------------------------
+
+#run multiple regression for all the components
+associations<-glm(bmi_log_sd_norm[visit==2]~age_sd_norm[visit==2] + agesq_sd_norm[visit==2] + gender_factor[visit==2] + year_sd_norm[visit==2] + ffq_factor[visit==2] + PUFAE_sd_norm[visit==2] + 
+				MUFAE_sd_norm[visit==2] + SATFAT_sd_norm[visit==2] + TOTFAT_sd_norm[visit==2] + SUGAR_sd_norm[visit==2] + CARBOHYDRATES_sd_norm[visit==2] + TRANFAT_sd_norm[visit==2] + 
+				FA_sd_norm[visit==2] + PROTEIN_ANIMAL_sd_norm[visit==2] + CHOLESTEROL_sd_norm[visit==2]+ WHOLEGRAIN_sd_norm[visit==2] + SALT_sd_norm[visit==2], family = gaussian(link = "identity"))
+
+summary(associations)
+
+#check variation explained for each, but adjusting for the others
+
+all_variables<-c("PUFAE_sd_norm","MUFAE_sd_norm","SATFAT_sd_norm","TOTFAT_sd_norm","SUGAR_sd_norm","CARBOHYDRATES_sd_norm","TRANFAT_sd_norm","FA_sd_norm","PROTEIN_ANIMAL_sd_norm",
+		"CHOLESTEROL_sd_norm","WHOLEGRAIN_sd_norm","SALT_sd_norm")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_log_sd_norm[(visit==2 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)]))],VIP_data_subset[(visit==2 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c(variable)],
+			VIP_data_subset[(visit==2 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c("age_sd_norm","agesq_sd_norm","year_sd_norm","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+#rank each subject whitin the variable distribution, rank the opposite for beneficial variables, like acids, fiber etc.
+
+#bmi
+#VIP_data_independant$bmi_rank[!is.na(bmi)]<-order(bmi[!is.na(bmi)])
+
+#ensum1
+VIP_data_independant$ensum1_rank[!is.na(ensum1)]<-order(ensum1[!is.na(ensum1)])
+
+#protsum1
+VIP_data_independant$protsum1_rank[!is.na(protsum1)]<-order(protsum1[!is.na(protsum1)])
+
+#kolhsum1
+VIP_data_independant$kolhsum1_rank[!is.na(kolhsum1)]<-order(kolhsum1[!is.na(kolhsum1)])
+
+#sacksum1
+VIP_data_independant$sacksum1_rank[!is.na(sacksum1)]<-order(sacksum1[!is.na(sacksum1)])
+
+#DISAsum1
+VIP_data_independant$DISAsum1_rank[!is.na(DISAsum1)]<-order(DISAsum1[!is.na(DISAsum1)])
+
+#MOSAsum1
+VIP_data_independant$MOSAsum1_rank[!is.na(MOSAsum1)]<-order(MOSAsum1[!is.na(MOSAsum1)])
+
+#fibesum1
+VIP_data_independant$fibesum1_rank[!is.na(fibesum1)]<-order(-fibesum1[!is.na(fibesum1)])
+
+#FULLKsum1
+VIP_data_independant$FULLKsum1_rank[!is.na(FULLKsum1)]<-order(-FULLKsum1[!is.na(FULLKsum1)])
+
+#alkosum1
+VIP_data_independant$alkosum1_rank[!is.na(alkosum1)]<-order(alkosum1[!is.na(alkosum1)])
+
+#fettsum1
+VIP_data_independant$fettsum1_rank[!is.na(fettsum1)]<-order(fettsum1[!is.na(fettsum1)])
+
+#mfetsum1
+VIP_data_independant$mfetsum1_rank[!is.na(mfetsum1)]<-order(mfetsum1[!is.na(mfetsum1)])
+
+#MONOsum1
+VIP_data_independant$MONOsum1_rank[!is.na(MONOsum1)]<-order(MONOsum1[!is.na(MONOsum1)])
+
+#POLYsum1
+VIP_data_independant$POLYsum1_rank[!is.na(POLYsum1)]<-order(POLYsum1[!is.na(POLYsum1)])
+
+#TRANSsum1
+VIP_data_independant$TRANSsum1_rank[!is.na(TRANSsum1)]<-order(TRANSsum1[!is.na(TRANSsum1)])
+
+#kolesum1
+VIP_data_independant$kolesum1_rank[!is.na(kolesum1)]<-order(kolesum1[!is.na(kolesum1)])
+
+#acids
+VIP_data_independant$acids<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+VIP_data_independant$acids_rank[!is.na(VIP_data_independant$acids)]<-order(-VIP_data_independant$acids[!is.na(VIP_data_independant$acids)])
+
+#NATRsum1
+VIP_data_independant$NATRsum1_rank[!is.na(NATRsum1)]<-order(NATRsum1[!is.na(NATRsum1)])
+
+detach(VIP_data_independant)
+attach(VIP_data_independant)
+
+#check the effect sizes for fitting all together or separetly
+
+associations<-glm(bmi~age + agesq + gender_factor + year + ffq_factor + ensum1_rank + protsum1_rank + kolhsum1_rank + sacksum1_rank + DISAsum1_rank + MOSAsum1_rank + fibesum1_rank
+	+ FULLKsum1_rank + alkosum1_rank + fettsum1_rank + MONOsum1_rank + POLYsum1_rank + TRANSsum1_rank + kolesum1_rank + acids_rank + NATRsum1_rank, family = gaussian(link = "identity"))
+
+summary(associations)
+
+
+all_variables<-c("ensum1_rank","protsum1_rank","kolhsum1_rank","sacksum1_rank","DISAsum1_rank","MOSAsum1_rank","fibesum1_rank","FULLKsum1_rank","alkosum1_rank","fettsum1_rank",
+"MONOsum1_rank","POLYsum1_rank","TRANSsum1_rank","kolesum1_rank","acids_rank","NATRsum1_rank")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+		
+		
+		
+#look at the raw variables, logged and standardized
+
+#ensum1
+VIP_data_independant$ensum1_std[!is.na(ensum1)]<-(log(ensum1[!is.na(ensum1)])-mean(log(ensum1[!is.na(ensum1)])))/sd(log(ensum1[!is.na(ensum1)]))
+
+#protsum1
+VIP_data_independant$protsum1_std[!is.na(protsum1)]<-(log(protsum1[!is.na(protsum1)])-mean(log(protsum1[!is.na(protsum1)])))/sd(log(protsum1[!is.na(protsum1)]))
+
+#kolhsum1
+VIP_data_independant$kolhsum1_std[!is.na(kolhsum1)]<-(log(kolhsum1[!is.na(kolhsum1)])-mean(log(kolhsum1[!is.na(kolhsum1)])))/sd(log(kolhsum1[!is.na(kolhsum1)]))
+
+#sacksum1
+VIP_data_independant$sacksum1_std[!is.na(sacksum1)]<-(log(sacksum1[!is.na(sacksum1)])-mean(log(sacksum1[!is.na(sacksum1)])))/sd(log(sacksum1[!is.na(sacksum1)]))
+
+#DISAsum1
+VIP_data_independant$DISAsum1_std[!is.na(DISAsum1)]<-(log(DISAsum1[!is.na(DISAsum1)])-mean(log(DISAsum1[!is.na(DISAsum1)])))/sd(log(DISAsum1[!is.na(DISAsum1)]))
+
+#MOSAsum1
+VIP_data_independant$MOSAsum1_std[!is.na(MOSAsum1)]<-(log(MOSAsum1[!is.na(MOSAsum1)])-mean(log(MOSAsum1[!is.na(MOSAsum1)])))/sd(log(MOSAsum1[!is.na(MOSAsum1)]))
+
+#fibesum1
+VIP_data_independant$fibesum1_std[!is.na(fibesum1)]<-(log(fibesum1[!is.na(fibesum1)])-mean(log(fibesum1[!is.na(fibesum1)])))/sd(log(fibesum1[!is.na(fibesum1)]))
+
+#FULLKsum1
+VIP_data_independant$FULLKsum1<-FULLKsum1+0.000001
+VIP_data_independant$FULLKsum1_std[!is.na(FULLKsum1)]<-(log(FULLKsum1[!is.na(FULLKsum1)])-mean(log(FULLKsum1[!is.na(FULLKsum1)])))/sd(log(FULLKsum1[!is.na(FULLKsum1)]))
+
+#alkosum1
+VIP_data_independant$alkosum1<-alkosum1+0.000001
+VIP_data_independant$alkosum1_std[!is.na(alkosum1)]<-(log(alkosum1[!is.na(alkosum1)])-mean(log(alkosum1[!is.na(alkosum1)])))/sd(log(alkosum1[!is.na(alkosum1)]))
+
+#fettsum1
+VIP_data_independant$fettsum1_std[!is.na(fettsum1)]<-(log(fettsum1[!is.na(fettsum1)])-mean(log(fettsum1[!is.na(fettsum1)])))/sd(log(fettsum1[!is.na(fettsum1)]))
+
+#mfetsum1
+VIP_data_independant$mfetsum1_std[!is.na(mfetsum1)]<-(log(mfetsum1[!is.na(mfetsum1)])-mean(log(mfetsum1[!is.na(mfetsum1)])))/sd(log(mfetsum1[!is.na(mfetsum1)]))
+
+#MONOsum1
+VIP_data_independant$MONOsum1_std[!is.na(MONOsum1)]<-(log(MONOsum1[!is.na(MONOsum1)])-mean(log(MONOsum1[!is.na(MONOsum1)])))/sd(log(MONOsum1[!is.na(MONOsum1)]))
+
+#POLYsum1
+VIP_data_independant$POLYsum1_std[!is.na(POLYsum1)]<-(log(POLYsum1[!is.na(POLYsum1)])-mean(log(POLYsum1[!is.na(POLYsum1)])))/sd(log(POLYsum1[!is.na(POLYsum1)]))
+
+#TRANSsum1
+VIP_data_independant$TRANSsum1_std[!is.na(TRANSsum1)]<-(log(TRANSsum1[!is.na(TRANSsum1)])-mean(log(TRANSsum1[!is.na(TRANSsum1)])))/sd(log(TRANSsum1[!is.na(TRANSsum1)]))
+
+#kolesum1
+VIP_data_independant$kolesum1_std[!is.na(kolesum1)]<-(log(kolesum1[!is.na(kolesum1)])-mean(log(kolesum1[!is.na(kolesum1)])))/sd(log(kolesum1[!is.na(kolesum1)]))
+
+#acids
+VIP_data_independant$acids<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+VIP_data_independant$acids_std[!is.na(VIP_data_independant$acids)]<-(log(VIP_data_independant$acids[!is.na(VIP_data_independant$acids)])-mean(log(VIP_data_independant$acids[!is.na(VIP_data_independant$acids)])))/sd(log(VIP_data_independant$acids[!is.na(VIP_data_independant$acids)]))
+
+#NATRsum1
+VIP_data_independant$NATRsum1_std[!is.na(NATRsum1)]<-(log(NATRsum1[!is.na(NATRsum1)])-mean(log(NATRsum1[!is.na(NATRsum1)])))/sd(log(NATRsum1[!is.na(NATRsum1)]))
+
+detach(VIP_data_independant)
+attach(VIP_data_independant)
+
+#ensum1
+VIP_data_independant$ensum1_std_ctg[!is.na(ensum1_std) & ensum1_std < -1] <-0
+VIP_data_independant$ensum1_std_ctg[!is.na(ensum1_std) & ensum1_std >= -1 & ensum1_std < 0] <-1
+VIP_data_independant$ensum1_std_ctg[!is.na(ensum1_std) & ensum1_std) & ensum1_std >= 1] <-3
+
+#protsum1
+VIP_data_independant$protsum1_std_ctg[!is.na(protsum1_std) & protsum1_std < -1] <-0
+VIP_data_independant$protsum1_std_ctg[!is.na(protsum1_std) & protsum1_std >= -1 & protsum1_std < 0] <-1
+VIP_data_independant$protsum1_std_ctg[!is.na(protsum1_std) & protsum1_std >= 0 & protsum1_std < 1] <-2
+VIP_data_independant$protsum1_std_ctg[!is.na(protsum1_std) & protsum1_std >= 1] <-3
+
+#POLYsum1
+VIP_data_independant$POLYs >= 0 & ensum1_std < 1] <-2
+VIP_data_independant$ensum1_std_ctg[!is.na(ensum1_stdum1_std_ctg[!is.na(POLYsum1_std) & POLYsum1_std < -1] <-0
+VIP_data_independant$POLYsum1_std_ctg[!is.na(POLYsum1_std) & POLYsum1_std >= -1 & POLYsum1_std < 0] <-1
+VIP_data_independant$POLYsum1_std_ctg[!is.na(POLYsum1_std) & POLYsum1_std >= 0 & POLYsum1_std < 1] <-2
+VIP_data_independant$POLYsum1_std_ctg[!is.na(POLYsum1_std) & POLYsum1_std >= 1] <-3
+
+#check the effect sizes for fitting all together or separatly
+
+associations<-glm(bmi~age + agesq + gender_factor + year + ffq_factor + utbild + protsum1_std + kolhsum1 + sacksum1 + fibesum1_std
+	+ FULLKsum1_std  + fettsum1_std + MONOsum1_std + POLYsum1_std + TRANSsum1_std + kolesum1_std + acids_std + NATRsum1_std, family = gaussian(link = "identity"))
+
+summary(associations)
+
+
+all_variables<-c("ensum1_std","protsum1_std","kolhsum1_std","sacksum1_std","DISAsum1_std","MOSAsum1_std","fibesum1_std","FULLKsum1_std","alkosum1_std","fettsum1_std",
+"MONOsum1_std","POLYsum1_std","TRANSsum1_std","kolesum1_std","acids_std","NATRsum1_std")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+
+
+
+#POLYsum1
+VIP_data_independant$PUFAE<-(100*9*POLYsum1)/ensum1
+VIP_data_independant$PUFAE_transformed<-log(VIP_data_independant$PUFAE)		
+VIP_data_independant$PUFAE_transformed[!is.na(ensum1)]<-(VIP_data_independant$PUFAE_transformed[!is.na(ensum1)]-mean(VIP_data_independant$PUFAE_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$PUFAE_transformed[!is.na(ensum1)])
+		
+#MONOsum1
+VIP_data_independant$MUFAE<-(100*9*MONOsum1)/ensum1
+VIP_data_independant$MUFAE_transformed<-log(VIP_data_independant$MUFAE)
+VIP_data_independant$MUFAE_transformed[!is.na(ensum1)]<-(VIP_data_independant$MUFAE_transformed[!is.na(ensum1)]-mean(VIP_data_independant$MUFAE_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$MUFAE_transformed[!is.na(ensum1)])
+
+#mfetsum1
+VIP_data_independant$SATFAT<-(100*9*mfetsum1)/ensum1
+VIP_data_independant$SATFAT_transformed<-log(VIP_data_independant$SATFAT)
+VIP_data_independant$SATFAT_transformed[!is.na(ensum1)]<-(VIP_data_independant$SATFAT_transformed[!is.na(ensum1)]-mean(VIP_data_independant$SATFAT_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$SATFAT_transformed[!is.na(ensum1)])
+
+#fettsum1
+VIP_data_independant$TOTFAT<-(100*9*fettsum1)/ensum1
+VIP_data_independant$TOTFAT_transformed<-log(VIP_data_independant$TOTFAT)
+VIP_data_independant$TOTFAT_transformed[!is.na(ensum1)]<-(VIP_data_independant$TOTFAT_transformed[!is.na(ensum1)]-mean(VIP_data_independant$TOTFAT_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$TOTFAT_transformed[!is.na(ensum1)])
+
+#acids
+VIP_data_independant$FA<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+VIP_data_independant$FA<-(100*9*VIP_data_independant$FA)/ensum1
+VIP_data_independant$FA_transformed<-log(VIP_data_independant$FA)
+VIP_data_independant$FA_transformed[!is.na(ensum1)]<-(VIP_data_independant$FA_transformed[!is.na(ensum1)]-mean(VIP_data_independant$FA_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$FA_transformed[!is.na(ensum1)])
+
+#kolhsum1
+VIP_data_independant$CARBOHYDRATES<-(100*4*kolhsum1)/ensum1
+VIP_data_independant$CARBOHYDRATES_transformed<-log(VIP_data_independant$CARBOHYDRATES)
+VIP_data_independant$CARBOHYDRATES_transformed[!is.na(ensum1)]<-(VIP_data_independant$CARBOHYDRATES_transformed[!is.na(ensum1)]-mean(VIP_data_independant$CARBOHYDRATES_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$CARBOHYDRATES_transformed[!is.na(ensum1)])
+
+#sacksum1
+VIP_data_independant$SUGAR<-(100*4*sacksum1)/ensum1
+VIP_data_independant$SUGAR_transformed<-log(VIP_data_independant$SUGAR)
+VIP_data_independant$SUGAR_transformed[!is.na(ensum1)]<-(VIP_data_independant$SUGAR_transformed[!is.na(ensum1)]-mean(VIP_data_independant$SUGAR_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$SUGAR_transformed[!is.na(ensum1)])
+
+#protsum1
+VIP_data_independant$PROTEIN<-(100*4*protsum1)/ensum1
+VIP_data_independant$PROTEIN_transformed<-log(VIP_data_independant$PROTEIN)
+VIP_data_independant$PROTEIN_transformed[!is.na(ensum1)]<-(VIP_data_independant$PROTEIN_transformed[!is.na(ensum1)]-mean(VIP_data_independant$PROTEIN_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$PROTEIN_transformed[!is.na(ensum1)])
+
+#fibesum1
+VIP_data_independant$FIBER<-fibesum1
+VIP_data_independant$FIBER_transformed<-log(VIP_data_independant$FIBER)
+VIP_data_independant$FIBER_transformed[!is.na(VIP_data_independant$FIBER_transformed)]<-(VIP_data_independant$FIBER_transformed[!is.na(VIP_data_independant$FIBER_transformed)]-mean(VIP_data_independant$FIBER_transformed[!is.na(VIP_data_independant$FIBER_transformed)]))/sd(VIP_data_independant$FIBER_transformed[!is.na(VIP_data_independant$FIBER_transformed)])
+
+#NATRsum1
+VIP_data_independant$SALT<-NATRsum1/1000
+VIP_data_independant$SALT_transformed<-log(VIP_data_independant$SALT)
+VIP_data_independant$SALT_transformed[!is.na(ensum1)]<-(VIP_data_independant$SALT_transformed[!is.na(ensum1)]-mean(VIP_data_independant$SALT_transformed[!is.na(ensum1)]))/sd(VIP_data_independant$SALT_transformed[!is.na(ensum1)])
+
+detach(VIP_data_independant)
+attach(VIP_data_independant)
+
+			
+			
+			
+
+
+#categorize according to the recommended cutpoints
+#POLYsum1
+VIP_data_independant$PUFAE_score[!is.na(PUFAE)]<-0
+VIP_data_independant$PUFAE_score[!is.na(PUFAE) & (PUFAE >= 5) & (PUFAE <= 10) ]<-1
+VIP_data_independant$PUFAE_score[!is.na(PUFAE) & PUFAE > 10]<-2
+
+#MONOsum1
+VIP_data_independant$MUFAE_score[!is.na(MUFAE)]<-0
+VIP_data_independant$MUFAE_score[!is.na(MUFAE) & (MUFAE >= 10) & (MUFAE <= 20) ]<-1
+VIP_data_independant$MUFAE_score[!is.na(MUFAE) & MUFAE > 20]<-2
+
+#mfetsum1
+VIP_data_independant$SATFAT_score[!is.na(SATFAT)]<-2
+VIP_data_independant$SATFAT_score[!is.na(SATFAT) & SATFAT <= 10]<-1
+
+#fettsum1
+VIP_data_independant$TOTFAT_score[!is.na(TOTFAT)]<-0
+VIP_data_independant$TOTFAT_score[!is.na(TOTFAT) & (TOTFAT >= 25) & (TOTFAT <= 40) ]<-1
+VIP_data_independant$TOTFAT_score[!is.na(TOTFAT) & TOTFAT > 40]<-2
+
+#acids
+VIP_data_independant$FA_score[!is.na(FA)]<-1
+VIP_data_independant$FA_score[!is.na(FA) & FA < 3]<-2
+
+#kolhsum1
+VIP_data_independant$CARBOHYDRATES_score[!is.na(CARBOHYDRATES)]<-0
+VIP_data_independant$CARBOHYDRATES_score[!is.na(CARBOHYDRATES) & (CARBOHYDRATES >= 45) & (CARBOHYDRATES <= 60) ]<-1
+VIP_data_independant$CARBOHYDRATES_score[!is.na(CARBOHYDRATES) & CARBOHYDRATES > 60]<-2
+
+#protsum1
+VIP_data_independant$PROTEIN_score[!is.na(PROTEIN)]<-0
+VIP_data_independant$PROTEIN_score[!is.na(PROTEIN) & (PROTEIN >= 10) & (PROTEIN <= 20) ]<-1
+VIP_data_independant$PROTEIN_score[!is.na(PROTEIN) & PROTEIN > 20]<-2
+
+#sacksum1
+VIP_data_independant$SUGAR_score[!is.na(SUGAR)]<-2
+VIP_data_independant$SUGAR_score[!is.na(SUGAR) & SUGAR < 10]<-1
+
+#NATRsum1
+VIP_data_independant$SALT_score[!is.na(SALT)]<-2
+VIP_data_independant$SALT_score[!is.na(SALT) & SALT <= 6]<-1
+
+#fibesum1
+VIP_data_independant$FIBER_score[!is.na(FIBER)]<-1
+VIP_data_independant$FIBER_score[!is.na(FIBER) & FIBER < 25]<-2
+
+detach(VIP_data_independant)
+attach(VIP_data_independant)
+
+#run multiple regression for all the components
+
+associations<-glm(bmi~age + agesq + gender_factor + year + ffq_factor +PUFAE_score + MUFAE_score + SATFAT_score + TOTFAT_score + SUGAR_score + CARBOHYDRATES_score 
+				+ FA_score + PROTEIN_score + FIBER_score + SALT_score, family = gaussian(link = "identity"))
+
+summary(associations)
+
+all_variables<-c("PUFAE_score","MUFAE_score","SATFAT_score","TOTFAT_score","SUGAR_score","CARBOHYDRATES_score","FA_score","PROTEIN_score","FIBER_score","SALT_score")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+# run multiple regression for each component separetly
+for (variable in all_variables){
+	
+	associations<-glm(bmi~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+			
+			
+			
+			
+			#POLYsum1
+VIP_data_subset$PUFAE<-(100*9*POLYsum1)/ensum1
+VIP_data_subset$PUFAE_transformed<-log(VIP_data_subset$PUFAE)		
+VIP_data_subset$PUFAE_transformed[!is.na(ensum1)]<-(VIP_data_subset$PUFAE_transformed[!is.na(ensum1)]-mean(VIP_data_subset$PUFAE_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$PUFAE_transformed[!is.na(ensum1)])
+
+#MONOsum1
+VIP_data_subset$MUFAE<-(100*9*MONOsum1)/ensum1
+VIP_data_subset$MUFAE_transformed<-log(VIP_data_subset$MUFAE)
+VIP_data_subset$MUFAE_transformed[!is.na(ensum1)]<-(VIP_data_subset$MUFAE_transformed[!is.na(ensum1)]-mean(VIP_data_subset$MUFAE_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$MUFAE_transformed[!is.na(ensum1)])
+
+#mfetsum1
+VIP_data_subset$SATFAT<-(100*9*mfetsum1)/ensum1
+VIP_data_subset$SATFAT_transformed<-log(VIP_data_subset$SATFAT)
+VIP_data_subset$SATFAT_transformed[!is.na(ensum1)]<-(VIP_data_subset$SATFAT_transformed[!is.na(ensum1)]-mean(VIP_data_subset$SATFAT_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$SATFAT_transformed[!is.na(ensum1)])
+
+#fettsum1
+VIP_data_subset$TOTFAT<-(100*9*fettsum1)/ensum1
+VIP_data_subset$TOTFAT_transformed<-log(VIP_data_subset$TOTFAT)
+VIP_data_subset$TOTFAT_transformed[!is.na(ensum1)]<-(VIP_data_subset$TOTFAT_transformed[!is.na(ensum1)]-mean(VIP_data_subset$TOTFAT_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$TOTFAT_transformed[!is.na(ensum1)])
+
+#acids
+VIP_data_subset$FA<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+VIP_data_subset$FA<-(100*9*VIP_data_subset$FA)/ensum1
+VIP_data_subset$FA_transformed<-log(VIP_data_subset$FA)
+VIP_data_subset$FA_transformed[!is.na(ensum1)]<-(VIP_data_subset$FA_transformed[!is.na(ensum1)]-mean(VIP_data_subset$FA_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$FA_transformed[!is.na(ensum1)])
+
+#kolhsum1
+VIP_data_subset$CARBOHYDRATES<-(100*4*kolhsum1)/ensum1
+VIP_data_subset$CARBOHYDRATES_transformed<-log(VIP_data_subset$CARBOHYDRATES)
+VIP_data_subset$CARBOHYDRATES_transformed[!is.na(ensum1)]<-(VIP_data_subset$CARBOHYDRATES_transformed[!is.na(ensum1)]-mean(VIP_data_subset$CARBOHYDRATES_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$CARBOHYDRATES_transformed[!is.na(ensum1)])
+
+#sacksum1
+VIP_data_subset$SUGAR<-(100*4*sacksum1)/ensum1
+VIP_data_subset$SUGAR_transformed<-log(VIP_data_subset$SUGAR)
+VIP_data_subset$SUGAR_transformed[!is.na(ensum1)]<-(VIP_data_subset$SUGAR_transformed[!is.na(ensum1)]-mean(VIP_data_subset$SUGAR_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$SUGAR_transformed[!is.na(ensum1)])
+
+#protsum1
+VIP_data_subset$PROTEIN<-(100*4*protsum1)/ensum1
+VIP_data_subset$PROTEIN_transformed<-log(VIP_data_subset$PROTEIN)
+VIP_data_subset$PROTEIN_transformed[!is.na(ensum1)]<-(VIP_data_subset$PROTEIN_transformed[!is.na(ensum1)]-mean(VIP_data_subset$PROTEIN_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$PROTEIN_transformed[!is.na(ensum1)])
+
+#fibesum1
+VIP_data_subset$FIBER<-fibesum1
+VIP_data_subset$FIBER_transformed<-log(VIP_data_subset$FIBER)
+VIP_data_subset$FIBER_transformed[!is.na(VIP_data_subset$FIBER_transformed)]<-(VIP_data_subset$FIBER_transformed[!is.na(VIP_data_subset$FIBER_transformed)]-mean(VIP_data_subset$FIBER_transformed[!is.na(VIP_data_subset$FIBER_transformed)]))/sd(VIP_data_subset$FIBER_transformed[!is.na(VIP_data_subset$FIBER_transformed)])
+
+#NATRsum1
+VIP_data_subset$SALT<-NATRsum1/1000
+VIP_data_subset$SALT_transformed<-log(VIP_data_subset$SALT)
+VIP_data_subset$SALT_transformed[!is.na(ensum1)]<-(VIP_data_subset$SALT_transformed[!is.na(ensum1)]-mean(VIP_data_subset$SALT_transformed[!is.na(ensum1)]))/sd(VIP_data_subset$SALT_transformed[!is.na(ensum1)])
+
+detach(VIP_data_subset)
+attach(VIP_data_subset)
+			
+			
+			
+			
+#run multiple regression for all the components
+associations<-glm(bmi_log_sd_norm[visit==1]~age_sd_norm[visit==1] + agesq_sd_norm[visit==1] + gender_factor[visit==1] + year_sd_norm[visit==1] + ffq_factor[visit==1] + PUFAE_sd_norm[visit==1] + 
+				MUFAE_sd_norm[visit==1] + SATFAT_sd_norm[visit==1] + TOTFAT_sd_norm[visit==1] + SUGAR_sd_norm[visit==1] + CARBOHYDRATES_sd_norm[visit==1] + TRANFAT_sd_norm[visit==1] + 
+				FA_sd_norm[visit==1] + PROTEIN_ANIMAL_sd_norm[visit==1] + CHOLESTEROL_sd_norm[visit==1]+ WHOLEGRAIN_sd_norm[visit==1] + SALT_sd_norm[visit==1], family = gaussian(link = "identity"))
+
+summary(associations)
+
+#protein is  insignificant, since animal protein contains most of the variation
+
+#check variation explained for each, but adjusting for the others
+
+all_variables<-c("PUFAE_sd_norm","MUFAE_sd_norm","SATFAT_sd_norm","TOTFAT_sd_norm","SUGAR_sd_norm","CARBOHYDRATES_sd_norm","TRANFAT_sd_norm","FA_sd_norm","PROTEIN_ANIMAL_sd_norm",
+		"CHOLESTEROL_sd_norm","WHOLEGRAIN_sd_norm","SALT_sd_norm")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_log_sd_norm[(visit==1 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)]))],VIP_data_subset[(visit==1 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c(variable)],
+			VIP_data_subset[(visit==1 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c("age_sd_norm","agesq_sd_norm","year_sd_norm","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+#----------------------------------------------VISIT==1------------------------------------------------------------------
+
+#----------------------------------------------VISIT==2------------------------------------------------------------------
+
+#run multiple regression for all the components
+associations<-glm(bmi_log_sd_norm[visit==2]~age_sd_norm[visit==2] + agesq_sd_norm[visit==2] + gender_factor[visit==2] + year_sd_norm[visit==2] + ffq_factor[visit==2] + PUFAE_sd_norm[visit==2] + 
+				MUFAE_sd_norm[visit==2] + SATFAT_sd_norm[visit==2] + TOTFAT_sd_norm[visit==2] + SUGAR_sd_norm[visit==2] + CARBOHYDRATES_sd_norm[visit==2] + TRANFAT_sd_norm[visit==2] + 
+				FA_sd_norm[visit==2] + PROTEIN_ANIMAL_sd_norm[visit==2] + CHOLESTEROL_sd_norm[visit==2]+ WHOLEGRAIN_sd_norm[visit==2] + SALT_sd_norm[visit==2], family = gaussian(link = "identity"))
+
+summary(associations)
+
+#check variation explained for each, but adjusting for the others
+
+all_variables<-c("PUFAE_sd_norm","MUFAE_sd_norm","SATFAT_sd_norm","TOTFAT_sd_norm","SUGAR_sd_norm","CARBOHYDRATES_sd_norm","TRANFAT_sd_norm","FA_sd_norm","PROTEIN_ANIMAL_sd_norm",
+		"CHOLESTEROL_sd_norm","WHOLEGRAIN_sd_norm","SALT_sd_norm")
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_log_sd_norm[(visit==2 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)]))],VIP_data_subset[(visit==2 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c(variable)],
+			VIP_data_subset[(visit==2 & !is.na(bmi_log_sd_norm) & !is.na(VIP_data_subset[,c(variable)])),c("age_sd_norm","agesq_sd_norm","year_sd_norm","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+#----------------------------------------------VISIT==2------------------------------------------------------------------
+
+#----------------------------------------------CATEGORIES----------------------------------------------------------------
+
+#make a categorized score for each, based on the guilines
+
+#POLYsum1
+VIP_data_subset$POLYsum1_score[!is.na(PUFAE)]<-0
+VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & (PUFAE >= 5) & (PUFAE <= 10) ]<-1
+VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & PUFAE > 10]<-2
+VIP_data_subset$POLYsum1_score_sd_norm[!is.na(PUFAE) & visit==1]<-(VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & visit==1]-mean(VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & visit==1]))/sd(VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & visit==1])
+VIP_data_subset$POLYsum1_score_sd_norm[!is.na(PUFAE) & visit==2]<-(VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & visit==2]-mean(VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & visit==2]))/sd(VIP_data_subset$POLYsum1_score[!is.na(PUFAE) & visit==2])
+
+#MONOsum1
+VIP_data_subset$MONOsum1_score[!is.na(MUFAE)]<-0
+VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & (MUFAE >= 10) & (MUFAE <= 20) ]<-1
+VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & MUFAE > 20]<-2
+VIP_data_subset$MONOsum1_score_sd_norm[!is.na(MUFAE) & visit==1]<-(VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & visit==1]-mean(VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & visit==1]))/sd(VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & visit==1])
+VIP_data_subset$MONOsum1_score_sd_norm[!is.na(MUFAE) & visit==2]<-(VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & visit==2]-mean(VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & visit==2]))/sd(VIP_data_subset$MONOsum1_score[!is.na(MUFAE) & visit==2])
+
+#mfetsum1
+VIP_data_subset$mfetsum1_score[!is.na(SATFAT)]<-2
+VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & SATFAT <= 10]<-1
+VIP_data_subset$mfetsum1_score_sd_norm[!is.na(SATFAT) & visit==1]<-(VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & visit==1]-mean(VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & visit==1]))/sd(VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & visit==1])
+VIP_data_subset$mfetsum1_score_sd_norm[!is.na(SATFAT) & visit==2]<-(VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & visit==2]-mean(VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & visit==2]))/sd(VIP_data_subset$mfetsum1_score[!is.na(SATFAT) & visit==2])
+
+#fettsum1
+VIP_data_subset$fettsum1_score[!is.na(TOTFAT)]<-0
+VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & (TOTFAT >= 25) & (TOTFAT <= 40) ]<-1
+VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & TOTFAT > 40]<-2
+VIP_data_subset$fettsum1_score_sd_norm[!is.na(TOTFAT) & visit==1]<-(VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & visit==1]-mean(VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & visit==1]))/sd(VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & visit==1])
+VIP_data_subset$fettsum1_score_sd_norm[!is.na(TOTFAT) & visit==2]<-(VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & visit==2]-mean(VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & visit==2]))/sd(VIP_data_subset$fettsum1_score[!is.na(TOTFAT) & visit==2])
+
+#acids
+VIP_data_subset$FA_score[!is.na(FA)]<-1
+VIP_data_subset$FA_score[!is.na(FA) & FA < 3]<-2
+VIP_data_subset$FA_score_sd_norm[!is.na(FA) & visit==1]<-(VIP_data_subset$FA_score[!is.na(FA) & visit==1]-mean(VIP_data_subset$FA_score[!is.na(FA) & visit==1]))/sd(VIP_data_subset$FA_score[!is.na(FA) & visit==1])
+VIP_data_subset$FA_score_sd_norm[!is.na(FA) & visit==2]<-(VIP_data_subset$FA_score[!is.na(FA) & visit==2]-mean(VIP_data_subset$FA_score[!is.na(FA) & visit==2]))/sd(VIP_data_subset$FA_score[!is.na(FA) & visit==2])
+
+#kolhsum1
+VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES)]<-0
+VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & (CARBOHYDRATES >= 45) & (CARBOHYDRATES <= 60) ]<-1
+VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & CARBOHYDRATES > 60]<-2
+VIP_data_subset$kolhsum1_score_sd_norm[!is.na(CARBOHYDRATES) & visit==1]<-(VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & visit==1]-mean(VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & visit==1]))/sd(VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & visit==1])
+VIP_data_subset$kolhsum1_score_sd_norm[!is.na(CARBOHYDRATES) & visit==2]<-(VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & visit==2]-mean(VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & visit==2]))/sd(VIP_data_subset$kolhsum1_score[!is.na(CARBOHYDRATES) & visit==2])
+
+#sacksum1
+VIP_data_subset$sacksum1_score[!is.na(SUGAR)]<-2
+VIP_data_subset$sacksum1_score[!is.na(SUGAR) & SUGAR < 10]<-1
+VIP_data_subset$sacksum1_score_sd_norm[!is.na(SUGAR) & visit==1]<-(VIP_data_subset$sacksum1_score[!is.na(SUGAR) & visit==1]-mean(VIP_data_subset$sacksum1_score[!is.na(SUGAR) & visit==1]))/sd(VIP_data_subset$sacksum1_score[!is.na(SUGAR) & visit==1])
+VIP_data_subset$sacksum1_score_sd_norm[!is.na(SUGAR) & visit==2]<-(VIP_data_subset$sacksum1_score[!is.na(SUGAR) & visit==2]-mean(VIP_data_subset$sacksum1_score[!is.na(SUGAR) & visit==2]))/sd(VIP_data_subset$sacksum1_score[!is.na(SUGAR) & visit==2])
+
+#NATRsum1
+VIP_data_subset$NATRsum1_score[!is.na(SALT)]<-2
+VIP_data_subset$NATRsum1_score[!is.na(SALT) & SALT <= 6]<-1
+VIP_data_subset$NATRsum1_score_sd_norm[!is.na(SALT) & visit==1]<-(VIP_data_subset$NATRsum1_score[!is.na(SALT) & visit==1]-mean(VIP_data_subset$NATRsum1_score[!is.na(SALT) & visit==1]))/sd(VIP_data_subset$NATRsum1_score[!is.na(SALT) & visit==1])
+VIP_data_subset$NATRsum1_score_sd_norm[!is.na(SALT) & visit==2]<-(VIP_data_subset$NATRsum1_score[!is.na(SALT) & visit==2]-mean(VIP_data_subset$NATRsum1_score[!is.na(SALT) & visit==2]))/sd(VIP_data_subset$NATRsum1_score[!is.na(SALT) & visit==2])
+
+#TRANSsum1 recommandations say always as low as possible, so we take tertiles
+
+#protsum1_anim can not find recommendations so taking tertiles
+
+#kolesum1 no guidelines upper limit is set, since they concluded that lower cholesterol will result from the guidelines on other nutrient intakes, so tertiles are taken
+
+#FULLKsum1 some guidelines mentioned, but not in %E , but says: "Adults: Intake of dietary fibre should be at least 25–35 g/d, or approximately 3 g/MJ.", so for now, tertiles are taken
+
+#check the raw ensum1 tertiles aswell
+
+#calculate the tertiles inside each visit always
+
+#ensum1
+ensum1_tertiles_visit1<-quantile(ensum1[!is.na(ensum1) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+ensum1_tertiles_visit2<-quantile(ensum1[!is.na(ensum1) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==1]<-0
+VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==1 & ensum1>=ensum1_tertiles_visit1[[1]] & ensum1<ensum1_tertiles_visit1[[2]]]<-1
+VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==1 & ensum1>=ensum1_tertiles_visit1[[2]]]<-2
+VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==2]<-0
+VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==2 & ensum1>=ensum1_tertiles_visit2[[1]] & ensum1<ensum1_tertiles_visit2[[2]]]<-1
+VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==2 & ensum1>=ensum1_tertiles_visit2[[2]]]<-2
+VIP_data_subset$ensum1_score_sd_norm[!is.na(ensum1) & visit==1]<-(VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==1]-mean(VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==1]))/sd(VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==1])
+VIP_data_subset$ensum1_score_sd_norm[!is.na(ensum1) & visit==2]<-(VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==2]-mean(VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==2]))/sd(VIP_data_subset$ensum1_score[!is.na(ensum1) & visit==2])
+
+
+#TRANSsum1
+TRANSsum1_tertiles_visit1<-quantile(TRANFAT[!is.na(TRANFAT) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+TRANSsum1_tertiles_visit2<-quantile(TRANFAT[!is.na(TRANFAT) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==1]<-0
+VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==1 & TRANFAT>=TRANSsum1_tertiles_visit1[[1]] & TRANFAT<TRANSsum1_tertiles_visit1[[2]]]<-1
+VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==1 & TRANFAT>=TRANSsum1_tertiles_visit1[[2]]]<-2
+VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==2]<-0
+VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==2 & TRANFAT>=TRANSsum1_tertiles_visit2[[1]] & TRANFAT<TRANSsum1_tertiles_visit2[[2]]]<-1
+VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==2 & TRANFAT>=TRANSsum1_tertiles_visit2[[2]]]<-2
+VIP_data_subset$TRANSsum1_score_sd_norm[!is.na(TRANFAT) & visit==1]<-(VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==1]-mean(VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==1]))/sd(VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==1])
+VIP_data_subset$TRANSsum1_score_sd_norm[!is.na(TRANFAT) & visit==2]<-(VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==2]-mean(VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==2]))/sd(VIP_data_subset$TRANSsum1_score[!is.na(TRANFAT) & visit==2])
+
+
+#protsum1_anim
+PROTEIN_ANIMAL_tertiles_visit1<-quantile(PROTEIN_ANIMAL[!is.na(PROTEIN_ANIMAL) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+PROTEIN_ANIMAL_tertiles_visit2<-quantile(PROTEIN_ANIMAL[!is.na(PROTEIN_ANIMAL) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data_subset$protsum1_anim_score[!is.na(protsum1) & visit==1]<-0
+VIP_data_subset$protsum1_anim_score[!is.na(protsum1) & visit==1 & PROTEIN_ANIMAL>=PROTEIN_ANIMAL_tertiles_visit1[[1]]
+				& PROTEIN_ANIMAL<PROTEIN_ANIMAL_tertiles_visit1[[2]] ]<-1
+VIP_data_subset$protsum1_anim_score[!is.na(protsum1) & visit==1 & PROTEIN_ANIMAL>=PROTEIN_ANIMAL_tertiles_visit1[[2]]]<-2
+VIP_data_subset$protsum1_anim_score[!is.na(protsum1) & visit==2]<-0
+VIP_data_subset$protsum1_anim_score[!is.na(protsum1) & visit==2 & PROTEIN_ANIMAL>=PROTEIN_ANIMAL_tertiles_visit2[[1]]
+				& PROTEIN_ANIMAL<PROTEIN_ANIMAL_tertiles_visit2[[2]] ]<-1
+VIP_data_subset$protsum1_anim_score[!is.na(protsum1) & visit==2 & PROTEIN_ANIMAL>=PROTEIN_ANIMAL_tertiles_visit2[[2]]]<-2
+VIP_data_subset$protsum1_anim_score_sd_norm[!is.na(PROTEIN_ANIMAL) & visit==1]<-(VIP_data_subset$protsum1_anim_score[!is.na(PROTEIN_ANIMAL) & visit==1]-mean(VIP_data_subset$protsum1_anim_score[!is.na(PROTEIN_ANIMAL) & visit==1]))/sd(VIP_data_subset$protsum1_anim_score[!is.na(PROTEIN_ANIMAL) & visit==1])
+VIP_data_subset$protsum1_anim_score_sd_norm[!is.na(PROTEIN_ANIMAL) & visit==2]<-(VIP_data_subset$protsum1_anim_score[!is.na(PROTEIN_ANIMAL) & visit==2]-mean(VIP_data_subset$protsum1_anim_score[!is.na(PROTEIN_ANIMAL) & visit==2]))/sd(VIP_data_subset$protsum1_anim_score[!is.na(PROTEIN_ANIMAL) & visit==2])
+
+
+#kolesum1
+kolesum1_tertiles_visit1<-quantile(CHOLESTEROL[!is.na(CHOLESTEROL) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+kolesum1_tertiles_visit2<-quantile(CHOLESTEROL[!is.na(CHOLESTEROL) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==1]<-0
+VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==1 & CHOLESTEROL>=kolesum1_tertiles_visit1[[1]] & CHOLESTEROL<kolesum1_tertiles_visit1[[2]]]<-1
+VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==1 & CHOLESTEROL>=kolesum1_tertiles_visit1[[2]]]<-2
+VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==2]<-0
+VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==2 & CHOLESTEROL>=kolesum1_tertiles_visit2[[1]] & CHOLESTEROL<kolesum1_tertiles_visit2[[2]]]<-1
+VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==2 & CHOLESTEROL>=kolesum1_tertiles_visit2[[2]]]<-2
+VIP_data_subset$kolesum1_score_sd_norm[!is.na(CHOLESTEROL) & visit==1]<-(VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==1]-mean(VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==1]))/sd(VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==1])
+VIP_data_subset$kolesum1_score_sd_norm[!is.na(CHOLESTEROL) & visit==2]<-(VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==2]-mean(VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==2]))/sd(VIP_data_subset$kolesum1_score[!is.na(CHOLESTEROL) & visit==2])
+
+
+#FULLKsum1
+WHOLEGRAIN_tertiles_visit1<-quantile(WHOLEGRAIN[!is.na(WHOLEGRAIN) & visit==1], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+WHOLEGRAIN_tertiles_visit2<-quantile(WHOLEGRAIN[!is.na(WHOLEGRAIN) & visit==2], prob = c(0.33, 0.66, 1),na.rm=TRUE)
+
+VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==1]<-2
+VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==1 & WHOLEGRAIN>=WHOLEGRAIN_tertiles_visit1[[1]] & 
+				WHOLEGRAIN<WHOLEGRAIN_tertiles_visit1[[2]] ]<-1
+VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==1 & WHOLEGRAIN>=WHOLEGRAIN_tertiles_visit1[[2]]]<-0
+VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==2]<-2
+VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==2 & WHOLEGRAIN>=WHOLEGRAIN_tertiles_visit2[[1]] & 
+				WHOLEGRAIN<WHOLEGRAIN_tertiles_visit2[[2]] ]<-1
+VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==2 & WHOLEGRAIN>=WHOLEGRAIN_tertiles_visit2[[2]]]<-0
+VIP_data_subset$FULLKsum1_score_sd_norm[!is.na(FULLKsum1) & visit==1]<-(VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==1]-mean(VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==1]))/sd(VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==1])
+VIP_data_subset$FULLKsum1_score_sd_norm[!is.na(FULLKsum1) & visit==2]<-(VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==2]-mean(VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==2]))/sd(VIP_data_subset$FULLKsum1_score[!is.na(FULLKsum1) & visit==2])
+
+
+#look at the number of individuals in each category for each variable
+detach(VIP_data_subset)
+attach(VIP_data_subset)
+
+
+
+
+
+
+#take 3SD for cutpoint
+VIP_data_independant$bmi_3SD<-VIP_data_independant$bmi_norm
+length(VIP_data_independant$bmi_3SD[!is.na(bmi) & (VIP_data_independant$bmi_sd_norm > 3 | VIP_data_independant$bmi_sd_norm < -3)])#313
+VIP_data_independant$bmi_3SD[!is.na(bmi) & (VIP_data_independant$bmi_sd_norm > 3 | VIP_data_independant$bmi_sd_norm < -3)]<-NA
+
+png("Results/distributions/filtered_3SD_bmi_distribution.png")
+qqnorm(VIP_data_independant$bmi_3SD)
+qqline(VIP_data_independant$bmi_3SD)
+dev.off()
+png("Results/distributions/filtered_3SD_bmi_histogram.png")
+hist(VIP_data_independant$bmi_3SD)
+dev.off()
+
+
+#take 4SD for cutpoints
+VIP_data_independant$bmi_4SD<-VIP_data_independant$bmi_norm
+length(VIP_data_independant$bmi_4SD[!is.na(bmi) & (VIP_data_independant$bmi_sd_norm > 4 | VIP_data_independant$bmi_sd_norm < -4)])#38
+VIP_data_independant$bmi_4SD[!is.na(bmi) & (VIP_data_independant$bmi_sd_norm > 4 | VIP_data_independant$bmi_sd_norm < -4)]<-NA
+
+png("Results/distributions/filtered_4SD_bmi_distribution.png")
+qqnorm(VIP_data_independant$bmi_4SD)
+qqline(VIP_data_independant$bmi_4SD)
+dev.off()
+png("Results/distributions/filtered_4SD_bmi_histogram.png")
+hist(VIP_data_independant$bmi_4SD)
+dev.off()
+
+
+#take 3.5SD for cutpoint
+VIP_data_independant$bmi_35SD<-VIP_data_independant$bmi_norm
+length(VIP_data_independant$bmi_35SD[!is.na(bmi) & (VIP_data_independant$bmi_sd_norm > 3.5 | VIP_data_independant$bmi_sd_norm < -3.5)])#116
+VIP_data_independant$bmi_35SD[!is.na(bmi) & (VIP_data_independant$bmi_sd_norm > 3.5 | VIP_data_independant$bmi_sd_norm < -3.5)]<-NA
+
+png("Results/distributions/filtered_35SD_bmi_distribution.png")
+qqnorm(VIP_data_independant$bmi_35SD)
+qqline(VIP_data_independant$bmi_35SD)
+dev.off()
+png("Results/distributions/filtered_35SD_bmi_histogram.png")
+hist(VIP_data_independant$bmi_35SD)
+dev.off()
+
+			
+			
+			
+			
+			#------------------------------INDEPENDANT DATA--------------------------------------------------------------------
+
+source(file="Code/load_indp_variables_SD_based.R")
+
+#run several different regressions 
+
+# check all the paired correlations for filtered bmi4 and filtered nutrients
+rcorr( cbind(bmi_4SD,POLYsum1_transformed_4SD,MONOsum1_transformed_4SD,mfetsum1_transformed_4SD,fettsum1_transformed_4SD,sacksum1_transformed_4SD,kolhsum1_transformed_4SD,FA_transformed_4SD,protsum1_transformed_4SD,fibesum1_transformed_4SD,NATRsum1_transformed_4SD),type="pearson")
+
+# check all the paired correlations for filtered bmi4 and filtered nutrients expressed in % of TEI
+rcorr( cbind(bmi_4SD,POLYsum1_ofTEI_transformed,MONOsum1_ofTEI_transformed,mfetsum1_ofTEI_transformed,fettsum1_ofTEI_transformed,sacksum1_ofTEI_transformed,kolhsum1_ofTEI_transformed,FA_ofTEI_transformed,protsum1_ofTEI_transformed,fibesum1_ofTEI_transformed,NATRsum1_ofTEI_transformed),type="pearson")
+
+# check all the paired correlations for filtered bmi4 and filtered nutrients expressed in % of TEI and categorized
+rcorr( cbind(bmi_4SD,POLYsum1_ofTEI_categorized_g,MONOsum1_ofTEI_categorized_g,mfetsum1_ofTEI_categorized_g,fettsum1_ofTEI_categorized_g,sacksum1_ofTEI_categorized_g,kolhsum1_ofTEI_categorized_g,FA_ofTEI_categorized_g,protsum1_ofTEI_categorized_g,fibesum1_categorized_g,NATRsum1_categorized_g),type="pearson")
+
+
+
+#for raw continous, fitted together
+
+#filtered bmi and other variables with cutpoint 4SD and log transformed with other variables being standardized also (BMI AND NUTRIENTS)
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + POLYsum1_transformed_4SD + MONOsum1_transformed_4SD + mfetsum1_transformed_4SD + fettsum1_transformed_4SD + sacksum1_transformed_4SD
+				+ kolhsum1_transformed_4SD + FA_transformed_4SD + protsum1_transformed_4SD + fibesum1_transformed_4SD + NATRsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+#r² filtered bmi and other variables with cutpoint 4SD and log transformed with other variables being standardized also (BMI AND NUTRIENTS)
+all_variables<-c("POLYsum1_transformed_4SD","MONOsum1_transformed_4SD","mfetsum1_transformed_4SD","fettsum1_transformed_4SD","sacksum1_transformed_4SD",
+		"kolhsum1_transformed_4SD","FA_transformed_4SD","protsum1_transformed_4SD","fibesum1_transformed_4SD","NATRsum1_transformed_4SD")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4SD_sd",all_variables)])
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c(variable)],
+			independant_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+
+#for raw continous, fitted separately
+for (variable in all_variables){
+
+	associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_4SD_sd[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+		
+}
+
+
+
+
+
+# for continuous expressed in % of TEI, fitted together
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + POLYsum1_ofTEI_transformed + MONOsum1_ofTEI_transformed + mfetsum1_ofTEI_transformed + fettsum1_ofTEI_transformed + sacksum1_ofTEI_transformed
+				+ kolhsum1_ofTEI_transformed + FA_ofTEI_transformed + protsum1_ofTEI_transformed + fibesum1_ofTEI_transformed + NATRsum1_ofTEI_transformed, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+all_variables<-c("POLYsum1_ofTEI_transformed","MONOsum1_ofTEI_transformed","mfetsum1_ofTEI_transformed","fettsum1_ofTEI_transformed","sacksum1_ofTEI_transformed",
+		"kolhsum1_ofTEI_transformed","FA_ofTEI_transformed","protsum1_ofTEI_transformed","fibesum1_ofTEI_transformed","NATRsum1_ofTEI_transformed")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4SD_sd",all_variables)])
+
+#r²
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c(variable)],
+			independant_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+# for continuous expressed in % of TEI, fitted separately
+for (variable in all_variables){
+	
+	associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_4SD_sd[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+
+
+
+
+# categorized based on guidelines, fitted together
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + POLYsum1_ofTEI_categorized_g + MONOsum1_ofTEI_categorized_g + mfetsum1_ofTEI_categorized_g + fettsum1_ofTEI_categorized_g + sacksum1_ofTEI_categorized_g
+				+ kolhsum1_ofTEI_categorized_g + FA_ofTEI_categorized_g + protsum1_ofTEI_categorized_g + fibesum1_categorized_g + NATRsum1_categorized_g, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+all_variables<-c("POLYsum1_ofTEI_categorized_g","MONOsum1_ofTEI_categorized_g","mfetsum1_ofTEI_categorized_g","fettsum1_ofTEI_categorized_g","sacksum1_ofTEI_categorized_g",
+		"kolhsum1_ofTEI_categorized_g","FA_ofTEI_categorized_g","protsum1_ofTEI_categorized_g","fibesum1_categorized_g","NATRsum1_categorized_g")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4SD_sd",all_variables)])
+
+#r²
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c(variable)],
+			independant_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+
+# categorized based on guidelines, fitted separately
+for (variable in all_variables){
+	
+	associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_4SD_sd[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_4SD_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+#try several models with sugar:
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + fibesum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + mfetsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + fettsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ kolhsum1_transformed_4SD + sacksum1_transformed_4SD*kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ fibesum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ fibesum1_transformed_4SD + sacksum1_transformed_4SD*fibesum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ mfetsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ fettsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ mfetsum1_transformed_4SD + sacksum1_transformed_4SD*mfetsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ fettsum1_transformed_4SD + sacksum1_transformed_4SD*fettsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ mfetsum1_transformed_4SD + fibesum1_transformed_4SD + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ fettsum1_transformed_4SD + fibesum1_transformed_4SD + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD+ mfetsum1_transformed_4SD+ fettsum1_transformed_4SD + fibesum1_transformed_4SD + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_transformed_4SD + fibesum1_transformed_4SD + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor  + fibesum1_transformed_4SD + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor + fettsum1_transformed_4SD  + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor + fettsum1_transformed_4SD  + fibesum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor  + kolhsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor + fettsum1_transformed_4SD , family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor  + fibesum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor + mfetsum1_transformed_4SD , family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor + kolhsum1_transformed_4SD  + fibesum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor + kolhsum1_transformed_4SD  + fibesum1_transformed_4SD + fettsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_transformed_4SD~age + agesq + gender_factor + year + ffq_factor  + kolhsum1_transformed_4SD + fettsum1_transformed_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+all_variables<-c("sacksum1_transformed_4SD","kolhsum1_transformed_4SD","fibesum1_transformed_4SD")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4SD_sd",all_variables)])
+
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_transformed_4SD","fibesum1_transformed_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_transformed_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","fibesum1_transformed_4SD")])
+
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_transformed_4SD","sacksum1_transformed_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_transformed_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","sacksum1_transformed_4SD")])
+
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","sacksum1_transformed_4SD","fibesum1_transformed_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","sacksum1_transformed_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_transformed_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","fibesum1_transformed_4SD")])
+
+#fit sugar against bmi in stratified carbs
+
+associations<-glm(bmi_4SD_sd[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0]~age[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + agesq[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + gender_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + year[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + ffq_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + sacksum1_transformed_4SD[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0], family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_4SD_sd[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1]~age[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + agesq[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + gender_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + year[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + ffq_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + sacksum1_transformed_4SD[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1], family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2]~age[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + agesq[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + gender_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + year[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + ffq_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + sacksum1_transformed_4SD[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2], family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+
+#------------------------------INDEPENDANT DATA--------------------------------------------------------------------
+
+
+			
+			
+			
+			
+			
+
+
+#try several models with sugar:
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + fibesum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + mfetsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + fettsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ kolhsum1_norm_sd_4SD + sacksum1_norm_sd_4SD*kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ fibesum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ fibesum1_norm_sd_4SD + sacksum1_norm_sd_4SD*fibesum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ mfetsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ fettsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ mfetsum1_norm_sd_4SD + sacksum1_norm_sd_4SD*mfetsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ fettsum1_norm_sd_4SD + sacksum1_norm_sd_4SD*fettsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ mfetsum1_norm_sd_4SD + fibesum1_norm_sd_4SD + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ fettsum1_norm_sd_4SD + fibesum1_norm_sd_4SD + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD+ mfetsum1_norm_sd_4SD+ fettsum1_norm_sd_4SD + fibesum1_norm_sd_4SD + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor + sacksum1_norm_sd_4SD + fibesum1_norm_sd_4SD + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd~age + agesq + gender_factor + year + ffq_factor  + fibesum1_norm_sd_4SD + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor + fettsum1_norm_sd_4SD  + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor + fettsum1_norm_sd_4SD  + fibesum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor  + kolhsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor + fettsum1_norm_sd_4SD , family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor  + fibesum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor + mfetsum1_norm_sd_4SD , family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor + kolhsum1_norm_sd_4SD  + fibesum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor + kolhsum1_norm_sd_4SD  + fibesum1_norm_sd_4SD + fettsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(sacksum1_norm_sd_4SD~age + agesq + gender_factor + year + ffq_factor  + kolhsum1_norm_sd_4SD + fettsum1_norm_sd_4SD, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+all_variables<-c("sacksum1_norm_sd_4SD","kolhsum1_norm_sd_4SD","fibesum1_norm_sd_4SD")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4SD_sd",all_variables)])
+
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_norm_sd_4SD","fibesum1_norm_sd_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_norm_sd_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("sacksum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","fibesum1_norm_sd_4SD")])
+
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_norm_sd_4SD","sacksum1_norm_sd_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","kolhsum1_norm_sd_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("fibesum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","sacksum1_norm_sd_4SD")])
+
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","sacksum1_norm_sd_4SD","fibesum1_norm_sd_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","sacksum1_norm_sd_4SD")])
+pcor.test(independant_no_missing$bmi_4SD_sd,independant_no_missing[,c("kolhsum1_norm_sd_4SD")],independant_no_missing[,c("age","agesq","year","ffq","gender","fibesum1_norm_sd_4SD")])
+
+#fit sugar against bmi in stratified carbs
+
+associations<-glm(bmi_4SD_sd[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0]~age[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + agesq[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + gender_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + year[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + ffq_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0] + sacksum1_norm_sd_4SD[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==0], family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_4SD_sd[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1]~age[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + agesq[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + gender_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + year[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + ffq_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1] + sacksum1_norm_sd_4SD[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==1], family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+associations<-glm(bmi_4SD_sd[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2]~age[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + agesq[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + gender_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + year[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + ffq_factor[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2] + sacksum1_norm_sd_4SD[!is.na(kolhsum1_ofTEI_categorized_g) & kolhsum1_ofTEI_categorized_g==2], family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+			
+			
+			
+			
+			
+
+#check 4MAD cutpoint
+#take 4MAD for cutpoint
+VIP_data_independant$bmi_4MAD<-bmi
+length(VIP_data_independant$bmi_4MAD[!is.na(bmi) & (bmi <= (median(bmi[!is.na(bmi)])-4*mad(bmi[!is.na(bmi)])) | bmi >= (median(bmi[!is.na(bmi)])+4*mad(bmi[!is.na(bmi)])))])#1067
+VIP_data_independant$bmi_4MAD[!is.na(bmi) & (bmi <= (median(bmi[!is.na(bmi)])-4*mad(bmi[!is.na(bmi)])) | bmi >= (median(bmi[!is.na(bmi)])+4*mad(bmi[!is.na(bmi)])))]<-NA
+VIP_data_independant$bmi_4MAD<-log(VIP_data_independant$bmi_4MAD)
+VIP_data_independant$bmi_4MAD_norm_sd[!is.na(VIP_data_independant$bmi_4MAD)]<-(VIP_data_independant$bmi_4MAD[!is.na(VIP_data_independant$bmi_4MAD)] - mean(VIP_data_independant$bmi_4MAD[!is.na(VIP_data_independant$bmi_4MAD)]))/(sd(VIP_data_independant$bmi_4MAD[!is.na(VIP_data_independant$bmi_4MAD)]))
+
+png("Results/distributions/filtered_4MAD_bmi_distribution.png")
+qqnorm(VIP_data_independant$bmi_4MAD_norm_sd)
+qqline(VIP_data_independant$bmi_4MAD_norm_sd)
+dev.off()
+png("Results/distributions/filtered_4MAD_bmi_histogram.png")
+hist(VIP_data_independant$bmi_4MAD_norm_sd)
+dev.off()
+
+
+#filtered
+VIP_data_independant$POLYsum1_4MAD <- POLYsum1
+length(VIP_data_independant$POLYsum1[!is.na(POLYsum1) & (POLYsum1 <= (median(POLYsum1[!is.na(POLYsum1)])-4*mad(POLYsum1[!is.na(POLYsum1)])) | POLYsum1 >= (median(POLYsum1[!is.na(POLYsum1)])+
+								4*mad(POLYsum1[!is.na(POLYsum1)])))])
+VIP_data_independant$POLYsum1_4MAD[!is.na(POLYsum1) & (POLYsum1 <= (median(POLYsum1[!is.na(POLYsum1)])-4*mad(POLYsum1[!is.na(POLYsum1)])) | POLYsum1 >= (median(POLYsum1[!is.na(POLYsum1)])+
+						4*mad(POLYsum1[!is.na(POLYsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$POLYsum1_ofTEI_4MAD<-(100*9*VIP_data_independant$POLYsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$POLYsum1_4MAD_norm_sd<-log(VIP_data_independant$POLYsum1_4MAD)
+VIP_data_independant$POLYsum1_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_4MAD_norm_sd)]<-(VIP_data_independant$POLYsum1_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$POLYsum1_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$POLYsum1_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$POLYsum1_ofTEI_4MAD)		
+VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$POLYsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$POLYsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$POLYsum1_4MAD)]<-0
+VIP_data_independant$POLYsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$POLYsum1_4MAD) & VIP_data_independant$POLYsum1_ofTEI_4MAD >= 5 & VIP_data_independant$POLYsum1_ofTEI_4MAD <= 10 ]<-1
+VIP_data_independant$POLYsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$POLYsum1_4MAD) & VIP_data_independant$POLYsum1_ofTEI_4MAD > 10]<-2
+
+
+
+
+
+#filtered
+VIP_data_independant$MONOsum1_4MAD <- MONOsum1
+length(VIP_data_independant$MONOsum1[!is.na(MONOsum1) & (MONOsum1 <= (median(MONOsum1[!is.na(MONOsum1)])-4*mad(MONOsum1[!is.na(MONOsum1)])) | MONOsum1 >= (median(MONOsum1[!is.na(MONOsum1)])+
+								4*mad(MONOsum1[!is.na(MONOsum1)])))])
+VIP_data_independant$MONOsum1_4MAD[!is.na(MONOsum1) & (MONOsum1 <= (median(MONOsum1[!is.na(MONOsum1)])-4*mad(MONOsum1[!is.na(MONOsum1)])) | MONOsum1 >= (median(MONOsum1[!is.na(MONOsum1)])+
+						4*mad(MONOsum1[!is.na(MONOsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$MONOsum1_ofTEI_4MAD<-(100*9*VIP_data_independant$MONOsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$MONOsum1_4MAD_norm_sd<-log(VIP_data_independant$MONOsum1_4MAD)
+VIP_data_independant$MONOsum1_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_4MAD_norm_sd)]<-(VIP_data_independant$MONOsum1_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$MONOsum1_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$MONOsum1_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$MONOsum1_ofTEI_4MAD)		
+VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$MONOsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$MONOsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$MONOsum1_4MAD)]<-0
+VIP_data_independant$MONOsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$MONOsum1_4MAD) & VIP_data_independant$MONOsum1_ofTEI_4MAD >= 10 & VIP_data_independant$MONOsum1_ofTEI_4MAD <= 20 ]<-1
+VIP_data_independant$MONOsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$MONOsum1_4MAD) & VIP_data_independant$MONOsum1_ofTEI_4MAD > 20]<-2
+
+
+
+
+#filtered
+VIP_data_independant$mfetsum1_4MAD <- mfetsum1
+length(VIP_data_independant$mfetsum1[!is.na(mfetsum1) & (mfetsum1 <= (median(mfetsum1[!is.na(mfetsum1)])-4*mad(mfetsum1[!is.na(mfetsum1)])) | mfetsum1 >= (median(mfetsum1[!is.na(mfetsum1)])+
+								4*mad(mfetsum1[!is.na(mfetsum1)])))])
+VIP_data_independant$mfetsum1_4MAD[!is.na(mfetsum1) & (mfetsum1 <= (median(mfetsum1[!is.na(mfetsum1)])-4*mad(mfetsum1[!is.na(mfetsum1)])) | mfetsum1 >= (median(mfetsum1[!is.na(mfetsum1)])+
+						4*mad(mfetsum1[!is.na(mfetsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$mfetsum1_ofTEI_4MAD<-(100*9*VIP_data_independant$mfetsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$mfetsum1_4MAD_norm_sd<-log(VIP_data_independant$mfetsum1_4MAD)
+VIP_data_independant$mfetsum1_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_4MAD_norm_sd)]<-(VIP_data_independant$mfetsum1_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$mfetsum1_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$mfetsum1_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$mfetsum1_ofTEI_4MAD)		
+VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$mfetsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$mfetsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$mfetsum1_4MAD)]<-2
+VIP_data_independant$mfetsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$mfetsum1_4MAD) & VIP_data_independant$mfetsum1_ofTEI_4MAD <= 10 ]<-1
+
+
+
+
+
+#filtered
+VIP_data_independant$fettsum1_4MAD <- fettsum1
+length(VIP_data_independant$fettsum1[!is.na(fettsum1) & (fettsum1 <= (median(fettsum1[!is.na(fettsum1)])-4*mad(fettsum1[!is.na(fettsum1)])) | fettsum1 >= (median(fettsum1[!is.na(fettsum1)])+
+								4*mad(fettsum1[!is.na(fettsum1)])))])
+VIP_data_independant$fettsum1_4MAD[!is.na(fettsum1) & (fettsum1 <= (median(fettsum1[!is.na(fettsum1)])-4*mad(fettsum1[!is.na(fettsum1)])) | fettsum1 >= (median(fettsum1[!is.na(fettsum1)])+
+						4*mad(fettsum1[!is.na(fettsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$fettsum1_ofTEI_4MAD<-(100*9*VIP_data_independant$fettsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$fettsum1_4MAD_norm_sd<-log(VIP_data_independant$fettsum1_4MAD)
+VIP_data_independant$fettsum1_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_4MAD_norm_sd)]<-(VIP_data_independant$fettsum1_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$fettsum1_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$fettsum1_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$fettsum1_ofTEI_4MAD)		
+VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fettsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$fettsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$fettsum1_4MAD)]<-0
+VIP_data_independant$fettsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$fettsum1_4MAD) & VIP_data_independant$fettsum1_ofTEI_4MAD >= 25 & VIP_data_independant$fettsum1_ofTEI_4MAD <= 25 ]<-1
+VIP_data_independant$fettsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$fettsum1_4MAD) & VIP_data_independant$fettsum1_ofTEI_4MAD > 40]<-2
+
+
+
+
+
+#filtered
+VIP_data_independant$FA_4MAD <- FA
+length(VIP_data_independant$FA[!is.na(FA) & (FA <= (median(FA[!is.na(FA)])-4*mad(FA[!is.na(FA)])) | FA >= (median(FA[!is.na(FA)])+
+								4*mad(FA[!is.na(FA)])))])
+VIP_data_independant$FA_4MAD[!is.na(FA) & (FA <= (median(FA[!is.na(FA)])-4*mad(FA[!is.na(FA)])) | FA >= (median(FA[!is.na(FA)])+
+						4*mad(FA[!is.na(FA)])))]<-NA
+
+# % of TEI
+VIP_data_independant$FA_ofTEI_4MAD<-(100*9*VIP_data_independant$FA_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$FA_4MAD_norm_sd<-log(VIP_data_independant$FA_4MAD)
+VIP_data_independant$FA_4MAD_norm_sd[!is.na(VIP_data_independant$FA_4MAD_norm_sd)]<-(VIP_data_independant$FA_4MAD_norm_sd[!is.na(VIP_data_independant$FA_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$FA_4MAD_norm_sd[!is.na(VIP_data_independant$FA_4MAD_norm_sd)]))/(sd(VIP_data_independant$FA_4MAD_norm_sd[!is.na(VIP_data_independant$FA_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$FA_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$FA_ofTEI_4MAD)		
+VIP_data_independant$FA_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$FA_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$FA_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$FA_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$FA_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$FA_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$FA_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$FA_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$FA_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$FA_4MAD)]<-1
+VIP_data_independant$FA_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$FA_4MAD) & VIP_data_independant$FA_ofTEI_4MAD <3 ]<-2
+
+
+
+
+#filtered
+VIP_data_independant$kolhsum1_4MAD <- kolhsum1
+length(VIP_data_independant$kolhsum1[!is.na(kolhsum1) & (kolhsum1 <= (median(kolhsum1[!is.na(kolhsum1)])-4*mad(kolhsum1[!is.na(kolhsum1)])) | kolhsum1 >= (median(kolhsum1[!is.na(kolhsum1)])+
+								4*mad(kolhsum1[!is.na(kolhsum1)])))])
+VIP_data_independant$kolhsum1_4MAD[!is.na(kolhsum1) & (kolhsum1 <= (median(kolhsum1[!is.na(kolhsum1)])-4*mad(kolhsum1[!is.na(kolhsum1)])) | kolhsum1 >= (median(kolhsum1[!is.na(kolhsum1)])+
+						4*mad(kolhsum1[!is.na(kolhsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$kolhsum1_ofTEI_4MAD<-(100*4*VIP_data_independant$kolhsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$kolhsum1_4MAD_norm_sd<-log(VIP_data_independant$kolhsum1_4MAD)
+VIP_data_independant$kolhsum1_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_4MAD_norm_sd)]<-(VIP_data_independant$kolhsum1_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$kolhsum1_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$kolhsum1_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$kolhsum1_ofTEI_4MAD)		
+VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$kolhsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$kolhsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$kolhsum1_4MAD)]<-0
+VIP_data_independant$kolhsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$kolhsum1_4MAD) & VIP_data_independant$kolhsum1_ofTEI_4MAD >= 45 & VIP_data_independant$kolhsum1_ofTEI_4MAD <= 60 ]<-1
+VIP_data_independant$kolhsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$kolhsum1_4MAD) & VIP_data_independant$kolhsum1_ofTEI_4MAD > 60]<-2
+
+
+
+#filtered
+VIP_data_independant$sacksum1_4MAD <- sacksum1
+length(VIP_data_independant$sacksum1[!is.na(sacksum1) & (sacksum1 <= (median(sacksum1[!is.na(sacksum1)])-4*mad(sacksum1[!is.na(sacksum1)])) | sacksum1 >= (median(sacksum1[!is.na(sacksum1)])+
+								4*mad(sacksum1[!is.na(sacksum1)])))])
+VIP_data_independant$sacksum1_4MAD[!is.na(sacksum1) & (sacksum1 <= (median(sacksum1[!is.na(sacksum1)])-4*mad(sacksum1[!is.na(sacksum1)])) | sacksum1 >= (median(sacksum1[!is.na(sacksum1)])+
+						4*mad(sacksum1[!is.na(sacksum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$sacksum1_ofTEI_4MAD<-(100*4*VIP_data_independant$sacksum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$sacksum1_4MAD_norm_sd<-log(VIP_data_independant$sacksum1_4MAD)
+VIP_data_independant$sacksum1_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_4MAD_norm_sd)]<-(VIP_data_independant$sacksum1_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$sacksum1_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$sacksum1_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$sacksum1_ofTEI_4MAD)		
+VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$sacksum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$sacksum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$sacksum1_4MAD)]<-2
+VIP_data_independant$sacksum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$sacksum1_4MAD) & VIP_data_independant$sacksum1_ofTEI_4MAD < 10 ]<-1
+
+
+
+
+
+
+#filtered
+VIP_data_independant$protsum1_4MAD <- protsum1
+length(VIP_data_independant$protsum1[!is.na(protsum1) & (protsum1 <= (median(protsum1[!is.na(protsum1)])-4*mad(protsum1[!is.na(protsum1)])) | protsum1 >= (median(protsum1[!is.na(protsum1)])+
+								4*mad(protsum1[!is.na(protsum1)])))])
+VIP_data_independant$protsum1_4MAD[!is.na(protsum1) & (protsum1 <= (median(protsum1[!is.na(protsum1)])-4*mad(protsum1[!is.na(protsum1)])) | protsum1 >= (median(protsum1[!is.na(protsum1)])+
+						4*mad(protsum1[!is.na(protsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$protsum1_ofTEI_4MAD<-(100*4*VIP_data_independant$protsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$protsum1_4MAD_norm_sd<-log(VIP_data_independant$protsum1_4MAD)
+VIP_data_independant$protsum1_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_4MAD_norm_sd)]<-(VIP_data_independant$protsum1_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$protsum1_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$protsum1_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$protsum1_ofTEI_4MAD)		
+VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$protsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$protsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$protsum1_4MAD)]<-0
+VIP_data_independant$protsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$protsum1_4MAD) & VIP_data_independant$protsum1_ofTEI_4MAD >= 10 & VIP_data_independant$protsum1_ofTEI_4MAD <= 20 ]<-1
+VIP_data_independant$protsum1_ofTEI_4MAD_categorized_g[!is.na(VIP_data_independant$protsum1_4MAD) & VIP_data_independant$protsum1_ofTEI_4MAD > 20]<-2
+
+
+
+
+
+#filtered
+VIP_data_independant$fibesum1_4MAD <- fibesum1
+length(VIP_data_independant$fibesum1[!is.na(fibesum1) & (fibesum1 <= (median(fibesum1[!is.na(fibesum1)])-4*mad(fibesum1[!is.na(fibesum1)])) | fibesum1 >= (median(fibesum1[!is.na(fibesum1)])+
+								4*mad(fibesum1[!is.na(fibesum1)])))])
+VIP_data_independant$fibesum1_4MAD[!is.na(fibesum1) & (fibesum1 <= (median(fibesum1[!is.na(fibesum1)])-4*mad(fibesum1[!is.na(fibesum1)])) | fibesum1 >= (median(fibesum1[!is.na(fibesum1)])+
+						4*mad(fibesum1[!is.na(fibesum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$fibesum1_ofTEI_4MAD<-(100*4*VIP_data_independant$fibesum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$fibesum1_4MAD_norm_sd<-log(VIP_data_independant$fibesum1_4MAD)
+VIP_data_independant$fibesum1_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_4MAD_norm_sd)]<-(VIP_data_independant$fibesum1_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$fibesum1_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$fibesum1_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$fibesum1_ofTEI_4MAD)		
+VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$fibesum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$fibesum1_4MAD_categorized_g[!is.na(VIP_data_independant$fibesum1_4MAD)]<-1
+VIP_data_independant$fibesum1_4MAD_categorized_g[!is.na(VIP_data_independant$fibesum1_4MAD) & VIP_data_independant$fibesum1_4MAD < 25 ]<-2
+
+
+
+#filtered
+VIP_data_independant$NATRsum1_4MAD <- NATRsum1
+length(VIP_data_independant$NATRsum1[!is.na(NATRsum1) & (NATRsum1 <= (median(NATRsum1[!is.na(NATRsum1)])-4*mad(NATRsum1[!is.na(NATRsum1)])) | NATRsum1 >= (median(NATRsum1[!is.na(NATRsum1)])+
+								4*mad(NATRsum1[!is.na(NATRsum1)])))])
+VIP_data_independant$NATRsum1_4MAD[!is.na(NATRsum1) & (NATRsum1 <= (median(NATRsum1[!is.na(NATRsum1)])-4*mad(NATRsum1[!is.na(NATRsum1)])) | NATRsum1 >= (median(NATRsum1[!is.na(NATRsum1)])+
+						4*mad(NATRsum1[!is.na(NATRsum1)])))]<-NA
+
+# % of TEI
+VIP_data_independant$NATRsum1_ofTEI_4MAD<-(100*4*VIP_data_independant$NATRsum1_4MAD)/ensum1
+
+#log and standardize filtered
+VIP_data_independant$NATRsum1_4MAD_norm_sd<-log(VIP_data_independant$NATRsum1_4MAD)
+VIP_data_independant$NATRsum1_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_4MAD_norm_sd)]<-(VIP_data_independant$NATRsum1_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_4MAD_norm_sd)] - 
+			mean(VIP_data_independant$NATRsum1_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_4MAD_norm_sd)]))/(sd(VIP_data_independant$NATRsum1_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_4MAD_norm_sd)]))
+
+# % of TEI log transformed and standardized
+VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd<-log(VIP_data_independant$NATRsum1_ofTEI_4MAD)		
+VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd)]<-(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd)]-
+			mean(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd)]))/sd(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd[!is.na(VIP_data_independant$NATRsum1_ofTEI_4MAD_norm_sd)])
+
+# categorizing the % of TEI based on guidelines
+VIP_data_independant$NATRsum1_4MAD_categorized_g[!is.na(VIP_data_independant$NATRsum1_4MAD)]<-2
+VIP_data_independant$NATRsum1_4MAD_categorized_g[!is.na(VIP_data_independant$NATRsum1_4MAD) & VIP_data_independant$NATRsum1_4MAD/1000 <= 2.4]<-1
+
+
+			
+			
+			
+			
+			#filtered less
+
+
+# continuous
+
+#together
+associations<-glm(bmi_4MAD_norm_sd~age + agesq + gender_factor + year + ffq_factor + POLYsum1_4MAD_norm_sd + MONOsum1_4MAD_norm_sd + mfetsum1_4MAD_norm_sd + fettsum1_4MAD_norm_sd + sacksum1_4MAD_norm_sd
+				+ kolhsum1_4MAD_norm_sd + FA_4MAD_norm_sd + protsum1_4MAD_norm_sd + fibesum1_4MAD_norm_sd + NATRsum1_4MAD_norm_sd, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+#r²
+all_variables<-c("POLYsum1_4MAD_norm_sd","MONOsum1_4MAD_norm_sd","mfetsum1_4MAD_norm_sd","fettsum1_4MAD_norm_sd","sacksum1_4MAD_norm_sd",
+		"kolhsum1_4MAD_norm_sd","FA_4MAD_norm_sd","protsum1_4MAD_norm_sd","fibesum1_4MAD_norm_sd","NATRsum1_4MAD_norm_sd")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4MAD_norm_sd",all_variables)])
+
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(independant_no_missing$bmi_4MAD_norm_sd,independant_no_missing[,c(variable)],
+			independant_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+
+#separately
+for (variable in all_variables){
+	
+	associations<-glm(bmi_4MAD_norm_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_4MAD_norm_sd[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+# % of TEI
+
+#together
+associations<-glm(bmi_4MAD_norm_sd~age + agesq + gender_factor + year + ffq_factor + POLYsum1_ofTEI_4MAD_norm_sd + MONOsum1_ofTEI_4MAD_norm_sd + mfetsum1_ofTEI_4MAD_norm_sd + fettsum1_ofTEI_4MAD_norm_sd + sacksum1_ofTEI_4MAD_norm_sd
+				+ kolhsum1_ofTEI_4MAD_norm_sd + FA_ofTEI_4MAD_norm_sd + protsum1_ofTEI_4MAD_norm_sd + fibesum1_ofTEI_4MAD_norm_sd + NATRsum1_ofTEI_4MAD_norm_sd, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+all_variables<-c("POLYsum1_ofTEI_4MAD_norm_sd","MONOsum1_ofTEI_4MAD_norm_sd","mfetsum1_ofTEI_4MAD_norm_sd","fettsum1_ofTEI_4MAD_norm_sd","sacksum1_ofTEI_4MAD_norm_sd",
+		"kolhsum1_ofTEI_4MAD_norm_sd","FA_ofTEI_4MAD_norm_sd","protsum1_ofTEI_4MAD_norm_sd","fibesum1_ofTEI_4MAD_norm_sd","NATRsum1_ofTEI_4MAD_norm_sd")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4MAD_norm_sd",all_variables)])
+
+#r²
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(independant_no_missing$bmi_4MAD_norm_sd,independant_no_missing[,c(variable)],
+			independant_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+
+#separately
+for (variable in all_variables){
+	
+	associations<-glm(bmi_4MAD_norm_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_4MAD_norm_sd[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+
+
+
+
+#  % of TEI and categorized
+associations<-glm(bmi_4MAD_norm_sd~age + agesq + gender_factor + year + ffq_factor + POLYsum1_ofTEI_4MAD_categorized_g + MONOsum1_ofTEI_4MAD_categorized_g + mfetsum1_ofTEI_4MAD_categorized_g + fettsum1_ofTEI_4MAD_categorized_g + sacksum1_ofTEI_4MAD_categorized_g
+				+ kolhsum1_ofTEI_4MAD_categorized_g + FA_ofTEI_4MAD_categorized_g + protsum1_ofTEI_4MAD_categorized_g + fibesum1_categorized_g + NATRsum1_categorized_g, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+all_variables<-c("POLYsum1_ofTEI_4MAD_categorized_g","MONOsum1_ofTEI_4MAD_categorized_g","mfetsum1_ofTEI_4MAD_categorized_g","fettsum1_ofTEI_4MAD_categorized_g","sacksum1_ofTEI_4MAD_categorized_g",
+		"kolhsum1_ofTEI_4MAD_categorized_g","FA_ofTEI_4MAD_categorized_g","protsum1_ofTEI_4MAD_categorized_g","fibesum1_categorized_g","NATRsum1_categorized_g")
+
+independant_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_4MAD_norm_sd",all_variables)])
+
+#r²
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(independant_no_missing$bmi_4MAD_norm_sd,independant_no_missing[,c(variable)],
+			independant_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+
+# separately
+for (variable in all_variables){
+	
+	associations<-glm(bmi_4MAD_norm_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_4MAD_norm_sd[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_4MAD_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+
+
+VIP_data <- read.csv("VIP_data/VIP_161102.csv", header = TRUE, sep = ",", row.names = NULL, fill=TRUE)
+VIP_data<-VIP_data[order(Subject_id),]
+attach(VIP_data)
+
+missing_besok<-cbind(Subject_id[is.na(besok)],as.numeric(substr(datum[is.na(besok)],7,10)))
+colnames(missing_besok)<-c("Subject_id","year")
+
+years<-VIP_data[Subject_id %in% missing_besok[,1],c("Subject_id","datum")]
+years$datum<-as.numeric(substr(years$datum,7,10))
+years_in_order<-aggregate(datum~Subject_id,data=years,function(x){return(x)})
+
+missing_besok_all_years<-merge(years_in_order,missing_besok)
+
+VIP_data$new_visit<-besok
+VIP_data$new_visit[is.na(besok)]<-apply(missing_besok_all_years,1,function(x){return(match(x[3],sort(x[2][[1]])))})
+detach(VIP_data)
+
+
+
+
+
+
+#POLYsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$POLYsum1_norm_sd<-log(POLYsum1)
+VIP_data_independant$POLYsum1_norm_sd[!is.na(POLYsum1)]<-(VIP_data_independant$POLYsum1_norm_sd[!is.na(POLYsum1)]-
+			mean(VIP_data_independant$POLYsum1_norm_sd[!is.na(POLYsum1)]))/sd(VIP_data_independant$POLYsum1_norm_sd[!is.na(POLYsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$POLYsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$POLYsum1_norm_sd)]<-lm(VIP_data_independant$POLYsum1_norm_sd~ensum1)$residuals
+
+
+#MONOsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$MONOsum1_norm_sd<-log(MONOsum1)
+VIP_data_independant$MONOsum1_norm_sd[!is.na(MONOsum1)]<-(VIP_data_independant$MONOsum1_norm_sd[!is.na(MONOsum1)]-
+			mean(VIP_data_independant$MONOsum1_norm_sd[!is.na(MONOsum1)]))/sd(VIP_data_independant$MONOsum1_norm_sd[!is.na(MONOsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$MONOsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$MONOsum1_norm_sd)]<-lm(VIP_data_independant$MONOsum1_norm_sd~ensum1)$residuals
+
+
+
+#mfetsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$mfetsum1_norm_sd<-log(mfetsum1)
+VIP_data_independant$mfetsum1_norm_sd[!is.na(mfetsum1)]<-(VIP_data_independant$mfetsum1_norm_sd[!is.na(mfetsum1)]-
+			mean(VIP_data_independant$mfetsum1_norm_sd[!is.na(mfetsum1)]))/sd(VIP_data_independant$mfetsum1_norm_sd[!is.na(mfetsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$mfetsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$mfetsum1_norm_sd)]<-lm(VIP_data_independant$mfetsum1_norm_sd~ensum1)$residuals
+
+
+
+#fettsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$fettsum1_norm_sd<-log(fettsum1)
+VIP_data_independant$fettsum1_norm_sd[!is.na(fettsum1)]<-(VIP_data_independant$fettsum1_norm_sd[!is.na(fettsum1)]-
+			mean(VIP_data_independant$fettsum1_norm_sd[!is.na(fettsum1)]))/sd(VIP_data_independant$fettsum1_norm_sd[!is.na(fettsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$fettsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$fettsum1_norm_sd)]<-lm(VIP_data_independant$fettsum1_norm_sd~ensum1)$residuals
+
+
+#FA
+#acids are a combination of several variables
+VIP_data_independant$FA<-FA183_sum1 + FA205_sum1 + FA226_sum1 + FA182_sum1 + FA204_sum1
+detach(VIP_data_independant)
+attach(VIP_data_independant)
+
+VIP_data_independant$FA_norm_sd<-log(FA)
+VIP_data_independant$FA_norm_sd[!is.na(FA)]<-(VIP_data_independant$FA_norm_sd[!is.na(FA)]-
+			mean(VIP_data_independant$FA_norm_sd[!is.na(FA)]))/sd(VIP_data_independant$FA_norm_sd[!is.na(FA)])
+
+# adjusted for TEI
+
+VIP_data_independant$FA_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$FA_norm_sd)]<-lm(VIP_data_independant$FA_norm_sd~ensum1)$residuals
+
+
+
+#kolhsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$kolhsum1_norm_sd<-log(kolhsum1)
+VIP_data_independant$kolhsum1_norm_sd[!is.na(kolhsum1)]<-(VIP_data_independant$kolhsum1_norm_sd[!is.na(kolhsum1)]-
+			mean(VIP_data_independant$kolhsum1_norm_sd[!is.na(kolhsum1)]))/sd(VIP_data_independant$kolhsum1_norm_sd[!is.na(kolhsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$kolhsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$kolhsum1_norm_sd)]<-lm(VIP_data_independant$kolhsum1_norm_sd~ensum1)$residuals
+
+
+
+#sacksum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$sacksum1_norm_sd<-log(sacksum1)
+VIP_data_independant$sacksum1_norm_sd[!is.na(sacksum1)]<-(VIP_data_independant$sacksum1_norm_sd[!is.na(sacksum1)]-
+			mean(VIP_data_independant$sacksum1_norm_sd[!is.na(sacksum1)]))/sd(VIP_data_independant$sacksum1_norm_sd[!is.na(sacksum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$sacksum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$sacksum1_norm_sd)]<-lm(VIP_data_independant$sacksum1_norm_sd~ensum1)$residuals
+
+
+
+#protsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$protsum1_norm_sd<-log(protsum1)
+VIP_data_independant$protsum1_norm_sd[!is.na(protsum1)]<-(VIP_data_independant$protsum1_norm_sd[!is.na(protsum1)]-
+			mean(VIP_data_independant$protsum1_norm_sd[!is.na(protsum1)]))/sd(VIP_data_independant$protsum1_norm_sd[!is.na(protsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$protsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$protsum1_norm_sd)]<-lm(VIP_data_independant$protsum1_norm_sd~ensum1)$residuals
+
+
+
+#fibesum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$fibesum1_norm_sd<-log(fibesum1)
+VIP_data_independant$fibesum1_norm_sd[!is.na(fibesum1)]<-(VIP_data_independant$fibesum1_norm_sd[!is.na(fibesum1)]-
+			mean(VIP_data_independant$fibesum1_norm_sd[!is.na(fibesum1)]))/sd(VIP_data_independant$fibesum1_norm_sd[!is.na(fibesum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$fibesum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$fibesum1_norm_sd)]<-lm(VIP_data_independant$fibesum1_norm_sd~ensum1)$residuals
+
+
+
+#NATRsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$NATRsum1_norm_sd<-log(NATRsum1)
+VIP_data_independant$NATRsum1_norm_sd[!is.na(NATRsum1)]<-(VIP_data_independant$NATRsum1_norm_sd[!is.na(NATRsum1)]-
+			mean(VIP_data_independant$NATRsum1_norm_sd[!is.na(NATRsum1)]))/sd(VIP_data_independant$NATRsum1_norm_sd[!is.na(NATRsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$NATRsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$NATRsum1_norm_sd)]<-lm(VIP_data_independant$NATRsum1_norm_sd~ensum1)$residuals
+
+
+
+#protsum1_anim
+#original
+#continuous log transformed and standardized
+VIP_data_independant$protsum1_anim_norm_sd<-log(protsum1_anim)
+VIP_data_independant$protsum1_anim_norm_sd[!is.na(protsum1_anim)]<-(VIP_data_independant$protsum1_anim_norm_sd[!is.na(protsum1_anim)]-
+			mean(VIP_data_independant$protsum1_anim_norm_sd[!is.na(protsum1_anim)]))/sd(VIP_data_independant$protsum1_anim_norm_sd[!is.na(protsum1_anim)])
+
+# adjusted for TEI
+
+VIP_data_independant$protsum1_anim_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$protsum1_anim_norm_sd)]<-lm(VIP_data_independant$protsum1_anim_norm_sd~ensum1)$residuals
+
+
+
+#protsum1_veg
+#original
+#continuous log transformed and standardized
+VIP_data_independant$protsum1_veg_norm_sd<-log(protsum1_veg)
+VIP_data_independant$protsum1_veg_norm_sd[!is.na(protsum1_veg)]<-(VIP_data_independant$protsum1_veg_norm_sd[!is.na(protsum1_veg)]-
+			mean(VIP_data_independant$protsum1_veg_norm_sd[!is.na(protsum1_veg)]))/sd(VIP_data_independant$protsum1_veg_norm_sd[!is.na(protsum1_veg)])
+
+# adjusted for TEI
+
+VIP_data_independant$protsum1_veg_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$protsum1_veg_norm_sd)]<-lm(VIP_data_independant$protsum1_veg_norm_sd~ensum1)$residuals
+
+
+
+#DISAsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$DISAsum1_norm_sd<-log(DISAsum1)
+VIP_data_independant$DISAsum1_norm_sd[!is.na(DISAsum1)]<-(VIP_data_independant$DISAsum1_norm_sd[!is.na(DISAsum1)]-
+			mean(VIP_data_independant$DISAsum1_norm_sd[!is.na(DISAsum1)]))/sd(VIP_data_independant$DISAsum1_norm_sd[!is.na(DISAsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$DISAsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$DISAsum1_norm_sd)]<-lm(VIP_data_independant$DISAsum1_norm_sd~ensum1)$residuals
+
+
+
+#MOSAsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$MOSAsum1_norm_sd<-log(MOSAsum1)
+VIP_data_independant$MOSAsum1_norm_sd[!is.na(MOSAsum1)]<-(VIP_data_independant$MOSAsum1_norm_sd[!is.na(MOSAsum1)]-
+			mean(VIP_data_independant$MOSAsum1_norm_sd[!is.na(MOSAsum1)]))/sd(VIP_data_independant$MOSAsum1_norm_sd[!is.na(MOSAsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$MOSAsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$MOSAsum1_norm_sd)]<-lm(VIP_data_independant$MOSAsum1_norm_sd~ensum1)$residuals
+
+
+
+#FULLKsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$FULLKsum1_norm_sd<-log(FULLKsum1)
+VIP_data_independant$FULLKsum1_norm_sd[!is.na(FULLKsum1)]<-(VIP_data_independant$FULLKsum1_norm_sd[!is.na(FULLKsum1)]-
+			mean(VIP_data_independant$FULLKsum1_norm_sd[!is.na(FULLKsum1)]))/sd(VIP_data_independant$FULLKsum1_norm_sd[!is.na(FULLKsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$FULLKsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$FULLKsum1_norm_sd)]<-lm(VIP_data_independant$FULLKsum1_norm_sd~ensum1)$residuals
+
+
+
+#alkosum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$alkosum1_norm_sd<-log(alkosum1)
+VIP_data_independant$alkosum1_norm_sd[!is.na(alkosum1)]<-(VIP_data_independant$alkosum1_norm_sd[!is.na(alkosum1)]-
+			mean(VIP_data_independant$alkosum1_norm_sd[!is.na(alkosum1)]))/sd(VIP_data_independant$alkosum1_norm_sd[!is.na(alkosum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$alkosum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$alkosum1_norm_sd)]<-lm(VIP_data_independant$alkosum1_norm_sd~ensum1)$residuals
+
+
+
+#TRANSsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$TRANSsum1_norm_sd<-log(TRANSsum1)
+VIP_data_independant$TRANSsum1_norm_sd[!is.na(TRANSsum1)]<-(VIP_data_independant$TRANSsum1_norm_sd[!is.na(TRANSsum1)]-
+			mean(VIP_data_independant$TRANSsum1_norm_sd[!is.na(TRANSsum1)]))/sd(VIP_data_independant$TRANSsum1_norm_sd[!is.na(TRANSsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$TRANSsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$TRANSsum1_norm_sd)]<-lm(VIP_data_independant$TRANSsum1_norm_sd~ensum1)$residuals
+
+
+
+#kolesum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$kolesum1_norm_sd<-log(kolesum1)
+VIP_data_independant$kolesum1_norm_sd[!is.na(kolesum1)]<-(VIP_data_independant$kolesum1_norm_sd[!is.na(kolesum1)]-
+			mean(VIP_data_independant$kolesum1_norm_sd[!is.na(kolesum1)]))/sd(VIP_data_independant$kolesum1_norm_sd[!is.na(kolesum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$kolesum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$kolesum1_norm_sd)]<-lm(VIP_data_independant$kolesum1_norm_sd~ensum1)$residuals
+
+
+
+#MAGNsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$MAGNsum1_norm_sd<-log(MAGNsum1)
+VIP_data_independant$MAGNsum1_norm_sd[!is.na(MAGNsum1)]<-(VIP_data_independant$MAGNsum1_norm_sd[!is.na(MAGNsum1)]-
+			mean(VIP_data_independant$MAGNsum1_norm_sd[!is.na(MAGNsum1)]))/sd(VIP_data_independant$MAGNsum1_norm_sd[!is.na(MAGNsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$MAGNsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$MAGNsum1_norm_sd)]<-lm(VIP_data_independant$MAGNsum1_norm_sd~ensum1)$residuals
+
+
+
+#FOSFsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$FOSFsum1_norm_sd<-log(FOSFsum1)
+VIP_data_independant$FOSFsum1_norm_sd[!is.na(FOSFsum1)]<-(VIP_data_independant$FOSFsum1_norm_sd[!is.na(FOSFsum1)]-
+			mean(VIP_data_independant$FOSFsum1_norm_sd[!is.na(FOSFsum1)]))/sd(VIP_data_independant$FOSFsum1_norm_sd[!is.na(FOSFsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$FOSFsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$FOSFsum1_norm_sd)]<-lm(VIP_data_independant$FOSFsum1_norm_sd~ensum1)$residuals
+
+
+
+#selesum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$selesum1_norm_sd<-log(selesum1)
+VIP_data_independant$selesum1_norm_sd[!is.na(selesum1)]<-(VIP_data_independant$selesum1_norm_sd[!is.na(selesum1)]-
+			mean(VIP_data_independant$selesum1_norm_sd[!is.na(selesum1)]))/sd(VIP_data_independant$selesum1_norm_sd[!is.na(selesum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$selesum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$selesum1_norm_sd)]<-lm(VIP_data_independant$selesum1_norm_sd~ensum1)$residuals
+
+
+
+#ZINCsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$ZINCsum1_norm_sd<-log(ZINCsum1)
+VIP_data_independant$ZINCsum1_norm_sd[!is.na(ZINCsum1)]<-(VIP_data_independant$ZINCsum1_norm_sd[!is.na(ZINCsum1)]-
+			mean(VIP_data_independant$ZINCsum1_norm_sd[!is.na(ZINCsum1)]))/sd(VIP_data_independant$ZINCsum1_norm_sd[!is.na(ZINCsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$ZINCsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$ZINCsum1_norm_sd)]<-lm(VIP_data_independant$ZINCsum1_norm_sd~ensum1)$residuals
+
+
+
+#retisum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$retisum1_norm_sd<-log(retisum1)
+VIP_data_independant$retisum1_norm_sd[!is.na(retisum1)]<-(VIP_data_independant$retisum1_norm_sd[!is.na(retisum1)]-
+			mean(VIP_data_independant$retisum1_norm_sd[!is.na(retisum1)]))/sd(VIP_data_independant$retisum1_norm_sd[!is.na(retisum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$retisum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$retisum1_norm_sd)]<-lm(VIP_data_independant$retisum1_norm_sd~ensum1)$residuals
+
+
+
+#karosum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$karosum1_norm_sd<-log(karosum1)
+VIP_data_independant$karosum1_norm_sd[!is.na(karosum1)]<-(VIP_data_independant$karosum1_norm_sd[!is.na(karosum1)]-
+			mean(VIP_data_independant$karosum1_norm_sd[!is.na(karosum1)]))/sd(VIP_data_independant$karosum1_norm_sd[!is.na(karosum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$karosum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$karosum1_norm_sd)]<-lm(VIP_data_independant$karosum1_norm_sd~ensum1)$residuals
+
+
+
+#TIAMsum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$TIAMsum1_norm_sd<-log(TIAMsum1)
+VIP_data_independant$TIAMsum1_norm_sd[!is.na(TIAMsum1)]<-(VIP_data_independant$TIAMsum1_norm_sd[!is.na(TIAMsum1)]-
+			mean(VIP_data_independant$TIAMsum1_norm_sd[!is.na(TIAMsum1)]))/sd(VIP_data_independant$TIAMsum1_norm_sd[!is.na(TIAMsum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$TIAMsum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$TIAMsum1_norm_sd)]<-lm(VIP_data_independant$TIAMsum1_norm_sd~ensum1)$residuals
+
+
+
+#Folasum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$Folasum1_norm_sd<-log(Folasum1)
+VIP_data_independant$Folasum1_norm_sd[!is.na(Folasum1)]<-(VIP_data_independant$Folasum1_norm_sd[!is.na(Folasum1)]-
+			mean(VIP_data_independant$Folasum1_norm_sd[!is.na(Folasum1)]))/sd(VIP_data_independant$Folasum1_norm_sd[!is.na(Folasum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$Folasum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$Folasum1_norm_sd)]<-lm(VIP_data_independant$Folasum1_norm_sd~ensum1)$residuals
+
+
+
+#B2sum1
+#original
+#continuous log transformed and standardized
+VIP_data_independant$B2sum1_norm_sd<-log(B2sum1)
+VIP_data_independant$B2sum1_norm_sd[!is.na(B2sum1)]<-(VIP_data_independant$B2sum1_norm_sd[!is.na(B2sum1)]-
+			mean(VIP_data_independant$B2sum1_norm_sd[!is.na(B2sum1)]))/sd(VIP_data_independant$B2sum1_norm_sd[!is.na(B2sum1)])
+
+# adjusted for TEI
+
+VIP_data_independant$B2sum1_TEI_adjusted_norm_sd[!is.na(VIP_data_independant$B2sum1_norm_sd)]<-lm(VIP_data_independant$B2sum1_norm_sd~ensum1)$residuals
+
+
+
+#--------------------------25.4.-------------------------------------
+#MICRONUTRIENTS
+#continous.....getting different numbers than if fitting with basic covariates, some quite different, there is a lot of colinearity with the basic covariates also
+
+full_model_micronutrients<-glm(basic_residuals~NATRsum1_TEI_adjusted_norm_sd+MAGNsum1_TEI_adjusted_norm_sd+FOSFsum1_TEI_adjusted_norm_sd+
+				selesum1_TEI_adjusted_norm_sd+ZINCsum1_TEI_adjusted_norm_sd+retisum1_TEI_adjusted_norm_sd+karosum1_TEI_adjusted_norm_sd+
+				TIAMsum1_TEI_adjusted_norm_sd+Folasum1_TEI_adjusted_norm_sd+B2sum1_TEI_adjusted_norm_sd+NIACsum1_TEI_adjusted_norm_sd+
+				B6sum1_TEI_adjusted_norm_sd+B12sum1_TEI_adjusted_norm_sd+askosum1_TEI_adjusted_norm_sd+Dsum1_TEI_adjusted_norm_sd+
+				tokosum1_TEI_adjusted_norm_sd+VITKsum1_TEI_adjusted_norm_sd+jernsum1_TEI_adjusted_norm_sd+JODIsum1_TEI_adjusted_norm_sd+
+				kalcsum1_TEI_adjusted_norm_sd+KALIsum1_TEI_adjusted_norm_sd, family = gaussian(link = "identity"))
+
+
+#check results for all variables:
+#together
+summary(full_model_micronutrients)
+vif(full_model_micronutrients)
+
+micronutrients_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_norm_sd",micronutrients_variables)])
+
+#r²
+variable_count<-1
+for (variable in micronutrients_variables){
+	
+	partial_corr<-pcor.test(micronutrients_no_missing$bmi_norm_sd,micronutrients_no_missing[,c(variable)],
+			micronutrients_no_missing[,c("age","agesq","year","ffq","gender",micronutrients_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+#separately
+for (variable in micronutrients_variables){
+	
+	associations<-glm(bmi_norm_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in micronutrients_variables){
+	
+	partial_corr<-pcor.test(bmi_norm_sd[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+#estimate best model based on different scores
+
+#AIC
+
+model_selection_micronutrients <- glmulti(full_model_micronutrients, level = 1, crit="aicc", confsetsize=2097152)
+
+summary(model_selection_micronutrients)
+
+
+
+weightable(model_selection_micronutrients)
+
+
+
+
+#OTHERS
+#continous.....getting different numbers than if fitting with basic covariates, some quite different, there is a lot of colinearity with the basic covariates also
+
+full_model_other<-glm(basic_residuals~FULLKsum1_TEI_adjusted_norm_sd+kolesum1_TEI_adjusted_norm_sd+alkosum1_TEI_adjusted_norm_sd, family = gaussian(link = "identity"))
+
+
+#check results for all variables:
+#together
+summary(full_model_other)
+vif(full_model_other)
+
+other_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_norm_sd",other_variables)])
+
+#r²
+variable_count<-1
+for (variable in other_variables){
+	
+	partial_corr<-pcor.test(other_no_missing$bmi_norm_sd,other_no_missing[,c(variable)],
+			other_no_missing[,c("age","agesq","year","ffq","gender",other_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+#separately
+for (variable in other_variables){
+	
+	associations<-glm(bmi_norm_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in other_variables){
+	
+	partial_corr<-pcor.test(bmi_norm_sd[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+#estimate best model based on different scores
+
+#AIC
+
+model_selection_other <- glmulti(full_model_other, level = 1, crit="aicc", confsetsize=8)
+
+summary(model_selection_other)
+
+
+
+weightable(model_selection_other)
+
+
+#ALL TOGETHER
+#continous.....getting different numbers than if fitting with basic covariates, some quite different, there is a lot of colinearity with the basic covariates also
+
+full_model_all<-glm(basic_residuals~POLYsum1_TEI_adjusted_norm_sd+MONOsum1_TEI_adjusted_norm_sd+mfetsum1_TEI_adjusted_norm_sd+
+				fettsum1_TEI_adjusted_norm_sd+sacksum1_TEI_adjusted_norm_sd+kolhsum1_TEI_adjusted_norm_sd+FA_TEI_adjusted_norm_sd+
+				protsum1_TEI_adjusted_norm_sd+protsum1_anim_TEI_adjusted_norm_sd+protsum1_veg_TEI_adjusted_norm_sd+
+				fibesum1_TEI_adjusted_norm_sd+DISAsum1_TEI_adjusted_norm_sd+MOSAsum1_TEI_adjusted_norm_sd+TRANSsum1_TEI_adjusted_norm_sd+
+				NATRsum1_TEI_adjusted_norm_sd+MAGNsum1_TEI_adjusted_norm_sd+FOSFsum1_TEI_adjusted_norm_sd+
+				selesum1_TEI_adjusted_norm_sd+ZINCsum1_TEI_adjusted_norm_sd+retisum1_TEI_adjusted_norm_sd+karosum1_TEI_adjusted_norm_sd+
+				TIAMsum1_TEI_adjusted_norm_sd+Folasum1_TEI_adjusted_norm_sd+B2sum1_TEI_adjusted_norm_sd+NIACsum1_TEI_adjusted_norm_sd+
+				B6sum1_TEI_adjusted_norm_sd+B12sum1_TEI_adjusted_norm_sd+askosum1_TEI_adjusted_norm_sd+Dsum1_TEI_adjusted_norm_sd+
+				tokosum1_TEI_adjusted_norm_sd+VITKsum1_TEI_adjusted_norm_sd+jernsum1_TEI_adjusted_norm_sd+JODIsum1_TEI_adjusted_norm_sd+
+				kalcsum1_TEI_adjusted_norm_sd+KALIsum1_TEI_adjusted_norm_sd+FULLKsum1_TEI_adjusted_norm_sd+kolesum1_TEI_adjusted_norm_sd+
+				alkosum1_TEI_adjusted_norm_sd, family = gaussian(link = "identity"))
+
+
+#check results for all variables:
+#together
+summary(full_model_all)
+vif(full_model_all)
+
+all_no_missing<-na.omit(VIP_data_independant[,c("age","agesq","year","ffq","gender","bmi_norm_sd",all_variables)])
+
+#r²
+variable_count<-1
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(all_no_missing$bmi_norm_sd,all_no_missing[,c(variable)],
+			all_no_missing[,c("age","agesq","year","ffq","gender",all_variables[-variable_count])])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+	variable_count<-variable_count+1
+	
+}
+
+#separately
+for (variable in all_variables){
+	
+	associations<-glm(bmi_norm_sd~age + agesq + gender_factor + year + ffq_factor + VIP_data_independant[,c(variable)], family = gaussian(link = "identity"))
+	associations_summary<-summary(associations)
+	
+	message(variable)
+	message(round(associations_summary$coefficients[[7]],7))
+	message(round(associations_summary$coefficients[[28]],7))
+	
+}
+
+#r²
+for (variable in all_variables){
+	
+	partial_corr<-pcor.test(bmi_norm_sd[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)]))],VIP_data_independant[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c(variable)],
+			VIP_data_independant[(!is.na(bmi_norm_sd) & !is.na(VIP_data_independant[,c(variable)])),c("age","agesq","year","ffq","gender")])
+	message(variable)
+	message(round(partial_corr[[1]]*partial_corr[[1]],6))
+	message(partial_corr[[2]])
+	
+}
+
+
+
+#estimate best model based on different scores
+
+#AIC
+
+#not sure of it is a good idea to run this for all possible models
+model_selection_all <- glmulti(full_model_all, level = 1, crit="aicc", confsetsize=274877906944)
+
+summary(model_selection)
+
+
+
+weightable(model_selection)
+
+
+micronutrients_variables<-c("MAGNsum1_TEI_adjusted_norm_sd","FOSFsum1_TEI_adjusted_norm_sd",
+		"selesum1_TEI_adjusted_norm_sd","ZINCsum1_TEI_adjusted_norm_sd","retisum1_TEI_adjusted_norm_sd","karosum1_TEI_adjusted_norm_sd",
+		"TIAMsum1_TEI_adjusted_norm_sd","Folasum1_TEI_adjusted_norm_sd","B2sum1_TEI_adjusted_norm_sd","NIACsum1_TEI_adjusted_norm_sd",
+		"B6sum1_TEI_adjusted_norm_sd","B12sum1_TEI_adjusted_norm_sd","askosum1_TEI_adjusted_norm_sd","Dsum1_TEI_adjusted_norm_sd",
+		"tokosum1_TEI_adjusted_norm_sd","VITKsum1_TEI_adjusted_norm_sd","jernsum1_TEI_adjusted_norm_sd","JODIsum1_TEI_adjusted_norm_sd",
+		"kalcsum1_TEI_adjusted_norm_sd","KALIsum1_TEI_adjusted_norm_sd")
+
+all_variables<-c(macronutrients_variables, micronutrients_variables)
+
+
+
+#sugar
+#long ffq: da14 coffe buns rusk, da28 cornflakes, da48 pancakes vaffles, da65 icecream, da66 sweets and chocolate, da67 sugar honey, da 68 jam, da69 cookies, da74 soft drinks, da75 sodas, da 76 juice
+#short ffq: dat13 coffe buns rusk, dat23 cornflakes, DAT35  pancakes vaffles, dat48 icecream, dat49 sweets and chocolate, DAT50 sugar honey jam, dat51 cookies, dat 56 soft drinks sodas juice
+
+VIP_data_independant$sugar_food[ffq==0]<-apply(cbind(gramshort13,gramshort23,gramshort35,gramshort48,gramshort49,gramshort50,gramshort51,gramshort56),1,FUN=sum,na.rm=TRUE)[ffq==0]
+VIP_data_independant$sugar_food[ffq==1]<-apply(cbind(gramlong14,gramlong28,gramlong48,gramlong65,gramlong66,gramlong67,gramlong68,gramlong69,gramlong74,gramlong75,gramlong76),1,FUN=sum,na.rm=TRUE)[ffq==1]
+VIP_data_independant$sugar_food_norm_sd[!is.na(VIP_data_independant$sugar_food)]<-log(VIP_data_independant$sugar_food[!is.na(VIP_data_independant$sugar_food)]+0.0001)
+VIP_data_independant$sugar_food_norm_sd[!is.na(VIP_data_independant$sugar_food_norm_sd)]<-(VIP_data_independant$sugar_food_norm_sd[!is.na(VIP_data_independant$sugar_food_norm_sd)]-mean(VIP_data_independant$sugar_food_norm_sd[!is.na(VIP_data_independant$sugar_food_norm_sd)]))/
++ (sd(VIP_data_independant$sugar_food_norm_sd[!is.na(VIP_data_independant$sugar_food_norm_sd)]))
+
+
+
+VIP_data_independant$fruit[ffq==0]<-apply(cbind(gramshort24,gramshort25,gramshort26),1,FUN=sum,na.rm=TRUE)[ffq==0]
+VIP_data_independant$fruit[ffq==1]<-apply(cbind(gramlong29, gramlong30,gramlong31,gramlong32),1,FUN=sum,na.rm=TRUE)[ffq==1]
+VIP_data_independant$fruit_norm_sd[!is.na(VIP_data_independant$fruit)]<-log(VIP_data_independant$fruit[!is.na(VIP_data_independant$fruit)]+0.0001)
+VIP_data_independant$fruit_norm_sd[!is.na(VIP_data_independant$fruit)]<-(VIP_data_independant$fruit_norm_sd-mean(VIP_data_independant$fruit_norm_sd))/
+		(sd(VIP_data_independant$fruit_norm_sd))
+
+
+
+VIP_data_independant$vegetables[ffq==0]<-apply(cbind(gramshort27,gramshort28,gramshort29,gramshort34),1,FUN=sum,na.rm=TRUE)[ffq==0]
+VIP_data_independant$vegetables[ffq==1]<-apply(cbind(gramlong33,gramlong34,gramlong35,gramlong36,gramlong37,gramlong38, gramlong46),1,FUN=sum,na.rm=TRUE)[ffq==1]
+VIP_data_independant$vegetables_norm_sd[!is.na(VIP_data_independant$vegetables)]<-log(VIP_data_independant$vegetables[!is.na(VIP_data_independant$vegetables)]+0.0001)
+VIP_data_independant$vegetables_norm_sd[!is.na(VIP_data_independant$vegetables)]<-(VIP_data_independant$vegetables_norm_sd-mean(VIP_data_independant$vegetables_norm_sd))/
+		(sd(VIP_data_independant$vegetables_norm_sd))
+
+
+
+
+associations<-glm(bmi_norm_sd~age + agesq + gender_factor + year + ffq_factor + sugar_food_norm_sd, family = gaussian(link = "identity"))
+ 
+summary(associations)
+vif(associations)
+
+
+
+associations<-glm(bmi_norm_sd~age + agesq + gender_factor + year + ffq_factor + sugar_food_norm_sd + fruit_norm_sd + vegetables_norm_sd, family = gaussian(link = "identity"))
+
+summary(associations)
+vif(associations)
+
+
+
+#make matrix of bmi classes
+bmi_classes_visit1<-c()
+bmi_classes_visit1[VIP_data_subset_visit1_complete_cases$bmi_category==0]<-1
+bmi_classes_visit1[VIP_data_subset_visit1_complete_cases$bmi_category!=0]<-0
+bmi_classes_visit1<-cbind(bmi_classes_visit1,bmi_classes_visit1, bmi_classes_visit1)
+bmi_classes_visit1[VIP_data_subset_visit1_complete_cases$bmi_category!=1,2]<-0
+bmi_classes_visit1[VIP_data_subset_visit1_complete_cases$bmi_category==1,2]<-1
+bmi_classes_visit1[VIP_data_subset_visit1_complete_cases$bmi_category!=2,3]<-0
+bmi_classes_visit1[VIP_data_subset_visit1_complete_cases$bmi_category==2,3]<-1
+colnames(bmi_classes_visit1)<-c(1,2,3)
+
+#make categories of bmi for visit1
+
+#01
+bmi_category01_visit1<-VIP_data_subset_visit1_complete_cases$bmi_category[VIP_data_subset_visit1_complete_cases$bmi_category!=2]
+bmi_category01_visit1<-factor(bmi_category01_visit1)
+
+
+#02
+bmi_category02_visit1<-VIP_data_subset_visit1_complete_cases$bmi_category[VIP_data_subset_visit1_complete_cases$bmi_category!=1]
+bmi_category02_visit1[bmi_category02_visit1==2]<-1
+bmi_category02_visit1<-factor(bmi_category02_visit1)
+
+
+#12
+bmi_category12_visit1<-VIP_data_subset_visit1_complete_cases$bmi_category[VIP_data_subset_visit1_complete_cases$bmi_category!=0]
+bmi_category12_visit1[bmi_category12_visit1==1]<-0
+bmi_category12_visit1[bmi_category12_visit1==2]<-1
+bmi_category12_visit1<-factor(bmi_category12_visit1)
+
+
+fitted_probabilities<-c()
+fitted_probabilities[VIP_data_subset_visit1_complete_cases$bmi_category==0]<-
+		bmi_category_model_sep_log_reg$fitted.values[VIP_data_subset_visit1_complete_cases$bmi_category==0,1]
+fitted_probabilities[VIP_data_subset_visit1_complete_cases$bmi_category==1]<-
+		bmi_category_model_sep_log_reg$fitted.values[VIP_data_subset_visit1_complete_cases$bmi_category==1,2]
+fitted_probabilities[VIP_data_subset_visit1_complete_cases$bmi_category==2]<-
+		bmi_category_model_sep_log_reg$fitted.values[VIP_data_subset_visit1_complete_cases$bmi_category==2,3]
+
+		
+		
+		
+		(pcor.test(VIP_data_subset_visit1_complete_cases$obesity,
+							VIP_data_subset_visit1_complete_cases$diet_score,
+							apply(VIP_data_subset_visit1_complete_cases[,c("age","agesq","gender_factor","year","ffq_factor")],2,function(x){as.numeric(x)}),
+							method="spearman")$estimate)^2)
+							
+							
+							
+							
+							
+							
+							
+#check tables for best alpha 0.3 and fitting all together with multi lm based on ols
+
+#elastic net
+
+#visit1
+
+VIP_data_subset_visit1_complete_cases$diet_score<-apply(as.matrix(VIP_data_subset_visit1_complete_cases[,10:45])%*%
+				diag(regression_coefficients[set_alpha,]),1,sum,na.rm=T)
+
+obesity_prediction_lr<-predict(obesity_models_log_reg[[4]], VIP_data_subset_visit1_complete_cases[,c("age","agesq","gender_factor","year","ffq_factor","diet_score")],
+		,type="response")
+							
+							
+							
+							
+#plot them on the distributions
+d<-density(VIP_data_subset_visit1_complete_cases$environment_score_norm_sd)
+d$x<-d$x[d$x %in% VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score[VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score<1]]
+d$y<-d$y[VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score<1]
+
+
+
+plot(d, main=" Environment Z-score distribution in frist vist")
+polygon(d, col="gray90", border="gray20")
+polygon(c(min(d$x[VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score<1]),d$x[VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score<1],
+				max(d$x[VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score<1])), 
+				c(0,d$y[VIP_data_subset_visit1_complete_cases$ratio_bmi_environment_z_score<1],0), col="gray90", border="gray20")
+
+					
+PC1_control_disease<-pca_model$ind$coord[grep(paste0("Control_",condition),full_together$Group),1]
+PC2_control_disease<-pca_model$ind$coord[grep(paste0("Control_",condition),full_together$Group),2]
+PC3_control_disease<-pca_model$ind$coord[grep(paste0("Control_",condition),full_together$Group),3]
+
+					
+					
+					
+					clusMember<-rep("darkolivegreen3",length(rownames(cluster_data)))
+clusMember[grep("healthy",rownames(cluster_data))[-1]]<-"paleturquoise4"
+clusMember[50]<-"orange2"
+clusMember[1]<-"black"
+labelCol <- function(x) {
+	if (is.leaf(x)) {
+		## fetch label
+		label <- attr(x, "label") 
+		## set label color to red for A and B, to blue otherwise
+		attr(x, "nodePar") <- list(lab.col=clusMember[(1:74)[rownames(cluster_data)==label]])
+		
+	}
+	return(x)
+}
+
+png("~/Desktop/tmp.png",width=1500,height=750)
+par(cex=0.8, mar=c(5, 5, 5, 10))
+
+plot(dendrapply(as.dendrogram(hc), labelCol),horiz=T,xlab="log(distance)",main="drug effects on healthy and disease induced with PTZ")
+
+dev.off()
+				
+				
+				
+				all_predictors<-cbind(POLYsum1_TEI_adjusted_norm_sd,MONOsum1_TEI_adjusted_norm_sd,mfetsum1_TEI_adjusted_norm_sd,
+fettsum1_TEI_adjusted_norm_sd,sacksum1_TEI_adjusted_norm_sd,kolhsum1_TEI_adjusted_norm_sd,FA_TEI_adjusted_norm_sd,
+protsum1_anim_TEI_adjusted_norm_sd,protsum1_veg_TEI_adjusted_norm_sd,
+fibesum1_TEI_adjusted_norm_sd,DISAsum1_TEI_adjusted_norm_sd,MOSAsum1_TEI_adjusted_norm_sd,TRANSsum1_TEI_adjusted_norm_sd,
+NATRsum1_TEI_adjusted_norm_sd,kolesum1_TEI_adjusted_norm_sd,ensum1_norm_sd, MAGNsum1_TEI_adjusted_norm_sd,
+FOSFsum1_TEI_adjusted_norm_sd,selesum1_TEI_adjusted_norm_sd,ZINCsum1_TEI_adjusted_norm_sd,retisum1_TEI_adjusted_norm_sd,
+karosum1_TEI_adjusted_norm_sd,TIAMsum1_TEI_adjusted_norm_sd,Folasum1_TEI_adjusted_norm_sd,B2sum1_TEI_adjusted_norm_sd,
+NIACsum1_TEI_adjusted_norm_sd,B6sum1_TEI_adjusted_norm_sd,B12sum1_TEI_adjusted_norm_sd,askosum1_TEI_adjusted_norm_sd,
+Dsum1_TEI_adjusted_norm_sd,tokosum1_TEI_adjusted_norm_sd,VITKsum1_TEI_adjusted_norm_sd,jernsum1_TEI_adjusted_norm_sd,
+JODIsum1_TEI_adjusted_norm_sd,kalcsum1_TEI_adjusted_norm_sd,KALIsum1_TEI_adjusted_norm_sd,g6)
+
+				
+				
+				
+				
+				all_predictors<-cbind(age , agesq , gender_factor , year , ffq_factor,POLYsum1_TEI_adjusted_norm_sd,MONOsum1_TEI_adjusted_norm_sd,mfetsum1_TEI_adjusted_norm_sd,
+		fettsum1_TEI_adjusted_norm_sd,sacksum1_TEI_adjusted_norm_sd,kolhsum1_TEI_adjusted_norm_sd,FA_TEI_adjusted_norm_sd,
+		protsum1_anim_TEI_adjusted_norm_sd,protsum1_veg_TEI_adjusted_norm_sd,
+		fibesum1_TEI_adjusted_norm_sd,DISAsum1_TEI_adjusted_norm_sd,MOSAsum1_TEI_adjusted_norm_sd,TRANSsum1_TEI_adjusted_norm_sd,
+		NATRsum1_TEI_adjusted_norm_sd,kolesum1_TEI_adjusted_norm_sd,ensum1_norm_sd, MAGNsum1_TEI_adjusted_norm_sd,
+		FOSFsum1_TEI_adjusted_norm_sd,selesum1_TEI_adjusted_norm_sd,ZINCsum1_TEI_adjusted_norm_sd,retisum1_TEI_adjusted_norm_sd,
+		karosum1_TEI_adjusted_norm_sd,TIAMsum1_TEI_adjusted_norm_sd,Folasum1_TEI_adjusted_norm_sd,B2sum1_TEI_adjusted_norm_sd,
+		NIACsum1_TEI_adjusted_norm_sd,B6sum1_TEI_adjusted_norm_sd,B12sum1_TEI_adjusted_norm_sd,askosum1_TEI_adjusted_norm_sd,
+		Dsum1_TEI_adjusted_norm_sd,tokosum1_TEI_adjusted_norm_sd,VITKsum1_TEI_adjusted_norm_sd,jernsum1_TEI_adjusted_norm_sd,
+		JODIsum1_TEI_adjusted_norm_sd,kalcsum1_TEI_adjusted_norm_sd,KALIsum1_TEI_adjusted_norm_sd,g6)
+
+pca_model<-PCA(all_predictors, graph = FALSE, scale.unit=TRUE) 
+						
+						
+						
+
+#exclude n.s., not so good to do top down or bottom up, better to run model selection, use the branch and bound algorithm, based on aicc, no interactions(level 1), limit the number
+#of models to 5000, since it converges really fast to the optimum, but will then just circle around it, note that if you increase the space you should use condor,
+#branch and bound must have linear model output, no interactions and no factors, hence the as.numeric above :(
+model_selection_l <- glmulti(full_model, level = 1, crit="aicc", method="l",confsetsize=1000)
+
+#inspect the selected model and fit again to get the metrics and the model
+full_model_selected<-lm(bmi_norm_sd~POLYsum1_TEI_adjusted_norm_sd+mfetsum1_TEI_adjusted_norm_sd+sacksum1_TEI_adjusted_norm_sd+kolhsum1_TEI_adjusted_norm_sd+
+				FA_TEI_adjusted_norm_sd+protsum1_anim_TEI_adjusted_norm_sd+
+				fibesum1_TEI_adjusted_norm_sd+DISAsum1_TEI_adjusted_norm_sd+MOSAsum1_TEI_adjusted_norm_sd+TRANSsum1_TEI_adjusted_norm_sd+
+				NATRsum1_TEI_adjusted_norm_sd+kolesum1_TEI_adjusted_norm_sd+ensum1_norm_sd+ MAGNsum1_TEI_adjusted_norm_sd+
+				FOSFsum1_TEI_adjusted_norm_sd+ZINCsum1_TEI_adjusted_norm_sd+TIAMsum1_TEI_adjusted_norm_sd+Folasum1_TEI_adjusted_norm_sd+
+				NIACsum1_TEI_adjusted_norm_sd+B6sum1_TEI_adjusted_norm_sd+B12sum1_TEI_adjusted_norm_sd+askosum1_TEI_adjusted_norm_sd+
+				Dsum1_TEI_adjusted_norm_sd+jernsum1_TEI_adjusted_norm_sd+
+				JODIsum1_TEI_adjusted_norm_sd+KALIsum1_TEI_adjusted_norm_sd+g6)
+summary(full_model_selcted)
+vif(full_model_selcted)
+						
+						
+						
+						
+						
+						#visit2
+#-------------multiclasss-------------------
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor<-as.numeric(predicted_categorized_visit2)
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-0
+
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-1
+
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor[(predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<--1
+
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-2
+
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor[(predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<--2
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor<-as.factor(VIP_data_subset_visit2_complete_cases$compliance_multi_factor)
+#-------------multiclasss-------------------
+
+
+#-------------biclasss-------------------
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor<-as.numeric(predicted_categorized_visit2)
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-0
+
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==2) 
+				| (predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-1
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor<-as.factor(VIP_data_subset_visit2_complete_cases$compliance_bi_factor)
+#-------------biclasss-------------------
+
+#-------------biclasssopposite-------------------
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite<-as.numeric(predicted_categorized_visit2)
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-0
+
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite[(predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==1) 
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<-1
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite<-as.factor(VIP_data_subset_visit2_complete_cases$compliance_bi_factor_opposite)
+#-------------biclasssopposite-------------------
+
+#-------------biclasssstrict-------------------
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict<-as.numeric(predicted_categorized_visit2)
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-0
+
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-1
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict<-as.factor(VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict)
+#-------------biclasssstrict-------------------
+
+#-------------biclasssstrictopposite-------------------
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite<-as.numeric(predicted_categorized_visit2)
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==1)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-0
+
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite[(predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==0)
+				| (predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<-1
+VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite<-as.factor(VIP_data_subset_visit2_complete_cases$compliance_bi_factor_strict_opposite)
+#-------------biclasssstrictopposite-------------------
+
+#-------------continous-------------------
+VIP_data_subset_visit2_complete_cases$compliance_continous<-residuals_visit2
+
+
+#------------allmultifactors-------------
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all<-as.numeric(predicted_categorized_visit2)
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<-'00'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==1)]<-'11'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-'22'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==1)]<-'01'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-'12'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==1)]<-'21'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==1 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<-'10'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==0 & VIP_data_subset_visit2_complete_cases$bmi_category==2)]<-'02'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all[(predicted_categorized_visit2==2 & VIP_data_subset_visit2_complete_cases$bmi_category==0)]<-'20'
+VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all<-as.factor(VIP_data_subset_visit2_complete_cases$compliance_multi_factor_all)
+
+#save the datasets for further analysis in selection
+write.csv(VIP_data_subset_visit1_complete_cases, "../VIP_data/VIP_data_subset_visit1_complete_cases_2908.csv", row.names=FALSE, na="")
+write.csv(VIP_data_subset_visit2_complete_cases, "../VIP_data/VIP_data_subset_visit2_complete_cases_2908.csv", row.names=FALSE, na="")
+
+						
+						
+						
+resistance_case_control_susceptible_enummers_total<-resistance_case_control_susceptible_enummers[resistance_case_control_susceptible_enummers %in% enummers_total]
+resistance_case_control_compliant_enummers_total<-resistance_case_control_compliant_enummers[resistance_case_control_compliant_enummers %in% enummers_total]
+susceptible_case_control_compliant_enummers_total<-susceptible_case_control_compliant_enummers[susceptible_case_control_compliant_enummers %in% enummers_total]
+case_01_control_compliant_enummers_total<-case_01_control_compliant_enummers[case_01_control_compliant_enummers %in% enummers_total]
+case_02_control_compliant_enummers_total<-case_02_control_compliant_enummers[case_02_control_compliant_enummers %in% enummers_total]
+case_12_control_compliant_enummers_total<-case_12_control_compliant_enummers[case_12_control_compliant_enummers %in% enummers_total]
+case_10_control_compliant_enummers_total<-case_10_control_compliant_enummers[case_10_control_compliant_enummers %in% enummers_total]
+
+							

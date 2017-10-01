@@ -1,0 +1,29 @@
+Rscript ../../../code/final_analysis/effect_sizes_drugs_vs_control_in_condition.R Light
+Rscript ../../../code/final_analysis/effect_sizes_drugs_vs_control_in_condition.R Dark
+Rscript ../../../code/final_analysis/effect_sizes_drugs_vs_control_in_condition.R DarkApoLow
+Rscript ../../../code/final_analysis/effect_sizes_drugs_vs_control_in_condition.R DarkApoHigh
+Rscript ../../../code/final_analysis/effect_sizes_drugs_vs_control_in_condition.R DarkPTZ
+
+Rscript ../../../code/final_analysis/plot_raw_data_B1.R Light
+Rscript ../../../code/final_analysis/plot_raw_data_B1.R Dark
+Rscript ../../../code/final_analysis/plot_raw_data_B1.R DarkApoLow
+Rscript ../../../code/final_analysis/plot_raw_data_B1.R DarkApoHigh
+Rscript ../../../code/final_analysis/plot_raw_data_B1.R DarkPTZ
+
+
+
+
+
+
+Rscript ../../code/final_analysis/dendograms_of_raw_vars.R DarkApoLow_B2_cluster_scaled.txt DarkApoLow_B2
+Rscript ../../code/final_analysis/dendograms_of_raw_vars.R DarkApoLow_B1_cluster_scaled.txt DarkApoLow_B1
+Rscript ../../code/final_analysis/dendograms_of_raw_vars.R DarkApoHigh_B2_cluster_scaled.txt DarkApoHigh_B2
+Rscript ../../code/final_analysis/dendograms_of_raw_vars.R DarkApoHigh_B1_cluster_scaled.txt DarkApoHigh_B1
+Rscript ../../code/final_analysis/dendograms_of_raw_vars.R DarkPTZ_B2_cluster_scaled.txt DarkPTZ_B2
+Rscript ../../code/final_analysis/dendograms_of_raw_vars.R DarkPTZ_B1_cluster_scaled.txt DarkPTZ_B1
+
+
+
+
+
+

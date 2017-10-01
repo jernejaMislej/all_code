@@ -1,0 +1,172 @@
+
+#change the number of condition letters in the code
+Natural for Light,Dark,LightDark, Disease for ApoLow, ApoHigh, PTZ
+#ls condition, change condition and drug dosage or control 4x, do extra for ndmcihigh as it has 25,50,100
+ls *DarkApoHigh | while read line;do python3 ../../../code/dataset_per_bout/extract_data/extract_data_from_sequence.py $line DarkApoHigh 10microM ;done
+
+
+# in all 6  do this, as these are empty
+rm *NDMCHigh_3microM*
+rm *NDMCHigh_1microM*
+rm *NDMCHigh_10microM*
+
+#combine controls
+
+cd Light
+rm Natural_Control_Light_BoutLength
+rm Natural_Control_Light_TimeFactor
+rm Natural_Control_Light_ScootsProportion
+rm Natural_Control_Light_JBendsProportion
+rm Natural_Control_Light_CBendsProportion
+rm Natural_Control_Light_OBendsProportion
+rm Natural_Control_Light_EBendsProportion
+rm Natural_Control_Light_GBendsProportion
+rm Natural_Control_Light_HBendsProportion
+rm Natural_Control_Light_IBendsProportion
+
+cat *Control*_BoutLength > Natural_Control_Light_BoutLength
+cat *Control*_TimeFactor > Natural_Control_Light_TimeFactor
+cat *Control*_ScootsProportion > Natural_Control_Light_ScootsProportion
+cat *Control*_JBendsProportion > Natural_Control_Light_JBendsProportion
+cat *Control*_CBendsProportion > Natural_Control_Light_CBendsProportion
+cat *Control*_OBendsProportion > Natural_Control_Light_OBendsProportion
+cat *Control*_EBendsProportion > Natural_Control_Light_EBendsProportion
+cat *Control*_GBendsProportion > Natural_Control_Light_GBendsProportion
+cat *Control*_HBendsProportion > Natural_Control_Light_HBendsProportion
+cat *Control*_IBendsProportion > Natural_Control_Light_IBendsProportion
+
+comb2=('ss' 'sj' 'sc' 'so' 'se' 'sg' 'sh' 'si' 'js' 'jj' 'jc' 'jo' 'je' 'jg' 'jh' 'ji' 'cs' 'cj' 'cc' 'co' 'ce' 'cg' 'ch' 'ci' 'os' 'oj' 'oc' 'oo' 'oe' 'og' 'oh' 'oi' 'es' 'ej' 'ec' 'eo' 'ee' 'eg' 'eh' 'ei' 'gs' 'gj' 'gc' 'go' 'ge' 'gg' 'gh' 'gi' 'hs' 'hj' 'hc' 'ho' 'he' 'hg' 'hh' 'hi' 'is' 'ij' 'ic' 'io' 'ie' 'ig' 'ih' 'ii')
+for i in "${comb2[@]}"
+do
+	rm Natural_Control_Light_${i}Transition2Proportion
+	cat *Control*_${i}Transition2Proportion > Natural_Control_Light_${i}Transition2Proportion
+done
+
+comb3=('sss' 'ssj' 'ssc' 'sso' 'sse' 'ssg' 'ssh' 'ssi' 'sjs' 'sjj' 'sjc' 'sjo' 'sje' 'sjg' 'sjh' 'sji' 'scs' 'scj' 'scc' 'sco' 'sce' 'scg' 'sch' 'sci' 'sos' 'soj' 'soc' 'soo' 'soe' 'sog' 'soh' 'soi' 'ses' 'sej' 'sec' 'seo' 'see' 'seg' 'seh' 'sei' 'sgs' 'sgj' 'sgc' 'sgo' 'sge' 'sgg' 'sgh' 'sgi' 'shs' 'shj' 'shc' 'sho' 'she' 'shg' 'shh' 'shi' 'sis' 'sij' 'sic' 'sio' 'sie' 'sig' 'sih' 'sii' 'jss' 'jsj' 'jsc' 'jso' 'jse' 'jsg' 'jsh' 'jsi' 'jjs' 'jjj' 'jjc' 'jjo' 'jje' 'jjg' 'jjh' 'jji' 'jcs' 'jcj' 'jcc' 'jco' 'jce' 'jcg' 'jch' 'jci' 'jos' 'joj' 'joc' 'joo' 'joe' 'jog' 'joh' 'joi' 'jes' 'jej' 'jec' 'jeo' 'jee' 'jeg' 'jeh' 'jei' 'jgs' 'jgj' 'jgc' 'jgo' 'jge' 'jgg' 'jgh' 'jgi' 'jhs' 'jhj' 'jhc' 'jho' 'jhe' 'jhg' 'jhh' 'jhi' 'jis' 'jij' 'jic' 'jio' 'jie' 'jig' 'jih' 'jii' 'css' 'csj' 'csc' 'cso' 'cse' 'csg' 'csh' 'csi' 'cjs' 'cjj' 'cjc' 'cjo' 'cje' 'cjg' 'cjh' 'cji' 'ccs' 'ccj' 'ccc' 'cco' 'cce' 'ccg' 'cch' 'cci' 'cos' 'coj' 'coc' 'coo' 'coe' 'cog' 'coh' 'coi' 'ces' 'cej' 'cec' 'ceo' 'cee' 'ceg' 'ceh' 'cei' 'cgs' 'cgj' 'cgc' 'cgo' 'cge' 'cgg' 'cgh' 'cgi' 'chs' 'chj' 'chc' 'cho' 'che' 'chg' 'chh' 'chi' 'cis' 'cij' 'cic' 'cio' 'cie' 'cig' 'cih' 'cii' 'oss' 'osj' 'osc' 'oso' 'ose' 'osg' 'osh' 'osi' 'ojs' 'ojj' 'ojc' 'ojo' 'oje' 'ojg' 'ojh' 'oji' 'ocs' 'ocj' 'occ' 'oco' 'oce' 'ocg' 'och' 'oci' 'oos' 'ooj' 'ooc' 'ooo' 'ooe' 'oog' 'ooh' 'ooi' 'oes' 'oej' 'oec' 'oeo' 'oee' 'oeg' 'oeh' 'oei' 'ogs' 'ogj' 'ogc' 'ogo' 'oge' 'ogg' 'ogh' 'ogi' 'ohs' 'ohj' 'ohc' 'oho' 'ohe' 'ohg' 'ohh' 'ohi' 'ois' 'oij' 'oic' 'oio' 'oie' 'oig' 'oih' 'oii' 'ess' 'esj' 'esc' 'eso' 'ese' 'esg' 'esh' 'esi' 'ejs' 'ejj' 'ejc' 'ejo' 'eje' 'ejg' 'ejh' 'eji' 'ecs' 'ecj' 'ecc' 'eco' 'ece' 'ecg' 'ech' 'eci' 'eos' 'eoj' 'eoc' 'eoo' 'eoe' 'eog' 'eoh' 'eoi' 'ees' 'eej' 'eec' 'eeo' 'eee' 'eeg' 'eeh' 'eei' 'egs' 'egj' 'egc' 'ego' 'ege' 'egg' 'egh' 'egi' 'ehs' 'ehj' 'ehc' 'eho' 'ehe' 'ehg' 'ehh' 'ehi' 'eis' 'eij' 'eic' 'eio' 'eie' 'eig' 'eih' 'eii' 'gss' 'gsj' 'gsc' 'gso' 'gse' 'gsg' 'gsh' 'gsi' 'gjs' 'gjj' 'gjc' 'gjo' 'gje' 'gjg' 'gjh' 'gji' 'gcs' 'gcj' 'gcc' 'gco' 'gce' 'gcg' 'gch' 'gci' 'gos' 'goj' 'goc' 'goo' 'goe' 'gog' 'goh' 'goi' 'ges' 'gej' 'gec' 'geo' 'gee' 'geg' 'geh' 'gei' 'ggs' 'ggj' 'ggc' 'ggo' 'gge' 'ggg' 'ggh' 'ggi' 'ghs' 'ghj' 'ghc' 'gho' 'ghe' 'ghg' 'ghh' 'ghi' 'gis' 'gij' 'gic' 'gio' 'gie' 'gig' 'gih' 'gii' 'hss' 'hsj' 'hsc' 'hso' 'hse' 'hsg' 'hsh' 'hsi' 'hjs' 'hjj' 'hjc' 'hjo' 'hje' 'hjg' 'hjh' 'hji' 'hcs' 'hcj' 'hcc' 'hco' 'hce' 'hcg' 'hch' 'hci' 'hos' 'hoj' 'hoc' 'hoo' 'hoe' 'hog' 'hoh' 'hoi' 'hes' 'hej' 'hec' 'heo' 'hee' 'heg' 'heh' 'hei' 'hgs' 'hgj' 'hgc' 'hgo' 'hge' 'hgg' 'hgh' 'hgi' 'hhs' 'hhj' 'hhc' 'hho' 'hhe' 'hhg' 'hhh' 'hhi' 'his' 'hij' 'hic' 'hio' 'hie' 'hig' 'hih' 'hii' 'iss' 'isj' 'isc' 'iso' 'ise' 'isg' 'ish' 'isi' 'ijs' 'ijj' 'ijc' 'ijo' 'ije' 'ijg' 'ijh' 'iji' 'ics' 'icj' 'icc' 'ico' 'ice' 'icg' 'ich' 'ici' 'ios' 'ioj' 'ioc' 'ioo' 'ioe' 'iog' 'ioh' 'ioi' 'ies' 'iej' 'iec' 'ieo' 'iee' 'ieg' 'ieh' 'iei' 'igs' 'igj' 'igc' 'igo' 'ige' 'igg' 'igh' 'igi' 'ihs' 'ihj' 'ihc' 'iho' 'ihe' 'ihg' 'ihh' 'ihi' 'iis' 'iij' 'iic' 'iio' 'iie' 'iig' 'iih' 'iii')
+for i in "${comb3[@]}"
+do
+	rm Natural_Control_Light_${i}Transition3Proportion
+	cat *Control*_${i}Transition3Proportion > Natural_Control_Light_${i}Transition3Proportion
+done
+
+cd ..
+
+cd Dark
+rm Natural_Control_Dark_BoutLength
+rm Natural_Control_Dark_TimeFactor
+rm Natural_Control_Dark_ScootsProportion
+rm Natural_Control_Dark_JBendsProportion
+rm Natural_Control_Dark_CBendsProportion
+rm Natural_Control_Dark_OBendsProportion
+rm Natural_Control_Dark_EBendsProportion
+rm Natural_Control_Dark_GBendsProportion
+rm Natural_Control_Dark_HBendsProportion
+rm Natural_Control_Dark_IBendsProportion
+
+cat *Control*_BoutLength > Natural_Control_Dark_BoutLength
+cat *Control*_TimeFactor > Natural_Control_Dark_TimeFactor
+cat *Control*_ScootsProportion > Natural_Control_Dark_ScootsProportion
+cat *Control*_JBendsProportion > Natural_Control_Dark_JBendsProportion
+cat *Control*_CBendsProportion > Natural_Control_Dark_CBendsProportion
+cat *Control*_OBendsProportion > Natural_Control_Dark_OBendsProportion
+cat *Control*_EBendsProportion > Natural_Control_Dark_EBendsProportion
+cat *Control*_GBendsProportion > Natural_Control_Dark_GBendsProportion
+cat *Control*_HBendsProportion > Natural_Control_Dark_HBendsProportion
+cat *Control*_IBendsProportion > Natural_Control_Dark_IBendsProportion
+cd ..
+
+cd LightDark
+rm Natural_Control_LightDark_BoutLength
+rm Natural_Control_LightDark_TimeFactor
+rm Natural_Control_LightDark_ScootsProportion
+rm Natural_Control_LightDark_JBendsProportion
+rm Natural_Control_LightDark_CBendsProportion
+rm Natural_Control_LightDark_OBendsProportion
+rm Natural_Control_LightDark_EBendsProportion
+rm Natural_Control_LightDark_GBendsProportion
+rm Natural_Control_LightDark_HBendsProportion
+rm Natural_Control_LightDark_IBendsProportion
+
+cat *Control*_BoutLength > Natural_Control_LightDark_BoutLength
+cat *Control*_TimeFactor > Natural_Control_LightDark_TimeFactor
+cat *Control*_ScootsProportion > Natural_Control_LightDark_ScootsProportion
+cat *Control*_JBendsProportion > Natural_Control_LightDark_JBendsProportion
+cat *Control*_CBendsProportion > Natural_Control_LightDark_CBendsProportion
+cat *Control*_OBendsProportion > Natural_Control_LightDark_OBendsProportion
+cat *Control*_EBendsProportion > Natural_Control_LightDark_EBendsProportion
+cat *Control*_GBendsProportion > Natural_Control_LightDark_GBendsProportion
+cat *Control*_HBendsProportion > Natural_Control_LightDark_HBendsProportion
+cat *Control*_IBendsProportion > Natural_Control_LightDark_IBendsProportion
+cd ..
+
+cd DarkApoLow
+rm Disease_Control_DarkApoLow_BoutLength
+rm Disease_Control_DarkApoLow_TimeFactor
+rm Disease_Control_DarkApoLow_ScootsProportion
+rm Disease_Control_DarkApoLow_JBendsProportion
+rm Disease_Control_DarkApoLow_CBendsProportion
+rm Disease_Control_DarkApoLow_OBendsProportion
+rm Disease_Control_DarkApoLow_EBendsProportion
+rm Disease_Control_DarkApoLow_GBendsProportion
+rm Disease_Control_DarkApoLow_HBendsProportion
+rm Disease_Control_DarkApoLow_IBendsProportion
+
+cat *Control*_BoutLength > Disease_Control_DarkApoLow_BoutLength
+cat *Control*_TimeFactor > Disease_Control_DarkApoLow_TimeFactor
+cat *Control*_ScootsProportion > Disease_Control_DarkApoLow_ScootsProportion
+cat *Control*_JBendsProportion > Disease_Control_DarkApoLow_JBendsProportion
+cat *Control*_CBendsProportion > Disease_Control_DarkApoLow_CBendsProportion
+cat *Control*_OBendsProportion > Disease_Control_DarkApoLow_OBendsProportion
+cat *Control*_EBendsProportion > Disease_Control_DarkApoLow_EBendsProportion
+cat *Control*_GBendsProportion > Disease_Control_DarkApoLow_GBendsProportion
+cat *Control*_HBendsProportion > Disease_Control_DarkApoLow_HBendsProportion
+cat *Control*_IBendsProportion > Disease_Control_DarkApoLow_IBendsProportion
+cd ..
+
+cd DarkApoHigh
+rm Disease_Control_DarkApoHigh_BoutLength
+rm Disease_Control_DarkApoHigh_TimeFactor
+rm Disease_Control_DarkApoHigh_ScootsProportion
+rm Disease_Control_DarkApoHigh_JBendsProportion
+rm Disease_Control_DarkApoHigh_CBendsProportion
+rm Disease_Control_DarkApoHigh_OBendsProportion
+rm Disease_Control_DarkApoHigh_EBendsProportion
+rm Disease_Control_DarkApoHigh_GBendsProportion
+rm Disease_Control_DarkApoHigh_HBendsProportion
+rm Disease_Control_DarkApoHigh_IBendsProportion
+
+cat *Control*_BoutLength > Disease_Control_DarkApoHigh_BoutLength
+cat *Control*_TimeFactor > Disease_Control_DarkApoHigh_TimeFactor
+cat *Control*_ScootsProportion > Disease_Control_DarkApoHigh_ScootsProportion
+cat *Control*_JBendsProportion > Disease_Control_DarkApoHigh_JBendsProportion
+cat *Control*_CBendsProportion > Disease_Control_DarkApoHigh_CBendsProportion
+cat *Control*_OBendsProportion > Disease_Control_DarkApoHigh_OBendsProportion
+cat *Control*_EBendsProportion > Disease_Control_DarkApoHigh_EBendsProportion
+cat *Control*_GBendsProportion > Disease_Control_DarkApoHigh_GBendsProportion
+cat *Control*_HBendsProportion > Disease_Control_DarkApoHigh_HBendsProportion
+cat *Control*_IBendsProportion > Disease_Control_DarkApoHigh_IBendsProportion
+cd ..
+
+cd DarkPTZ
+rm Disease_Control_DarkPTZ_BoutLength
+rm Disease_Control_DarkPTZ_TimeFactor
+rm Disease_Control_DarkPTZ_ScootsProportion
+rm Disease_Control_DarkPTZ_JBendsProportion
+rm Disease_Control_DarkPTZ_CBendsProportion
+rm Disease_Control_DarkPTZ_OBendsProportion
+rm Disease_Control_DarkPTZ_EBendsProportion
+rm Disease_Control_DarkPTZ_GBendsProportion
+rm Disease_Control_DarkPTZ_HBendsProportion
+rm Disease_Control_DarkPTZ_IBendsProportion
+
+cat *Control*_BoutLength > Disease_Control_DarkPTZ_BoutLength
+cat *Control*_TimeFactor > Disease_Control_DarkPTZ_TimeFactor
+cat *Control*_ScootsProportion > Disease_Control_DarkPTZ_ScootsProportion
+cat *Control*_JBendsProportion > Disease_Control_DarkPTZ_JBendsProportion
+cat *Control*_CBendsProportion > Disease_Control_DarkPTZ_CBendsProportion
+cat *Control*_OBendsProportion > Disease_Control_DarkPTZ_OBendsProportion
+cat *Control*_EBendsProportion > Disease_Control_DarkPTZ_EBendsProportion
+cat *Control*_GBendsProportion > Disease_Control_DarkPTZ_GBendsProportion
+cat *Control*_HBendsProportion > Disease_Control_DarkPTZ_HBendsProportion
+cat *Control*_IBendsProportion > Disease_Control_DarkPTZ_IBendsProportion
+cd ..
